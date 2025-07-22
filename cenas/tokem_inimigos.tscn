@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://mlbixh7is7is"]
+
+[ext_resource type="Texture2D" uid="uid://b6ee0jkwq6akq" path="res://imagens/images (2).jpg" id="1_mm4aq"]
+[ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/token-border-collection-v0-61i9u2n221ja1.png" id="2_su08s"]
+[ext_resource type="Script" uid="uid://bu4f0babup620" path="res://scripts/token_player.gd" id="2_uclt2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mm4aq"]
+radius = 543.608
+
+[node name="tokem_inimigos" type="Area2D"]
+scale = Vector2(0.14, 0.14)
+script = ExtResource("2_uclt2")
+
+[node name="imagem_fundo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -405.0
+offset_right = 565.0
+offset_bottom = 910.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(600, 600)
+texture = ExtResource("1_mm4aq")
+metadata/_edit_use_anchors_ = true
+
+[node name="borda_token" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -508.0
+offset_top = -480.0
+offset_right = 516.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+texture = ExtResource("2_su08s")
+metadata/_edit_use_anchors_ = true
+
+[node name="Token-border-collection-v0-61i9u2n221Ja1" type="Sprite2D" parent="."]
+position = Vector2(1.36239e-07, 28.5714)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_su08s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mm4aq")

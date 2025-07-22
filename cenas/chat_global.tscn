@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://y2b0s1rfaa4b"]
+[gd_scene load_steps=7 format=3 uid="uid://y2b0s1rfaa4b"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_qjpr8"]
 [ext_resource type="Script" uid="uid://1bd3l482kf3m" path="res://cenas/chat_global.gd" id="1_vkkos"]
-[ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/images (1).jpg" id="2_vkkos"]
-[ext_resource type="Texture2D" uid="uid://bvvctkil27ojq" path="res://imagens/token-border-collection-v0-8pv4nqo221ja1.png" id="3_x4056"]
 
 [sub_resource type="FontVariation" id="FontVariation_pf4d4"]
 base_font = ExtResource("1_qjpr8")
@@ -72,67 +70,16 @@ color = Color(0.219608, 0.219608, 0.219608, 1)
 [node name="ScrollContainer" type="ScrollContainer" parent="fundo_chat"]
 custom_minimum_size = Vector2(240, 265)
 layout_mode = 2
-offset_left = 8.0
-offset_top = 33.0
-offset_right = 248.0
-offset_bottom = 383.0
+offset_left = 4.0
+offset_top = 31.0
+offset_right = 244.0
+offset_bottom = 381.0
 scale = Vector2(0.8, 0.8)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="fundo_chat/ScrollContainer"]
 custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
 alignment = 1
-
-[node name="inventario" type="HBoxContainer" parent="fundo_chat/ScrollContainer/VBoxContainer"]
-clip_contents = true
-layout_mode = 2
-theme_override_constants/separation = 2
-alignment = 1
-
-[node name="espaco - imagem" type="Label" parent="fundo_chat/ScrollContainer/VBoxContainer/inventario"]
-self_modulate = Color(0.924942, 0.996734, 1, 1)
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_pf4d4")
-text = " "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="fundo_chat/ScrollContainer/VBoxContainer/inventario/espaco - imagem"]
-layout_mode = 2
-offset_bottom = 55.0
-pivot_offset = Vector2(15, 15)
-
-[node name="Images(1)" type="Sprite2D" parent="fundo_chat/ScrollContainer/VBoxContainer/inventario/espaco - imagem/PanelContainer"]
-position = Vector2(15, 23)
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_vkkos")
-
-[node name="icon" type="Sprite2D" parent="fundo_chat/ScrollContainer/VBoxContainer/inventario/espaco - imagem/PanelContainer/Images(1)"]
-position = Vector2(0.000135422, -55.5556)
-scale = Vector2(0.166667, 0.166667)
-texture = ExtResource("3_x4056")
-offset = Vector2(3, 50)
-
-[node name="nick" type="Label" parent="fundo_chat/ScrollContainer/VBoxContainer/inventario"]
-self_modulate = Color(0.924942, 0.996734, 1, 1)
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_pf4d4")
-text = "- nick - "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="fundo_chat/ScrollContainer/VBoxContainer/inventario/nick"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="texto" type="RichTextLabel" parent="fundo_chat/ScrollContainer/VBoxContainer/inventario"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_qjpr8")
-fit_content = true
 
 [node name="enviar_botao" type="Button" parent="fundo_chat"]
 custom_minimum_size = Vector2(40, 20)

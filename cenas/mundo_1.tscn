@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwl3l84knabka"]
+[gd_scene load_steps=9 format=3 uid="uid://bwl3l84knabka"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_0blei"]
 [ext_resource type="Script" uid="uid://df5janu7knv7" path="res://cenas/mundo_1.gd" id="1_eeqrx"]
-[ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/token-border-collection-v0-61i9u2n221ja1.png" id="2_2f25m"]
-[ext_resource type="Script" uid="uid://bu4f0babup620" path="res://scripts/token_player.gd" id="3_k8nl3"]
-[ext_resource type="Texture2D" uid="uid://bvvctkil27ojq" path="res://imagens/token-border-collection-v0-8pv4nqo221ja1.png" id="4_1opco"]
-[ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/images (1).jpg" id="4_2f25m"]
+[ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="3_2f25m"]
+[ext_resource type="PackedScene" uid="uid://mlbixh7is7is" path="res://cenas/tokem_inimigos.tscn" id="4_k5b1o"]
 [ext_resource type="PackedScene" uid="uid://y2b0s1rfaa4b" path="res://cenas/chat_global.tscn" id="7_p1jju"]
 
 [sub_resource type="FontVariation" id="FontVariation_ysh8u"]
@@ -140,35 +138,21 @@ vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="token_player" type="Sprite2D" parent="."]
-position = Vector2(2, 1)
-scale = Vector2(0.0667999, 0.0725578)
-texture = ExtResource("2_2f25m")
-region_enabled = true
-region_filter_clip_enabled = true
-script = ExtResource("3_k8nl3")
+[node name="drop_tokens" type="Node" parent="."]
 
-[node name="icon" type="Sprite2D" parent="token_player"]
-position = Vector2(29.9402, 179.168)
-scale = Vector2(6.25582, 5.83523)
-texture = ExtResource("4_2f25m")
+[node name="tokem_player" parent="drop_tokens" instance=ExtResource("3_2f25m")]
+position = Vector2(48, 52)
+scale = Vector2(0.07, 0.07)
 
-[node name="token_inimigo" type="Sprite2D" parent="."]
-position = Vector2(-7.62939e-06, 3.05176e-05)
-scale = Vector2(0.103516, 0.106934)
-texture = ExtResource("4_1opco")
-script = ExtResource("3_k8nl3")
+[node name="tokem_inimigos" parent="drop_tokens" instance=ExtResource("4_k5b1o")]
+position = Vector2(331, 265)
+scale = Vector2(0.07, 0.07)
 
-[node name="icon" type="Sprite2D" parent="token_inimigo"]
-position = Vector2(9.15527e-05, -0.000366211)
-scale = Vector2(9.66038, 9.3516)
-
-[node name="drop_Chat" type="Node" parent="."]
+[node name="chat" type="Node" parent="."]
 script = SubResource("GDScript_k5b1o")
 
-[node name="chat_global" parent="drop_Chat" instance=ExtResource("7_p1jju")]
-position = Vector2(-351, 7)
-scale = Vector2(0.8, 0.8)
+[node name="chat_global" parent="chat" instance=ExtResource("7_p1jju")]
+position = Vector2(-393, -78)
 
 [node name="mouse_area" type="Area2D" parent="."]
 collision_layer = 129
