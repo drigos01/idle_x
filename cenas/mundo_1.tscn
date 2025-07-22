@@ -1,0 +1,179 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwl3l84knabka"]
+
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_0blei"]
+[ext_resource type="Script" uid="uid://df5janu7knv7" path="res://cenas/mundo_1.gd" id="1_eeqrx"]
+[ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/token-border-collection-v0-61i9u2n221ja1.png" id="2_2f25m"]
+[ext_resource type="Script" uid="uid://bu4f0babup620" path="res://scripts/token_player.gd" id="3_k8nl3"]
+[ext_resource type="Texture2D" uid="uid://bvvctkil27ojq" path="res://imagens/token-border-collection-v0-8pv4nqo221ja1.png" id="4_1opco"]
+[ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/images (1).jpg" id="4_2f25m"]
+[ext_resource type="PackedScene" uid="uid://y2b0s1rfaa4b" path="res://cenas/chat_global.tscn" id="7_p1jju"]
+
+[sub_resource type="FontVariation" id="FontVariation_ysh8u"]
+base_font = ExtResource("1_0blei")
+
+[sub_resource type="GDScript" id="GDScript_k5b1o"]
+script/source = "extends Node
+#
+#@onready var area_arastar := $Area2D
+#@onready var sprite := $Area2D/Sprite2D
+#
+#var selecionado := false
+#var arrastando := false
+#var arrasto_dentro := false
+#var offset := Vector2.ZERO
+#
+#func _ready():
+	#area_arastar.connect(\"mouse_entered\", _on_mouse_entered)
+	#area_arastar.connect(\"mouse_exited\", _on_mouse_exited)
+#
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		#if event.pressed:
+			#if arrasto_dentro:
+				#selecionado = true
+				#arrastando = true
+				#offset = area_arastar.global_position - get_viewport().get_mouse_position()
+				#print(\"✅ Selecionado por arrasto\")
+			#elif area_arastar.get_rect().has_point(area_arastar.to_local(get_viewport().get_mouse_position())):
+				#selecionado = true
+				#arrastando = true
+				#offset = area_arastar.global_position - get_viewport().get_mouse_position()
+				#print(\"✅ Selecionado por clique\")
+			#else:
+				#selecionado = false
+				#print(\"❌ Deselecionado\")
+		#else:
+			#arrastando = false
+#
+	#elif event is InputEventMouseMotion and arrastando:
+		#area_arastar.global_position = get_viewport().get_mouse_position() + offset
+#
+#func _on_mouse_entered():
+	#arrasto_dentro = true
+	#print(\"🟡 Mouse entrou na área\")
+#
+#func _on_mouse_exited():
+	#arrasto_dentro = false
+	#print(\"⚫ Mouse saiu da área\")
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eeqrx"]
+radius = 7.28011
+
+[node name="mundo_1" type="Node2D"]
+script = ExtResource("1_eeqrx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -739.0
+offset_top = -411.0
+offset_right = 779.0
+offset_bottom = 421.0
+color = Color(0.209908, 0.209908, 0.209908, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -562.0
+offset_top = -304.0
+offset_right = -351.0
+offset_bottom = -219.0
+color = Color(0.315102, 0.290606, 0.230582, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 207.0
+offset_bottom = 57.0
+alignment = 1
+
+[node name="inventario" type="HBoxContainer" parent="ColorRect2/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="inventario_slots" type="PanelContainer" parent="ColorRect2/VBoxContainer/inventario"]
+layout_mode = 2
+
+[node name="nome" type="Label" parent="ColorRect2/VBoxContainer/inventario/inventario_slots"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ysh8u")
+text = "    Inventario    "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="ColorRect2/VBoxContainer/inventario/inventario_slots"]
+
+[node name="inventario2" type="HBoxContainer" parent="ColorRect2/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="inventario_slots" type="PanelContainer" parent="ColorRect2/VBoxContainer/inventario2"]
+layout_mode = 2
+
+[node name="nome" type="Label" parent="ColorRect2/VBoxContainer/inventario2/inventario_slots"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ysh8u")
+text = "     Batalha     "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="ColorRect2/VBoxContainer/inventario2/inventario_slots"]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -468.0
+offset_top = -147.0
+offset_right = 486.0
+offset_bottom = 366.0
+color = Color(0.446887, 0.415275, 0.337826, 1)
+
+[node name="nome" type="Label" parent="ColorRect3"]
+layout_mode = 2
+offset_left = 299.0
+offset_top = 5.0
+offset_right = 633.0
+offset_bottom = 35.0
+theme_override_fonts/font = SubResource("FontVariation_ysh8u")
+text = "farme area"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="token_player" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(0.0667999, 0.0725578)
+texture = ExtResource("2_2f25m")
+region_enabled = true
+region_filter_clip_enabled = true
+script = ExtResource("3_k8nl3")
+
+[node name="icon" type="Sprite2D" parent="token_player"]
+position = Vector2(29.9402, 179.168)
+scale = Vector2(6.25582, 5.83523)
+texture = ExtResource("4_2f25m")
+
+[node name="token_inimigo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.62939e-06, 3.05176e-05)
+scale = Vector2(0.103516, 0.106934)
+texture = ExtResource("4_1opco")
+script = ExtResource("3_k8nl3")
+
+[node name="icon" type="Sprite2D" parent="token_inimigo"]
+position = Vector2(9.15527e-05, -0.000366211)
+scale = Vector2(9.66038, 9.3516)
+
+[node name="drop_Chat" type="Node" parent="."]
+script = SubResource("GDScript_k5b1o")
+
+[node name="chat_global" parent="drop_Chat" instance=ExtResource("7_p1jju")]
+position = Vector2(-351, 7)
+scale = Vector2(0.8, 0.8)
+
+[node name="mouse_area" type="Area2D" parent="."]
+collision_layer = 129
+collision_mask = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_area"]
+shape = SubResource("CircleShape2D_eeqrx")
