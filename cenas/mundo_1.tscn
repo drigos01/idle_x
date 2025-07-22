@@ -154,7 +154,6 @@ scale = Vector2(6.25582, 5.83523)
 texture = ExtResource("4_2f25m")
 
 [node name="token_inimigo" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-7.62939e-06, 3.05176e-05)
 scale = Vector2(0.103516, 0.106934)
 texture = ExtResource("4_1opco")
