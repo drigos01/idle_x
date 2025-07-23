@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://puh2eydbdmk4"]
+[gd_scene load_steps=7 format=3 uid="uid://puh2eydbdmk4"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_5suj5"]
+[ext_resource type="Script" uid="uid://dxfahyfte3lcq" path="res://cenas/mensagem_slot.gd" id="1_iqv53"]
 [ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="2_2tl83"]
 
 [sub_resource type="FontVariation" id="FontVariation_glhy2"]
@@ -9,13 +10,26 @@ base_font = ExtResource("1_5suj5")
 [sub_resource type="FontVariation" id="FontVariation_2tl83"]
 base_font = ExtResource("1_5suj5")
 
+[sub_resource type="FontVariation" id="FontVariation_5suj5"]
+base_font = ExtResource("1_5suj5")
+
 [node name="mensagem_slot" type="HBoxContainer"]
 clip_contents = true
 offset_right = 185.0
 offset_bottom = 30.0
 size_flags_horizontal = 0
 theme_override_constants/separation = 0
-alignment = 1
+alignment = 2
+script = ExtResource("1_iqv53")
+
+[node name="espaco - imagem2" type="Label" parent="."]
+self_modulate = Color(0.924942, 0.996734, 1, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_glhy2")
+text = "                     "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="espaco - imagem" type="Label" parent="."]
 self_modulate = Color(0.924942, 0.996734, 1, 1)
@@ -33,7 +47,7 @@ offset_right = -9.0
 offset_bottom = 55.0
 pivot_offset = Vector2(15, 15)
 
-[node name="token_player" parent="espaco - imagem/PanelContainer" instance=ExtResource("2_2tl83")]
+[node name="avatar" parent="espaco - imagem/PanelContainer" instance=ExtResource("2_2tl83")]
 position = Vector2(26, 16)
 scale = Vector2(0.028, 0.028)
 
@@ -45,10 +59,11 @@ theme_override_constants/separation = 0
 layout_mode = 2
 
 [node name="nick" type="Label" parent="VBoxContainer/HBoxContainer"]
-self_modulate = Color(0.924942, 0.996734, 1, 1)
+modulate = Color(0.25098, 0.117647, 0.0392157, 1)
+self_modulate = Color(0.129412, 0.0352941, 0.0235294, 1)
 custom_minimum_size = Vector2(30, 10)
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_glhy2")
+theme_override_fonts/font = SubResource("FontVariation_2tl83")
 text = "- nick - "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -59,9 +74,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="texto" type="RichTextLabel" parent="VBoxContainer"]
+modulate = Color(0.27451, 0.156863, 0.0784314, 1)
+self_modulate = Color(0.14902, 0.027451, 0.0156863, 1)
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_5suj5")
-theme_override_fonts/mono_font = SubResource("FontVariation_2tl83")
+theme_override_fonts/mono_font = SubResource("FontVariation_5suj5")
 fit_content = true
 scroll_active = false

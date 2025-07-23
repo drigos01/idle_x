@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://y2b0s1rfaa4b"]
+[gd_scene load_steps=8 format=3 uid="uid://y2b0s1rfaa4b"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_qjpr8"]
 [ext_resource type="Script" uid="uid://1bd3l482kf3m" path="res://cenas/chat_global.gd" id="1_vkkos"]
+[ext_resource type="Texture2D" uid="uid://bi5r8e0l8xdee" path="res://imagens/file_000000001a6861f49fa778e39cb2667a_1.png" id="2_qjpr8"]
 
 [sub_resource type="FontVariation" id="FontVariation_pf4d4"]
 base_font = ExtResource("1_qjpr8")
@@ -10,10 +11,10 @@ base_font = ExtResource("1_qjpr8")
 base_font = ExtResource("1_qjpr8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkkos"]
-size = Vector2(240, 26)
+size = Vector2(278, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4056"]
-size = Vector2(28, 379)
+size = Vector2(20, 382.5)
 
 [node name="chat_global" type="Node2D"]
 position = Vector2(0, -3)
@@ -25,22 +26,38 @@ offset_right = 116.0
 offset_bottom = 366.0
 color = Color(0.315102, 0.290606, 0.230582, 1)
 
+[node name="chat_global" type="Sprite2D" parent="fundo_chat"]
+position = Vector2(105, 63)
+scale = Vector2(0.30127, 0.32666)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 667.25)
+
+[node name="chat_global2" type="Sprite2D" parent="fundo_chat"]
+position = Vector2(105, 295)
+scale = Vector2(0.30127, 0.32666)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(0, 268.5, 1024, 755.5)
+
 [node name="ColorRect" type="ColorRect" parent="fundo_chat"]
 layout_mode = 0
-offset_left = -4.0
-offset_right = 212.0
-offset_bottom = 27.0
-color = Color(0.219501, 0.219501, 0.219501, 1)
+offset_left = -12.0
+offset_top = 345.0
+offset_right = 164.0
+offset_bottom = 369.0
+color = Color(0.137255, 0.109804, 0.0784314, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="fundo_chat"]
 layout_mode = 0
-offset_left = -19.0
-offset_top = 358.0
-offset_right = 226.0
-offset_bottom = 380.0
-color = Color(0.219501, 0.219501, 0.219501, 1)
+offset_left = -3.0
+offset_top = 50.0
+offset_right = 207.0
+offset_bottom = 283.0
+color = Color(0.694118, 0.537255, 0.305882, 1)
 
 [node name="titulo_layer" type="Label" parent="fundo_chat"]
+visible = false
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 offset_left = 67.0
@@ -54,69 +71,68 @@ justification_flags = 35
 uppercase = true
 
 [node name="ColorRect3" type="ColorRect" parent="fundo_chat"]
+visible = false
 layout_mode = 0
 offset_left = -19.0
 offset_right = 3.0
 offset_bottom = 366.0
 color = Color(0.219608, 0.219608, 0.219608, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="fundo_chat"]
-layout_mode = 0
-offset_left = 204.0
-offset_right = 226.0
-offset_bottom = 369.0
-color = Color(0.219608, 0.219608, 0.219608, 1)
-
 [node name="ScrollContainer" type="ScrollContainer" parent="fundo_chat"]
 custom_minimum_size = Vector2(240, 265)
 layout_mode = 2
-offset_left = 4.0
-offset_top = 31.0
-offset_right = 244.0
-offset_bottom = 381.0
+offset_left = -8.0
+offset_top = 39.0
+offset_right = 273.0
+offset_bottom = 373.0
 scale = Vector2(0.8, 0.8)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="fundo_chat/ScrollContainer"]
-custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
-alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="fundo_chat/ScrollContainer"]
+visible = false
+layout_mode = 2
+alignment = 2
 
 [node name="enviar_botao" type="Button" parent="fundo_chat"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(40, 20)
 layout_mode = 0
-offset_left = 146.0
-offset_top = 320.0
-offset_right = 203.0
-offset_bottom = 357.0
-text = "enviar"
+offset_left = 175.0
+offset_top = 323.0
+offset_right = 232.0
+offset_bottom = 384.0
 
 [node name="chat_global" type="TextEdit" parent="fundo_chat/enviar_botao"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 0
-offset_left = -138.0
-offset_right = -4.0
-offset_bottom = 36.0
+offset_left = -192.0
+offset_top = 17.0
+offset_right = -9.0
+offset_bottom = 53.0
 theme_override_fonts/font = SubResource("FontVariation_udbpm")
 scroll_past_end_of_file = true
 
 [node name="area_arastar" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(-1, 14)
+position = Vector2(-1, 8.5)
 shape = SubResource("RectangleShape2D_vkkos")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(-1, 372)
+position = Vector2(0, 385)
 shape = SubResource("RectangleShape2D_vkkos")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(-118, 192.5)
+position = Vector2(-131, 189.25)
 shape = SubResource("RectangleShape2D_x4056")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(111, 189)
+position = Vector2(130, 190)
 shape = SubResource("RectangleShape2D_x4056")
 
 [connection signal="pressed" from="fundo_chat/enviar_botao" to="." method="_on_enviar_botao_pressed"]

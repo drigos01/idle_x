@@ -3,7 +3,7 @@ extends Node2D
 @onready var slot_mensagem_scene := preload("res://cenas/mensagem_slot.tscn")
 @onready var container_mensagens := $fundo_chat/ScrollContainer/VBoxContainer
 
-var online := true  # ✅ Altere para true para ativar modo online
+var online := false  # ✅ Altere para true para ativar modo online
 
 func _ready():
 	if online:
@@ -49,30 +49,12 @@ func _enviar_mensagem():
 		adicionar_mensagem(nome, chat_enviar, true)
 
 	$fundo_chat/enviar_botao/chat_global.text = ""
-
-func adicionar_mensagem(nick: String, texto: String, enviada_por_mim: bool = false):
+	
+func adicionar_mensagem(nick, texto, enviada_por_mim := false):
 	var novo_slot = slot_mensagem_scene.instantiate()
 	novo_slot.get_node("VBoxContainer/HBoxContainer/nick").text = nick
 	novo_slot.get_node("VBoxContainer/texto").text = texto
-	
-	var hbox = novo_slot.get_node("VBoxContainer/HBoxContainer")
-	
-	# Remove todos os filhos existentes para evitar acumulados de spacer
-	for child in hbox.get_children():
-		if child.name == "Spacer":
-			child.queue_free()
-	
-	if enviada_por_mim:
-		# Mensagem enviada: adiciona spacer na esquerda para empurrar à direita
-		var spacer = Control.new()
-		spacer.name = "Spacer"
-		spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		hbox.add_child(spacer, true)  # adiciona spacer como primeiro filho
-	else:
-		# Mensagem recebida: adiciona spacer na direita para empurrar à esquerda
-		var spacer = Control.new()
-		spacer.name = "Spacer"
-		spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		hbox.add_child(spacer, false) # adiciona spacer como último filho
-	
+
+	novo_slot.configurar_espaco(enviada_por_mim)  # ativa/desativa o espaço interno
+
 	container_mensagens.add_child(novo_slot)
