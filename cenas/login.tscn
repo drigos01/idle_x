@@ -25,6 +25,7 @@ offset_bottom = 634.0
 color = Color(0.501961, 0.309804, 0.156863, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 696.0
 offset_top = 347.0
 offset_right = 1844.0
@@ -32,6 +33,7 @@ offset_bottom = 990.0
 color = Color(0.568399, 0.354739, 0.185187, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 864.0
 offset_top = 427.0
 offset_right = 1695.0

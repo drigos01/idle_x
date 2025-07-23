@@ -3,27 +3,152 @@
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_qjpr8"]
 [ext_resource type="Script" uid="uid://1bd3l482kf3m" path="res://cenas/chat_global.gd" id="1_vkkos"]
 [ext_resource type="Texture2D" uid="uid://bi5r8e0l8xdee" path="res://imagens/file_000000001a6861f49fa778e39cb2667a_1.png" id="2_qjpr8"]
+[ext_resource type="Texture2D" uid="uid://45ub2uxp4gut" path="res://imagens/file_00000000823c622fb2e90a468db9c89b_1.png" id="2_vkkos"]
 
 [sub_resource type="FontVariation" id="FontVariation_pf4d4"]
 base_font = ExtResource("1_qjpr8")
 
-[sub_resource type="FontVariation" id="FontVariation_udbpm"]
-base_font = ExtResource("1_qjpr8")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkkos"]
-size = Vector2(278, 47)
+size = Vector2(278, 27.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4056"]
 size = Vector2(20, 382.5)
 
 [node name="chat_global" type="Node2D"]
-position = Vector2(0, -3)
+position = Vector2(553, 268)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_vkkos")
+
+[node name="online_layer" type="Sprite2D" parent="."]
+position = Vector2(237, 103)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(150.875, 0, 873.125, 606.691)
+
+[node name="online_layer2" type="Sprite2D" parent="online_layer"]
+position = Vector2(-520, 5)
+scale = Vector2(-1.2, 1)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(864.125, 0, 159.875, 618.576)
+
+[node name="online_layer3" type="Sprite2D" parent="online_layer"]
+position = Vector2(0, 480)
+scale = Vector2(1, 1)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
+
+[node name="online_layer2" type="Sprite2D" parent="online_layer/online_layer3"]
+position = Vector2(-520, 5)
+scale = Vector2(-1.2, 1)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(864.125, 229.923, 159.875, 388.653)
+
+[node name="online_layer3" type="Sprite2D" parent="online_layer/online_layer3"]
+position = Vector2(0, 355)
+scale = Vector2(1, 1)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
+
+[node name="online_layer2" type="Sprite2D" parent="online_layer/online_layer3/online_layer3"]
+position = Vector2(-520, 5)
+scale = Vector2(-1.2, 1)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(864.125, 229.923, 159.875, 388.653)
+
+[node name="online_layer3" type="Sprite2D" parent="online_layer/online_layer3/online_layer3"]
+position = Vector2(-85.5076, 220)
+scale = Vector2(-1.01531, 1)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(45.125, 604.161, 940.5, 101.25)
+
+[node name="ColorRect4" type="ColorRect" parent="online_layer/online_layer3/online_layer3"]
+offset_left = -435.0
+offset_top = -880.0
+offset_right = 245.0
+offset_bottom = 160.0
+color = Color(0.635294, 0.47451, 0.254902, 1)
+
+[node name="ScrollContainer_usuarios_online" type="ScrollContainer" parent="online_layer"]
+custom_minimum_size = Vector2(240, 265)
+offset_left = -445.0
+offset_top = -65.0
+offset_right = 468.0
+offset_bottom = 1298.0
+scale = Vector2(0.8, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="online_layer/ScrollContainer_usuarios_online"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="online_layer/ScrollContainer_usuarios_online"]
+visible = false
+layout_mode = 2
+alignment = 2
+
+[node name="chat_global3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(216, 262)
+rotation = 3.14159
+scale = Vector2(0.2, -0.217)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(36.125, 247.072, 940.5, 525.928)
+
+[node name="chat_global4" type="Sprite2D" parent="chat_global3"]
+position = Vector2(7.62939e-05, -414.747)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(36.125, 289.25, 940.5, 312.75)
+
+[node name="chat_global5" type="Sprite2D" parent="chat_global3"]
+position = Vector2(7.62939e-05, -709.677)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(36.125, 289.25, 940.5, 312.75)
+
+[node name="chat_global6" type="Sprite2D" parent="chat_global3"]
+position = Vector2(7.62939e-05, -824.885)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(36.125, 242, 940.5, 360)
+
+[node name="chat_global8" type="Sprite2D" parent="chat_global3"]
+position = Vector2(105, 235.023)
+scale = Vector2(1, 0.874022)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(103.625, 714.5, 625.5, 65.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="chat_global3/chat_global8"]
+position = Vector2(-230, 0)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(42.875, 714.5, 686.25, 65.25)
+
+[node name="ColorRect4" type="ColorRect" parent="chat_global3"]
+offset_left = -352.0
+offset_top = -974.0
+offset_right = 341.0
+offset_bottom = 32.0
+color = Color(0.694118, 0.537255, 0.305882, 1)
+
+[node name="chat_global7" type="Sprite2D" parent="chat_global3"]
+position = Vector2(7.62939e-05, -1013.82)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(36.125, 26.635, 940.5, 213.75)
 
 [node name="fundo_chat" type="ColorRect" parent="."]
 offset_left = -105.0
 offset_right = 116.0
-offset_bottom = 366.0
+offset_bottom = 308.0
+mouse_filter = 1
 color = Color(0.315102, 0.290606, 0.230582, 1)
 
 [node name="chat_global" type="Sprite2D" parent="fundo_chat"]
@@ -45,7 +170,7 @@ layout_mode = 0
 offset_left = -12.0
 offset_top = 345.0
 offset_right = 164.0
-offset_bottom = 369.0
+offset_bottom = 372.0
 color = Color(0.137255, 0.109804, 0.0784314, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="fundo_chat"]
@@ -81,10 +206,10 @@ color = Color(0.219608, 0.219608, 0.219608, 1)
 [node name="ScrollContainer" type="ScrollContainer" parent="fundo_chat"]
 custom_minimum_size = Vector2(240, 265)
 layout_mode = 2
-offset_left = -8.0
-offset_top = 39.0
-offset_right = 273.0
-offset_bottom = 373.0
+offset_left = -7.0
+offset_top = 40.0
+offset_right = 274.0
+offset_bottom = 374.0
 scale = Vector2(0.8, 0.8)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="fundo_chat/ScrollContainer"]
@@ -95,48 +220,45 @@ visible = false
 layout_mode = 2
 alignment = 2
 
-[node name="enviar_botao" type="Button" parent="fundo_chat"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(40, 20)
-layout_mode = 0
-offset_left = 175.0
-offset_top = 323.0
-offset_right = 232.0
-offset_bottom = 384.0
-
-[node name="chat_global" type="TextEdit" parent="fundo_chat/enviar_botao"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 0
-offset_left = -192.0
-offset_top = 17.0
-offset_right = -9.0
-offset_bottom = 53.0
-theme_override_fonts/font = SubResource("FontVariation_udbpm")
-scroll_past_end_of_file = true
-
 [node name="area_arastar" type="Area2D" parent="."]
-visible = false
+position = Vector2(-4, -4)
 collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(-1, 8.5)
+position = Vector2(-1, 11)
 shape = SubResource("RectangleShape2D_vkkos")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(0, 385)
+position = Vector2(4, 382.125)
 shape = SubResource("RectangleShape2D_vkkos")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(-131, 189.25)
+position = Vector2(-126, 189.25)
 shape = SubResource("RectangleShape2D_x4056")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="area_arastar"]
-position = Vector2(130, 190)
+position = Vector2(134, 192)
 shape = SubResource("RectangleShape2D_x4056")
 
-[connection signal="pressed" from="fundo_chat/enviar_botao" to="." method="_on_enviar_botao_pressed"]
+[node name="mandar_mensagem" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 72.0
+offset_top = 322.0
+offset_right = 132.0
+offset_bottom = 382.0
+
+[node name="texto_mensagem" type="TextEdit" parent="mandar_mensagem"]
+layout_mode = 0
+offset_left = -196.0
+offset_top = 20.0
+offset_right = -12.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("1_qjpr8")
+theme_override_font_sizes/font_size = 25
+
 [connection signal="area_entered" from="area_arastar" to="." method="_on_area_arastar_area_entered"]
 [connection signal="area_exited" from="area_arastar" to="." method="_on_area_arastar_area_exited"]
 [connection signal="mouse_entered" from="area_arastar" to="." method="_on_area_arastar_mouse_entered"]
 [connection signal="mouse_exited" from="area_arastar" to="." method="_on_area_arastar_mouse_exited"]
+[connection signal="pressed" from="mandar_mensagem" to="." method="_on_mandar_mensagem_pressed"]

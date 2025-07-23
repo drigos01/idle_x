@@ -19,12 +19,13 @@ func get_user(flag, response):
 
 
 func _on_enviar_pressed() -> void:
-	var nick_input = $login/VBoxContainer/inventario/nick
-	var username = nick_input.text
-	var email = $login/VBoxContainer/inventario3/email.text
-	var senha = $login/VBoxContainer/inventario2/senha.text
+	var nick_input = $nick.text
+	var username = $nick.text
+	var email = $email.text
+	var senha = $senha.text
 
-	Socket.enviar_json("logging", {id = Sessao.id, username = username, email = email, senha = senha})
-	$login/VBoxContainer/inventario/nick.text = ""
-	$login/VBoxContainer/inventario3/email.text = ""
-	$login/VBoxContainer/inventario2/senha.text = ""
+	Socket.enviar_json("logging", {id = Sessao.id, username = username, email = email, password = senha})
+	#usarname, email = email, senha, = senha)
+	$nick.text = ""
+	$email.text = ""
+	$senha.text = ""
