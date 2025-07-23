@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdmnafrfo1mhj"]
+
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_e6eor"]
+
+[sub_resource type="FontVariation" id="FontVariation_45pl0"]
+base_font = ExtResource("1_e6eor")
+
+[node name="inventario" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -296.0
+offset_top = -146.0
+offset_right = 297.0
+offset_bottom = 302.0
+color = Color(0.0823529, 0.0823529, 0.00784314, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -300.0
+offset_top = -146.0
+offset_right = -296.0
+offset_bottom = 302.0
+color = Color(0.933333, 0.713726, 0.137255, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect2"]
+offset_left = 596.0
+offset_right = 602.0
+offset_bottom = 448.0
+color = Color(0.933333, 0.713726, 0.137255, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 302.0
+offset_top = -173.0
+offset_right = 331.0
+offset_bottom = 429.0
+rotation = 1.5708
+color = Color(0.933333, 0.713726, 0.137255, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="ColorRect4"]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 25.0
+offset_bottom = 598.0
+color = Color(0.0823529, 0.0823529, 0.00784314, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 159.0
+offset_top = -173.0
+offset_right = 188.0
+offset_bottom = 151.0
+rotation = 1.5708
+color = Color(0.933333, 0.713726, 0.137255, 1)
+
+[node name="Label" type="Label" parent="ColorRect6"]
+layout_mode = 0
+offset_left = -9.99999
+offset_top = 268.0
+offset_right = 287.0
+offset_bottom = 385.0
+rotation = -1.5708
+theme_override_fonts/font = SubResource("FontVariation_45pl0")
+theme_override_font_sizes/font_size = 60
+text = "inventario"
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = 283.0
+offset_top = -163.0
+offset_right = 286.0
+offset_bottom = -145.0
+rotation = 1.0472
+color = Color(0.933333, 0.713726, 0.137255, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="ColorRect7"]
+offset_left = 8.79422
+offset_top = 2.76797
+offset_right = 11.7942
+offset_bottom = 20.768
+rotation = 1.0472
+color = Color(0.933333, 0.713726, 0.137255, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 302.0
+offset_top = 302.0
+offset_right = 331.0
+offset_bottom = 904.0
+rotation = 1.5708
+color = Color(0.933333, 0.713726, 0.137255, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="ColorRect5"]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 25.0
+offset_bottom = 598.0
+color = Color(0.0823529, 0.0823529, 0.00784314, 1)

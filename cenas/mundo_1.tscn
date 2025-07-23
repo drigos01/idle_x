@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwl3l84knabka"]
+[gd_scene load_steps=10 format=3 uid="uid://bwl3l84knabka"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_0blei"]
 [ext_resource type="Script" uid="uid://df5janu7knv7" path="res://cenas/mundo_1.gd" id="1_eeqrx"]
 [ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="3_2f25m"]
+[ext_resource type="PackedScene" uid="uid://colc41r6jl5d7" path="res://cenas/estalagem.tscn" id="3_k5b1o"]
 [ext_resource type="PackedScene" uid="uid://mlbixh7is7is" path="res://cenas/tokem_inimigos.tscn" id="4_k5b1o"]
 [ext_resource type="PackedScene" uid="uid://y2b0s1rfaa4b" path="res://cenas/chat_global.tscn" id="7_p1jju"]
 
@@ -132,9 +133,13 @@ offset_top = 5.0
 offset_right = 633.0
 offset_bottom = 35.0
 theme_override_fonts/font = SubResource("FontVariation_ysh8u")
-text = "farme area"
+text = "mapa
+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="estalagem" parent="ColorRect3" instance=ExtResource("3_k5b1o")]
+position = Vector2(-118, -173)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -142,11 +147,11 @@ vertical_alignment = 1
 
 [node name="tokem_player" parent="drop_tokens" instance=ExtResource("3_2f25m")]
 position = Vector2(48, 52)
-scale = Vector2(0.07, 0.07)
+scale = Vector2(0.04, 0.04)
 
 [node name="tokem_inimigos" parent="drop_tokens" instance=ExtResource("4_k5b1o")]
 position = Vector2(331, 265)
-scale = Vector2(0.07, 0.07)
+scale = Vector2(0.04, 0.04)
 
 [node name="chat" type="Node" parent="."]
 script = SubResource("GDScript_k5b1o")

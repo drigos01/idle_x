@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://btnvbkgjwln82"]
 
-[ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/images (1).jpg" id="1_csi77"]
+[ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/personagens/images (1).jpg" id="1_csi77"]
 [ext_resource type="Script" uid="uid://bu4f0babup620" path="res://scripts/token_player.gd" id="2_18hlj"]
-[ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/token-border-collection-v0-61i9u2n221ja1.png" id="3_2m1rf"]
+[ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/layer/token-border-collection-v0-61i9u2n221ja1.png" id="3_2m1rf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f2b8c"]
 radius = 36.3456

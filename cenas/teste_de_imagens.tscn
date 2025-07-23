@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://desb2kt0qdyxv"]
+
+[ext_resource type="Texture2D" uid="uid://dm0r5vtekoylt" path="res://imagens/998bef04-ffa6-4dd4-a517-ba4cae96f9e0.png" id="1_kgls2"]
+[ext_resource type="Texture2D" uid="uid://blwhkabl73uo1" path="res://imagens/6853c91f26c11d5fa2a6363fdc6aa818 (1).png" id="2_3gk20"]
+[ext_resource type="Texture2D" uid="uid://d1f2uqpg0ppeg" path="res://imagens/snapedit_1753230494100.jpeg" id="3_kalny"]
+[ext_resource type="Texture2D" uid="uid://d088vj2sry757" path="res://imagens/upscalemedia-transformed.png" id="4_1fcp2"]
+
+[node name="teste de imagens" type="Sprite2D"]
+position = Vector2(271, 70)
+texture = ExtResource("1_kgls2")
+
+[node name="6853c91f26c11d5Fa2a6363Fdc6Aa818(1)" type="Sprite2D" parent="."]
+position = Vector2(-1091, 91)
+texture = ExtResource("2_3gk20")
+
+[node name="Snapedit1753230494100" type="Sprite2D" parent="."]
+position = Vector2(1216, 69)
+texture = ExtResource("3_kalny")
+
+[node name="Upscalemedia-transformed" type="Sprite2D" parent="."]
+position = Vector2(-1509, 1158)
+texture = ExtResource("4_1fcp2")

@@ -3,7 +3,7 @@ extends Node2D
 @onready var slot_mensagem_scene := preload("res://cenas/mensagem_slot.tscn")
 @onready var container_mensagens := $fundo_chat/ScrollContainer/VBoxContainer
 
-var online := false  # ✅ Altere para true para ativar modo online
+var online := true  # ✅ Altere para true para ativar modo online
 
 func _ready():
 	if online:
