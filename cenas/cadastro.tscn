@@ -1,18 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnp5shbx7mx1b"]
+[gd_scene load_steps=12 format=3 uid="uid://5qsbdaev7yq6"]
 
-[ext_resource type="Script" uid="uid://sasynxu2mfd8" path="res://scripts/login.gd" id="1_opchc"]
-[ext_resource type="Texture2D" uid="uid://8ujdvm8d0321" path="res://imagens/file_00000000dd746246bbba37e501fe96d3_1.png" id="2_fvljp"]
-[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="2_tor08"]
-[ext_resource type="Texture2D" uid="uid://cyasht67xgkeb" path="res://imagens/cadastro.png" id="3_xwq4y"]
+[ext_resource type="Script" uid="uid://dxaq5qfe88y7l" path="res://scripts/cadastro.gd" id="1_2sdqx"]
+[ext_resource type="Texture2D" uid="uid://8ujdvm8d0321" path="res://imagens/file_00000000dd746246bbba37e501fe96d3_1.png" id="2_rmxyw"]
+[ext_resource type="Texture2D" uid="uid://cyasht67xgkeb" path="res://imagens/cadastro.png" id="3_17ocs"]
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="4_a314k"]
 
-[sub_resource type="FontVariation" id="FontVariation_xwq4y"]
-base_font = ExtResource("2_tor08")
+[sub_resource type="FontVariation" id="FontVariation_fvljp"]
+base_font = ExtResource("4_a314k")
 
-[sub_resource type="FontVariation" id="FontVariation_uw26t"]
-base_font = ExtResource("2_tor08")
+[sub_resource type="FontVariation" id="FontVariation_opchc"]
+base_font = ExtResource("4_a314k")
 
-[sub_resource type="FontVariation" id="FontVariation_oi5x6"]
-base_font = ExtResource("2_tor08")
+[sub_resource type="FontVariation" id="FontVariation_tor08"]
+base_font = ExtResource("4_a314k")
 
 [sub_resource type="Animation" id="Animation_xwq4y"]
 length = 0.001
@@ -104,8 +104,8 @@ _data = {
 &"desaparecer": SubResource("Animation_uw26t")
 }
 
-[node name="login" type="Node2D"]
-script = ExtResource("1_opchc")
+[node name="cadastro" type="Node2D"]
+script = ExtResource("1_2sdqx")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -1284.0
@@ -140,80 +140,79 @@ metadata/_edit_use_anchors_ = true
 
 [node name="File00000000Dd746246Bbba37e501Fe96d31" type="Sprite2D" parent="."]
 position = Vector2(-51, -188)
-texture = ExtResource("2_fvljp")
+texture = ExtResource("2_rmxyw")
 region_enabled = true
 region_rect = Rect2(50.75, 420.5, 570, 52.5)
 
 [node name="File00000000Dd746246Bbba37e501Fe96d32" type="Sprite2D" parent="."]
 position = Vector2(251, -188)
-texture = ExtResource("2_fvljp")
+texture = ExtResource("2_rmxyw")
 region_enabled = true
 region_rect = Rect2(793.25, 420.5, 175.5, 52.5)
 
 [node name="Cadastro6" type="Sprite2D" parent="."]
 position = Vector2(324.5, 41.6094)
 scale = Vector2(0.5, 0.511116)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(925.438, 181.25, 98.562, 745.875)
 
 [node name="Cadastro5" type="Sprite2D" parent="."]
 position = Vector2(324.5, 11.8438)
 scale = Vector2(0.5, 0.499734)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(925.438, 181.25, 98.562, 705.375)
 
 [node name="Cadastro7" type="Sprite2D" parent="Cadastro5"]
 position = Vector2(-1278, 46)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(17.563, 181.25, 91.125, 745.875)
 
 [node name="Cadastro6" type="Sprite2D" parent="Cadastro5"]
 position = Vector2(-1278.25, 13.1664)
 scale = Vector2(0.983516, 1.00232)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(17.563, 181.25, 91.125, 729)
 
 [node name="Cadastro" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -202)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(167.75, 0, 686.667, 221.254)
 
 [node name="Cadastro3" type="Sprite2D" parent="."]
 position = Vector2(-230, 246)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(-39.812, 930.5, 550.469, 104.625)
 
 [node name="Cadastro5" type="Sprite2D" parent="Cadastro3"]
 position = Vector2(906, 0)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(516.25, 930.5, 507.75, 104.625)
 
 [node name="Cadastro6" type="Sprite2D" parent="Cadastro3"]
 position = Vector2(478, 0)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(125.563, 930.5, 735.75, 104.625)
 
 [node name="Cadastro4" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(270.688, 217.219, 502.875, 555.388)
 
 [node name="Cadastro3" type="Sprite2D" parent="Cadastro4"]
 position = Vector2(-380, 0)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(109.221, 217.219, 283.5, 555.388)
 
@@ -221,7 +220,7 @@ region_rect = Rect2(109.221, 217.219, 283.5, 555.388)
 position = Vector2(776, 0)
 rotation = 3.14159
 scale = Vector2(1.08, -1)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(109.221, 217.219, 283.5, 555.388)
 
@@ -229,7 +228,7 @@ region_rect = Rect2(109.221, 217.219, 283.5, 555.388)
 position = Vector2(358, -200)
 rotation = 3.14159
 scale = Vector2(-1.32, -1)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(179.75, 264.486, 216, 61.5)
 
@@ -242,21 +241,21 @@ offset_top = -32.0
 offset_right = 126.212
 offset_bottom = 30.0
 pivot_offset = Vector2(95, 0)
-theme_override_fonts/font = SubResource("FontVariation_xwq4y")
+theme_override_fonts/font = SubResource("FontVariation_fvljp")
 theme_override_font_sizes/font_size = 90
 text = "Nick"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="senha" type="Sprite2D" parent="Cadastro4/Cadastro3"]
+[node name="email" type="Sprite2D" parent="Cadastro4/Cadastro3"]
 position = Vector2(380, -28)
 rotation = 3.14159
 scale = Vector2(-1.32, -1)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(179.75, 264.486, 216, 61.5)
 
-[node name="nick_label" type="Label" parent="Cadastro4/Cadastro3/senha"]
+[node name="nick_label" type="Label" parent="Cadastro4/Cadastro3/email"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
 self_modulate = Color(0.360784, 0.196078, 0.12549, 1)
 custom_minimum_size = Vector2(30, 30)
@@ -265,15 +264,38 @@ offset_top = -34.0
 offset_right = 112.545
 offset_bottom = 28.0
 pivot_offset = Vector2(95, 0)
-theme_override_fonts/font = SubResource("FontVariation_xwq4y")
+theme_override_fonts/font = SubResource("FontVariation_fvljp")
+theme_override_font_sizes/font_size = 90
+text = "E-mail"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="email2" type="Sprite2D" parent="Cadastro4/Cadastro3"]
+position = Vector2(380, 136)
+rotation = 3.14159
+scale = Vector2(-1.32, -1)
+texture = ExtResource("3_17ocs")
+region_enabled = true
+region_rect = Rect2(179.75, 264.486, 216, 61.5)
+
+[node name="nick_label" type="Label" parent="Cadastro4/Cadastro3/email2"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.360784, 0.196078, 0.12549, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -95.4546
+offset_top = -34.0
+offset_right = 112.545
+offset_bottom = 28.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_fvljp")
 theme_override_font_sizes/font_size = 90
 text = "Senha"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cadastro4" type="Sprite2D" parent="Cadastro4"]
-position = Vector2(-14, 198)
-texture = ExtResource("3_xwq4y")
+position = Vector2(-14, 356)
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(186.313, 771.875, 627.75, 165.375)
 
@@ -281,7 +303,7 @@ region_rect = Rect2(186.313, 771.875, 627.75, 165.375)
 position = Vector2(493.086, 0.406097)
 rotation = 3.14159
 scale = Vector2(1.06605, -1.00495)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(109.221, 772.607, 131.092, 164.643)
 
@@ -289,7 +311,7 @@ region_rect = Rect2(109.221, 772.607, 131.092, 164.643)
 position = Vector2(366, 2)
 rotation = -3.14159
 scale = Vector2(1.08, -1)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(763.438, 771.875, 108, 168.75)
 
@@ -297,7 +319,7 @@ region_rect = Rect2(763.438, 771.875, 108, 168.75)
 position = Vector2(-360, -1.08251)
 rotation = -3.14159
 scale = Vector2(1.08, -1.0361)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(763.438, 771.875, 108, 168.75)
 
@@ -305,7 +327,7 @@ region_rect = Rect2(763.438, 771.875, 108, 168.75)
 position = Vector2(-433.978, -1.64029)
 rotation = 3.14159
 scale = Vector2(1.02896, -1.04282)
-texture = ExtResource("3_xwq4y")
+texture = ExtResource("3_17ocs")
 region_enabled = true
 region_rect = Rect2(770.188, 771.875, 148.5, 168.75)
 
@@ -315,16 +337,6 @@ offset_top = -78.0
 offset_right = 484.0
 offset_bottom = 42.0
 color = Color(0.694118, 0.486275, 0.211765, 1)
-
-[node name="senha" type="TextEdit" parent="Cadastro4/Cadastro4"]
-custom_minimum_size = Vector2(250, 0)
-offset_left = -448.0
-offset_top = -180.0
-offset_right = 494.0
-offset_bottom = -110.0
-theme_override_fonts/font = SubResource("FontVariation_uw26t")
-theme_override_font_sizes/font_size = 25
-scroll_past_end_of_file = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -340,8 +352,25 @@ offset_left = -229.0
 offset_top = -81.0
 offset_right = 241.0
 offset_bottom = -49.0
-theme_override_fonts/font = SubResource("FontVariation_oi5x6")
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = SubResource("FontVariation_opchc")
+scroll_past_end_of_file = true
+
+[node name="email" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = -230.0
+offset_top = 4.0
+offset_right = 240.0
+offset_bottom = 34.0
+theme_override_fonts/font = SubResource("FontVariation_opchc")
+scroll_past_end_of_file = true
+
+[node name="senha" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = -230.0
+offset_top = 85.0
+offset_right = 242.0
+offset_bottom = 120.0
+theme_override_fonts/font = SubResource("FontVariation_tor08")
 scroll_past_end_of_file = true
 
 [node name="enviar" type="Button" parent="."]
@@ -349,9 +378,9 @@ self_modulate = Color(1, 1, 1, 0)
 clip_contents = true
 custom_minimum_size = Vector2(50, 25)
 offset_left = -118.0
-offset_top = 65.0
+offset_top = 142.0
 offset_right = 116.0
-offset_bottom = 113.0
+offset_bottom = 190.0
 text = "enviar"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -376,7 +405,7 @@ offset_top = 81.0
 offset_right = 378.0
 offset_bottom = 143.0
 pivot_offset = Vector2(95, 0)
-theme_override_fonts/font = SubResource("FontVariation_xwq4y")
+theme_override_fonts/font = SubResource("FontVariation_fvljp")
 theme_override_font_sizes/font_size = 35
 text = "vazio"
 horizontal_alignment = 1
@@ -394,3 +423,4 @@ libraries = {
 speed_scale = 6.0
 
 [connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
+[connection signal="timeout" from="show_erro/TimerErro" to="." method="_on_timer_erro_timeout"]

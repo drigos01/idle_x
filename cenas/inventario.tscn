@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdmnafrfo1mhj"]
+[gd_scene load_steps=12 format=3 uid="uid://bdmnafrfo1mhj"]
 
 [ext_resource type="Texture2D" uid="uid://8ujdvm8d0321" path="res://imagens/file_00000000dd746246bbba37e501fe96d3_1.png" id="1_45pl0"]
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_e6eor"]
 [ext_resource type="Script" uid="uid://bmwrmpxupq2go" path="res://cenas/inventario.gd" id="1_p5ggw"]
+[ext_resource type="Script" uid="uid://d2acr2ioqjguk" path="res://cenas/fora_area.gd" id="4_o1lvm"]
+[ext_resource type="Script" uid="uid://4demqpiwvctk" path="res://cenas/mexer_layer.gd" id="5_1pwhu"]
 
 [sub_resource type="FontVariation" id="FontVariation_p5ggw"]
 base_font = ExtResource("1_e6eor")
@@ -321,5 +323,59 @@ collision_mask = 128
 position = Vector2(6, -31.5)
 shape = SubResource("RectangleShape2D_o1lvm")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -453.0
+offset_top = -410.0
+offset_right = 462.0
+offset_bottom = 345.0
+script = ExtResource("4_o1lvm")
+
+[node name="layer_mexer_objeto_pai" type="Node2D" parent="."]
+position = Vector2(415, -370)
+scale = Vector2(1, 1)
+
+[node name="mexer_layer" type="PanelContainer" parent="layer_mexer_objeto_pai"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 3.05176e-05
+offset_top = -3.05176e-05
+offset_right = 50.0
+offset_bottom = 720.0
+script = ExtResource("5_1pwhu")
+
+[node name="mexer_laye2" type="PanelContainer" parent="layer_mexer_objeto_pai"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -866.25
+offset_top = -2.50003
+offset_right = -816.25
+offset_bottom = 717.5
+script = ExtResource("5_1pwhu")
+
+[node name="mexer_laye3" type="PanelContainer" parent="layer_mexer_objeto_pai"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -826.0
+offset_top = -43.0
+offset_right = 1.0
+offset_bottom = 89.0
+script = ExtResource("5_1pwhu")
+
+[node name="mexer_laye4" type="PanelContainer" parent="layer_mexer_objeto_pai"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -812.5
+offset_top = 663.75
+offset_right = 14.5
+offset_bottom = 719.75
+script = ExtResource("5_1pwhu")
+
 [connection signal="area_entered" from="area_chat" to="." method="_on_area_chat_area_entered"]
 [connection signal="area_exited" from="area_chat" to="." method="_on_area_chat_area_exited"]
+[connection signal="mouse_entered" from="PanelContainer" to="PanelContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer" to="PanelContainer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer_mexer_objeto_pai/mexer_layer" to="layer_mexer_objeto_pai/mexer_layer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer_mexer_objeto_pai/mexer_layer" to="layer_mexer_objeto_pai/mexer_layer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer_mexer_objeto_pai/mexer_laye2" to="layer_mexer_objeto_pai/mexer_laye2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer_mexer_objeto_pai/mexer_laye2" to="layer_mexer_objeto_pai/mexer_laye2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer_mexer_objeto_pai/mexer_laye3" to="layer_mexer_objeto_pai/mexer_laye3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer_mexer_objeto_pai/mexer_laye3" to="layer_mexer_objeto_pai/mexer_laye3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer_mexer_objeto_pai/mexer_laye4" to="layer_mexer_objeto_pai/mexer_laye4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer_mexer_objeto_pai/mexer_laye4" to="layer_mexer_objeto_pai/mexer_laye4" method="_on_mouse_exited"]
