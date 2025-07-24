@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnvne3n74tr13"]
+
+[ext_resource type="Script" uid="uid://dp8or11sh78ak" path="res://token_player.gd" id="1_5shbo"]
+[ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="2_ecmyv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cgb5g"]
+radius = 54.7083
+
+[node name="token_player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5shbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_cgb5g")
+
+[node name="token_player" parent="." instance=ExtResource("2_ecmyv")]
+
+[connection signal="area_entered" from="token_player" to="." method="_on_token_player_area_entered"]
+[connection signal="area_exited" from="token_player" to="." method="_on_token_player_area_exited"]

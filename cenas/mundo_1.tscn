@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwl3l84knabka"]
+[gd_scene load_steps=9 format=3 uid="uid://bwl3l84knabka"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_0blei"]
 [ext_resource type="Script" uid="uid://df5janu7knv7" path="res://cenas/mundo_1.gd" id="1_eeqrx"]
-[ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="3_2f25m"]
+[ext_resource type="PackedScene" uid="uid://cnvne3n74tr13" path="res://cenas/token_player.tscn" id="3_eeqrx"]
 [ext_resource type="PackedScene" uid="uid://colc41r6jl5d7" path="res://cenas/estalagem.tscn" id="3_k5b1o"]
-[ext_resource type="PackedScene" uid="uid://mlbixh7is7is" path="res://cenas/tokem_inimigos.tscn" id="4_k5b1o"]
 [ext_resource type="PackedScene" uid="uid://bdmnafrfo1mhj" path="res://cenas/inventario.tscn" id="7_eeqrx"]
 [ext_resource type="PackedScene" uid="uid://y2b0s1rfaa4b" path="res://cenas/chat_global.tscn" id="7_p1jju"]
 
@@ -95,32 +94,26 @@ vertical_alignment = 1
 
 [node name="drop_tokens" type="Node" parent="."]
 
-[node name="tokem_player" parent="drop_tokens" instance=ExtResource("3_2f25m")]
-position = Vector2(476, 460)
-scale = Vector2(0.05, 0.05)
-
-[node name="Camera2D" type="Camera2D" parent="drop_tokens/tokem_player"]
-position = Vector2(79.9999, 79.999)
-scale = Vector2(33.3333, 33.3333)
-
-[node name="inventario" parent="drop_tokens/tokem_player/Camera2D" instance=ExtResource("7_eeqrx")]
-visible = false
-position = Vector2(-4.00002, 57)
-scale = Vector2(0.5, 0.5)
-
-[node name="tokem_inimigos" parent="drop_tokens" instance=ExtResource("4_k5b1o")]
-position = Vector2(44, 187)
-scale = Vector2(0.05, 0.05)
-
 [node name="mouse_area" type="Area2D" parent="."]
-collision_layer = 129
-collision_mask = 129
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_area"]
 shape = SubResource("CircleShape2D_eeqrx")
 
 [node name="taverna" parent="." instance=ExtResource("3_k5b1o")]
 
-[node name="chat_global" parent="." instance=ExtResource("7_p1jju")]
-position = Vector2(162, 308)
-scale = Vector2(0.833333, 0.833333)
+[node name="token_player" parent="." instance=ExtResource("3_eeqrx")]
+position = Vector2(587, 477)
+
+[node name="Camera2D" type="Camera2D" parent="token_player"]
+position = Vector2(-6.10352e-05, -0.00012207)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="inventario" parent="token_player/Camera2D" instance=ExtResource("7_eeqrx")]
+visible = false
+position = Vector2(-15.6, -4.79992)
+
+[node name="chat_global" parent="token_player" instance=ExtResource("7_p1jju")]
+position = Vector2(-832, -42)
+scale = Vector2(1.66667, 1.66667)

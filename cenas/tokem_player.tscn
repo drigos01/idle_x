@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://btnvbkgjwln82"]
+[gd_scene load_steps=6 format=3 uid="uid://btnvbkgjwln82"]
 
 [ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/personagens/images (1).jpg" id="1_csi77"]
 [ext_resource type="Script" uid="uid://bu4f0babup620" path="res://scripts/token_player.gd" id="2_18hlj"]
@@ -7,9 +7,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_f2b8c"]
 radius = 36.3456
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_csi77"]
+radius = 520.096
+
 [node name="token_player" type="Area2D"]
 position = Vector2(-1, -2)
 scale = Vector2(0.1, 0.1)
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("2_18hlj")
 
 [node name="imagem_fundo" type="TextureRect" parent="."]
@@ -53,3 +58,12 @@ texture = ExtResource("3_2m1rf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_f2b8c")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 30)
+shape = SubResource("CircleShape2D_csi77")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

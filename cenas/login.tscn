@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnp5shbx7mx1b"]
+[gd_scene load_steps=12 format=3 uid="uid://bnp5shbx7mx1b"]
 
 [ext_resource type="Script" uid="uid://sasynxu2mfd8" path="res://scripts/login.gd" id="1_opchc"]
 [ext_resource type="Texture2D" uid="uid://8ujdvm8d0321" path="res://imagens/file_00000000dd746246bbba37e501fe96d3_1.png" id="2_fvljp"]
@@ -13,6 +13,96 @@ base_font = ExtResource("2_tor08")
 
 [sub_resource type="FontVariation" id="FontVariation_tor08"]
 base_font = ExtResource("2_tor08")
+
+[sub_resource type="Animation" id="Animation_xwq4y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, -227)]
+}
+
+[sub_resource type="Animation" id="Animation_fvljp"]
+resource_name = "aparecer"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.635294)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-13, -227), Vector2(-13, -427)]
+}
+
+[sub_resource type="Animation" id="Animation_uw26t"]
+resource_name = "desaparecer"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-13, -427), Vector2(-13, -227)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oi5x6"]
+_data = {
+&"RESET": SubResource("Animation_xwq4y"),
+&"aparecer": SubResource("Animation_fvljp"),
+&"desaparecer": SubResource("Animation_uw26t")
+}
 
 [node name="login" type="Node2D"]
 script = ExtResource("1_opchc")
@@ -295,4 +385,41 @@ text = "enviar"
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
 
+[node name="show_erro" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-13, -227)
+
+[node name="ColorRect" type="ColorRect" parent="show_erro"]
+offset_left = -340.0
+offset_top = 65.0
+offset_right = 394.0
+offset_bottom = 153.0
+color = Color(0.403087, 0, 0.11844, 1)
+
+[node name="label_mensagem" type="Label" parent="show_erro"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -328.0
+offset_top = 81.0
+offset_right = 378.0
+offset_bottom = 143.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_fvljp")
+theme_override_font_sizes/font_size = 35
+text = "vazio"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="TimerErro" type="Timer" parent="show_erro"]
+wait_time = 1.9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_oi5x6")
+}
+speed_scale = 6.0
+
 [connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
+[connection signal="timeout" from="show_erro/TimerErro" to="." method="_on_timer_erro_timeout"]

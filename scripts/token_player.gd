@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 
 @onready var imagem_original: TextureRect = $imagem_fundo
 @onready var imagem_cortada: TextureRect = $borda_token

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://y2b0s1rfaa4b"]
+[gd_scene load_steps=9 format=3 uid="uid://y2b0s1rfaa4b"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_qjpr8"]
 [ext_resource type="Script" uid="uid://1bd3l482kf3m" path="res://cenas/chat_global.gd" id="1_vkkos"]
@@ -13,6 +13,9 @@ size = Vector2(278, 27.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4056"]
 size = Vector2(20, 382.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf4d4"]
+size = Vector2(272, 404)
 
 [node name="chat_global" type="Node2D"]
 position = Vector2(553, 268)
@@ -35,7 +38,6 @@ region_rect = Rect2(864.125, 0, 159.875, 618.576)
 
 [node name="online_layer3" type="Sprite2D" parent="online_layer"]
 position = Vector2(0, 480)
-scale = Vector2(1, 1)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
@@ -49,7 +51,6 @@ region_rect = Rect2(864.125, 229.923, 159.875, 388.653)
 
 [node name="online_layer3" type="Sprite2D" parent="online_layer/online_layer3"]
 position = Vector2(0, 355)
-scale = Vector2(1, 1)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
@@ -67,6 +68,13 @@ scale = Vector2(-1.01531, 1)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(45.125, 604.161, 940.5, 101.25)
+
+[node name="online_layer4" type="Sprite2D" parent="online_layer/online_layer3/online_layer3"]
+position = Vector2(-505, 220)
+scale = Vector2(-1.01531, 1)
+texture = ExtResource("2_vkkos")
+region_enabled = true
+region_rect = Rect2(149.188, 604.161, 573.75, 101.25)
 
 [node name="ColorRect4" type="ColorRect" parent="online_layer/online_layer3/online_layer3"]
 offset_left = -435.0
@@ -222,8 +230,8 @@ alignment = 2
 
 [node name="area_arastar" type="Area2D" parent="."]
 position = Vector2(-4, -4)
-collision_layer = 128
-collision_mask = 128
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_arastar"]
 position = Vector2(-1, 11)
@@ -257,8 +265,20 @@ offset_bottom = 52.0
 theme_override_fonts/font = ExtResource("1_qjpr8")
 theme_override_font_sizes/font_size = 25
 
+[node name="area_chat" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_chat"]
+position = Vector2(0, 188)
+shape = SubResource("RectangleShape2D_pf4d4")
+
 [connection signal="area_entered" from="area_arastar" to="." method="_on_area_arastar_area_entered"]
 [connection signal="area_exited" from="area_arastar" to="." method="_on_area_arastar_area_exited"]
 [connection signal="mouse_entered" from="area_arastar" to="." method="_on_area_arastar_mouse_entered"]
 [connection signal="mouse_exited" from="area_arastar" to="." method="_on_area_arastar_mouse_exited"]
 [connection signal="pressed" from="mandar_mensagem" to="." method="_on_mandar_mensagem_pressed"]
+[connection signal="area_entered" from="area_chat" to="." method="_on_area_chat_area_entered"]
+[connection signal="area_exited" from="area_chat" to="." method="_on_area_chat_area_exited"]
+[connection signal="mouse_entered" from="area_chat" to="." method="_on_area_chat_mouse_entered"]
+[connection signal="mouse_exited" from="area_chat" to="." method="_on_area_chat_mouse_exited"]

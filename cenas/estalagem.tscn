@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://colc41r6jl5d7"]
+[gd_scene load_steps=15 format=3 uid="uid://colc41r6jl5d7"]
 
 [ext_resource type="Texture2D" uid="uid://dw827vvpd0ibn" path="res://imagens/file_00000000cbec61f9a3e4d8bc904c0094_1.png" id="1_57kw2"]
 [ext_resource type="Texture2D" uid="uid://d088vj2sry757" path="res://imagens/upscalemedia-transformed.png" id="1_d7k1h"]
@@ -6059,17 +6059,29 @@ texture = ExtResource("1_d7k1h")
 [sub_resource type="TileSet" id="TileSet_p2htm"]
 sources/0 = SubResource("TileSetAtlasSource_6o1wp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xw28"]
+size = Vector2(324.632, 102.831)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rdb1"]
+size = Vector2(650.974, 211.017)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcxnj"]
+size = Vector2(190.017, 198.143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_070w8"]
+size = Vector2(280.72, 146.428)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7k1h"]
 size = Vector2(1268, 1022)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57kw2"]
-size = Vector2(4079.69, 74.5074)
+size = Vector2(5239.92, 120.244)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17jiy"]
-size = Vector2(745.675, 5925.05)
+size = Vector2(1088.15, 8632.1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vlxf"]
-size = Vector2(183.002, 5880.51)
+size = Vector2(262.456, 8844.32)
 
 [node name="taverna" type="Node2D"]
 
@@ -6349,6 +6361,14 @@ texture = ExtResource("1_d7k1h")
 region_enabled = true
 region_rect = Rect2(43, 849.625, 166.5, 94.5)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="mesa_grande"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesa_grande/StaticBody2D"]
+position = Vector2(-75.0054, 41.4155)
+shape = SubResource("RectangleShape2D_1xw28")
+
 [node name="barril" type="Sprite2D" parent="."]
 position = Vector2(-218, 69)
 rotation = -3.13806
@@ -6503,6 +6523,24 @@ position = Vector2(323.333, -233.333)
 texture = ExtResource("1_d7k1h")
 region_enabled = true
 region_rect = Rect2(612.25, 332.125, 166.5, 130.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="balcão_grande"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcão_grande/StaticBody2D"]
+position = Vector2(-92.3964, -31.5436)
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_4rdb1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="balcão_grande/StaticBody2D"]
+position = Vector2(318.764, -231.199)
+shape = SubResource("RectangleShape2D_pcxnj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="balcão_grande/StaticBody2D"]
+position = Vector2(263.339, -82.4102)
+rotation = -0.785397
+shape = SubResource("RectangleShape2D_070w8")
 
 [node name="armario2" type="Sprite2D" parent="."]
 position = Vector2(759, 21.5)
@@ -6946,27 +6984,28 @@ shape = SubResource("RectangleShape2D_d7k1h")
 [node name="area_estalagem" type="Area2D" parent="."]
 
 [node name="paredes2" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(-3, -54)
 rotation = -1.58099
 scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes2"]
-position = Vector2(-1564.97, -10.9467)
+position = Vector2(-2039.97, -1483.51)
 rotation = 0.0111415
 shape = SubResource("RectangleShape2D_57kw2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="paredes2"]
-position = Vector2(-1674.01, 5783.24)
+position = Vector2(-2129.36, 7283.67)
 rotation = 0.0111415
 shape = SubResource("RectangleShape2D_57kw2")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="paredes2"]
-position = Vector2(103.083, 2893.5)
+position = Vector2(22.656, 2926.27)
 shape = SubResource("RectangleShape2D_17jiy")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="paredes2"]
-position = Vector2(-3634.72, 2898.11)
+position = Vector2(-4763.89, 2878.71)
 rotation = 0.0162831
 shape = SubResource("RectangleShape2D_0vlxf")
 
