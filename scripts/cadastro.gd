@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready():
-
 	#get_my_id
 	Socket.connect("server_receive", _session_id)
 	Socket.connect("server_receive", get_user) # logged
@@ -16,15 +15,13 @@ func get_user(flag, response):
 	#Global.username = response.username
 	#Global.email = response.email
 	#show_erro(response.message)
-	if response.has("status") != 201: 
+	if !response.has("status") or response.status != 201:
 		return
-	else:
-		show_erro(response.status)
-		print(response.status)
-		
-		var label = $show_erro/label_mensagem
-		label.text = str(response.status)  # Ou qualquer texto de erro que quiser
-		label.add_theme_color_override("font_color", Color.RED)
+	show_erro(response.message)
+	
+	var label = $show_erro/label_mensagem
+	label.text = response.message # Ou qualquer texto de erro que quiser
+	label.add_theme_color_override("font_color", Color.GREEN)
 
 	#get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
 	#print(Global.username, Global.email)
