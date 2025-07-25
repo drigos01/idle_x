@@ -6,7 +6,7 @@ var online := true # Modo offline para testes
 
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 
-@onready var container_mensagens = $chat/fundo_chat/ScrollContainer/VBoxContainer
+# @onready var container_mensagens = $chat/fundo_chat/ScrollContainer/VBoxContainer
 @onready var senha_input = $senha
 @onready var btn_enviar = $login_btn
 
@@ -38,15 +38,25 @@ func _session_id(flag, response):
 	Sessao.id = response.id
 
 func _on_server_response(flag, response):
-	if flag == "logged":
-		aguardando_resposta = false
-		timer_timeout.stop()
+	if flag != "logged": return
+	aguardando_resposta = false
+	timer_timeout.stop()
+	
+	print(response)
 
-		Sessao.id = response.id
-		Global.username = response.username
-		Global.players = response.setup
+	if response.has("status") && response.status != 200:
+		show_erro(response.message, Color8(255, 0, 0))
+		return
 
-		get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
+	_limpar_campos()
+
+
+	Sessao.id = response.id
+	Global.players = response.setup
+	return
+	Global.username = Global.players[Sessao.id].username
+
+	get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
 
 func _on_timeout() -> void:
 	aguardando_resposta = false
