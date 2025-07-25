@@ -54,6 +54,7 @@ func _on_timeout() -> void:
 	_habilitar_envio(true)
 
 func _on_login_btn_pressed() -> void:
+	_limpar_campos()
 	if aguardando_resposta:
 		show_erro("Aguarde a resposta do servidor...", Color8(255, 150, 0))
 		return
@@ -139,7 +140,7 @@ func _limpar_campos() -> void:
 	$nick.text = ""
 	senha_input.text = ""
 	$nick.grab_focus()
-	get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
+	#get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
 	
 
 func _habilitar_envio(habilitar: bool) -> void:
