@@ -3,7 +3,7 @@ extends Node
 signal server_receive(flag: String, response, Dicionary)
 
 var socket := WebSocketPeer.new()
-var connected = true
+var connected = false
 
 func _ready():
 	conectar()

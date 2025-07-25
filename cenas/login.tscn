@@ -445,6 +445,50 @@ texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(225.125, 471.5, 126, 155.25)
 
+[node name="Placas7" type="Sprite2D" parent="."]
+position = Vector2(51, -170)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_oi5x6")
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas7"]
+position = Vector2(-195, 0)
+texture = ExtResource("5_oi5x6")
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="login" type="Sprite2D" parent="Placas7"]
+position = Vector2(-197.5, -2.5)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(711.125, 278, 130.5, 157.5)
+
+[node name="o" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(125, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(229.625, 469.25, 119.25, 153)
+
+[node name="g" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(250, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(78.875, 278, 132.75, 159.75)
+
+[node name="i" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(350, 0)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(373.625, 273.5, 74.25, 162)
+
+[node name="n" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(458.824, 5.88235)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(78.875, 469.25, 148.5, 159.75)
+
 [node name="Placas5" type="Sprite2D" parent="."]
 position = Vector2(172, 92)
 scale = Vector2(0.4, 0.4)
@@ -486,6 +530,52 @@ region_enabled = true
 region_rect = Rect2(373.625, 273.5, 74.25, 162)
 
 [node name="n" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(458.824, 5.88235)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(78.875, 469.25, 148.5, 159.75)
+
+[node name="Placas6" type="Sprite2D" parent="."]
+position = Vector2(172, 92)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_oi5x6")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas6"]
+position = Vector2(-195, 0)
+texture = ExtResource("5_oi5x6")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="login" type="Sprite2D" parent="Placas6"]
+position = Vector2(-197.5, -2.5)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(711.125, 278, 130.5, 157.5)
+
+[node name="o" type="Sprite2D" parent="Placas6/login"]
+position = Vector2(125, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(229.625, 469.25, 119.25, 153)
+
+[node name="g" type="Sprite2D" parent="Placas6/login"]
+position = Vector2(250, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(78.875, 278, 132.75, 159.75)
+
+[node name="i" type="Sprite2D" parent="Placas6/login"]
+position = Vector2(350, 0)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(373.625, 273.5, 74.25, 162)
+
+[node name="n" type="Sprite2D" parent="Placas6/login"]
 position = Vector2(458.824, 5.88235)
 texture = ExtResource("6_4fvy5")
 region_enabled = true

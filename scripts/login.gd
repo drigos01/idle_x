@@ -8,7 +8,7 @@ var online := false  # Modo offline para testes
 
 @onready var container_mensagens = $chat/fundo_chat/ScrollContainer/VBoxContainer
 @onready var senha_input = $senha
-@onready var btn_enviar = $enviar
+@onready var btn_enviar = $login_btn
 
 var aguardando_resposta := false
 var timer_timeout: Timer
