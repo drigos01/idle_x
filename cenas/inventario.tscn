@@ -333,7 +333,6 @@ script = ExtResource("4_o1lvm")
 
 [node name="layer_mexer_objeto_pai" type="Node2D" parent="."]
 position = Vector2(415, -370)
-scale = Vector2(1, 1)
 
 [node name="mexer_layer" type="PanelContainer" parent="layer_mexer_objeto_pai"]
 modulate = Color(1, 1, 1, 0)
