@@ -2,7 +2,7 @@ extends Node2D
 
 var cena_cadastro_packed = preload("res://cenas/cadastro.tscn")
 
-var online := false  # Modo offline para testes
+var online := true # Modo offline para testes
 
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 
@@ -38,15 +38,15 @@ func _session_id(flag, response):
 	Sessao.id = response.id
 
 func _on_server_response(flag, response):
-	if flag == "registered":
+	if flag == "logged":
 		aguardando_resposta = false
 		timer_timeout.stop()
 
-		if !response.has("status") or response.status != 201:
-			show_erro(response.message, Color8(255, 0, 0))
-		else:
-			show_erro(response.message, Color8(0, 200, 0))
-			_limpar_campos()
+		Sessao.id = response.id
+		Global.username = response.username
+		Global.players = response.setup
+
+		get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
 
 func _on_timeout() -> void:
 	aguardando_resposta = false
@@ -79,7 +79,7 @@ func _on_login_btn_pressed() -> void:
 	if online:
 		aguardando_resposta = true
 		_habilitar_envio(false)
-		Socket.enviar_json("registering", {
+		Socket.enviar_json("logging", {
 			"id": Sessao.id,
 			"username": username,
 			"password": senha

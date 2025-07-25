@@ -13,7 +13,6 @@ var aguardando_resposta := false
 var timer_timeout: Timer
 
 func _ready() -> void:
-	Socket.connect("server_receive", _session_id)
 	Socket.connect("server_receive", _on_server_response)
 	var anim_player = $show_erro/show_erro.get_node("AnimationPlayer")
 	anim_player.animation_finished.connect(_on_animation_finished)
@@ -31,10 +30,6 @@ func _ready() -> void:
 
 	$enviar.disabled = false
 
-func _session_id(flag, response):
-	if flag != "get_my_id":
-		return
-	Sessao.id = response.id
 
 func _on_server_response(flag, response):
 	if flag == "registered":
