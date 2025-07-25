@@ -12,6 +12,7 @@ func _ready():
 	Global.mouse_sobre_chat = false
 
 func _input(event: InputEvent) -> void:
+	print(Global.mouse_sobre_chat)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and not Global.mouse_sobre_chat:
 			mouse_pressionado = true
