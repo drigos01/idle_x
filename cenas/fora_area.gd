@@ -11,4 +11,5 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	print("🖱️ Saiu do chat")
-	Global.mouse_sobre_chat = false
+	if $"..".visible == true:
+		Global.mouse_sobre_chat = false

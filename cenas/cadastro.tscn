@@ -1,9 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://5qsbdaev7yq6"]
+[gd_scene load_steps=15 format=3 uid="uid://5qsbdaev7yq6"]
 
 [ext_resource type="Script" uid="uid://dxaq5qfe88y7l" path="res://scripts/cadastro.gd" id="1_2sdqx"]
 [ext_resource type="Texture2D" uid="uid://8ujdvm8d0321" path="res://imagens/file_00000000dd746246bbba37e501fe96d3_1.png" id="2_rmxyw"]
 [ext_resource type="Texture2D" uid="uid://cyasht67xgkeb" path="res://imagens/cadastro.png" id="3_17ocs"]
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="4_a314k"]
+[ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="5_rmxyw"]
+[ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="6_a314k"]
+[ext_resource type="Texture2D" uid="uid://cqwgnbljnmr5h" path="res://imagens/letras.png" id="7_mtehu"]
+[ext_resource type="Texture2D" uid="uid://c5m516r35qyfg" path="res://imagens/enfeites_de_menu.png" id="8_mtehu"]
 
 [sub_resource type="FontVariation" id="FontVariation_fvljp"]
 base_font = ExtResource("4_a314k")
@@ -11,10 +15,7 @@ base_font = ExtResource("4_a314k")
 [sub_resource type="FontVariation" id="FontVariation_opchc"]
 base_font = ExtResource("4_a314k")
 
-[sub_resource type="FontVariation" id="FontVariation_tor08"]
-base_font = ExtResource("4_a314k")
-
-[sub_resource type="Animation" id="Animation_xwq4y"]
+[sub_resource type="Animation" id="Animation_jupw8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,7 +27,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -38,39 +39,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-13, -227)]
+"values": [Vector2(-229, -316)]
 }
 
-[sub_resource type="Animation" id="Animation_fvljp"]
+[sub_resource type="Animation" id="Animation_pgk4w"]
 resource_name = "aparecer"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("show_erro:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.635294)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("show_erro:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-13, -227), Vector2(-13, -427)]
-}
-
-[sub_resource type="Animation" id="Animation_uw26t"]
-resource_name = "desaparecer"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -82,7 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-13, -427), Vector2(-13, -227)]
+"values": [Vector2(-229, -200), Vector2(-229, -316)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -94,14 +67,42 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oi5x6"]
+[sub_resource type="Animation" id="Animation_rmxyw"]
+resource_name = "desaparecer"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-229, -316), Vector2(-229, -200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fq4k4"]
 _data = {
-&"RESET": SubResource("Animation_xwq4y"),
-&"aparecer": SubResource("Animation_fvljp"),
-&"desaparecer": SubResource("Animation_uw26t")
+&"RESET": SubResource("Animation_jupw8"),
+&"aparecer": SubResource("Animation_pgk4w"),
+&"desaparecer": SubResource("Animation_rmxyw")
 }
 
 [node name="cadastro" type="Node2D"]
@@ -353,7 +354,16 @@ offset_top = -81.0
 offset_right = 241.0
 offset_bottom = -49.0
 theme_override_fonts/font = SubResource("FontVariation_opchc")
+theme_override_font_sizes/font_size = 25
 scroll_past_end_of_file = true
+
+[node name="senha" type="LineEdit" parent="."]
+offset_left = -232.0
+offset_top = 85.0
+offset_right = 242.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("4_a314k")
+theme_override_font_sizes/font_size = 20
 
 [node name="email" type="TextEdit" parent="."]
 custom_minimum_size = Vector2(250, 0)
@@ -362,47 +372,314 @@ offset_top = 4.0
 offset_right = 240.0
 offset_bottom = 34.0
 theme_override_fonts/font = SubResource("FontVariation_opchc")
-scroll_past_end_of_file = true
-
-[node name="senha" type="TextEdit" parent="."]
-custom_minimum_size = Vector2(250, 0)
-offset_left = -230.0
-offset_top = 85.0
-offset_right = 242.0
-offset_bottom = 120.0
-theme_override_fonts/font = SubResource("FontVariation_tor08")
+theme_override_font_sizes/font_size = 25
 scroll_past_end_of_file = true
 
 [node name="enviar" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 clip_contents = true
 custom_minimum_size = Vector2(50, 25)
-offset_left = -118.0
-offset_top = 142.0
-offset_right = 116.0
-offset_bottom = 190.0
+offset_left = 43.0
+offset_top = 144.0
+offset_right = 245.0
+offset_bottom = 192.0
+text = "enviar"
+
+[node name="login_btn" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(50, 25)
+offset_left = -228.0
+offset_top = 140.0
+offset_right = -26.0
+offset_bottom = 188.0
 text = "enviar"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
 
-[node name="show_erro" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-13, -227)
+[node name="Placas" type="Sprite2D" parent="."]
+position = Vector2(-220, 263)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_a314k")
+region_enabled = true
+region_rect = Rect2(837.125, 381.5, 126, 398.25)
 
-[node name="ColorRect" type="ColorRect" parent="show_erro"]
-offset_left = -340.0
-offset_top = 65.0
+[node name="Placas3" type="Sprite2D" parent="."]
+position = Vector2(229, 251)
+rotation = 0.523598
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_a314k")
+region_enabled = true
+region_rect = Rect2(837.125, 381.5, 126, 398.25)
+
+[node name="fundo" type="Sprite2D" parent="."]
+position = Vector2(-56, 146)
+rotation = -3.14159
+scale = Vector2(0.54, -0.570155)
+texture = ExtResource("3_17ocs")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
+
+[node name="Cadastro8" type="Sprite2D" parent="fundo"]
+position = Vector2(1.85174, 50.686)
+scale = Vector2(1, 1.13411)
+texture = ExtResource("3_17ocs")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
+
+[node name="Cadastro9" type="Sprite2D" parent="fundo"]
+position = Vector2(-244.444, 5.26117)
+scale = Vector2(1.02974, 1.03046)
+texture = ExtResource("3_17ocs")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
+
+[node name="Cadastro8" type="Sprite2D" parent="fundo/Cadastro9"]
+position = Vector2(3.37443, 46.3276)
+scale = Vector2(1.01238, 1)
+texture = ExtResource("3_17ocs")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
+
+[node name="Placas4" type="Sprite2D" parent="."]
+position = Vector2(177, 163)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_a314k")
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas4"]
+position = Vector2(-195, 0)
+texture = ExtResource("6_a314k")
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="registro" type="Sprite2D" parent="Placas4"]
+position = Vector2(-260, 2.5)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(600.875, 469.25, 144, 157.5)
+
+[node name="e" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(125, 5)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(618.875, 88.085, 144, 162)
+
+[node name="g" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(250, 5)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(78.875, 278, 132.75, 159.75)
+
+[node name="i" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(350, 0)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(373.625, 273.5, 74.25, 162)
+
+[node name="s" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(440, 0)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(747.125, 467, 112.5, 157.5)
+
+[node name="t" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(550, 0)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(855.125, 467, 123.75, 157.5)
+
+[node name="r" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(675, 5)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(605.375, 471.5, 139.5, 162)
+
+[node name="r2" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(810, 5)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(225.125, 471.5, 126, 155.25)
+
+[node name="Placas5" type="Sprite2D" parent="."]
+position = Vector2(-91, 167)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_a314k")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas5"]
+position = Vector2(-195, 0)
+texture = ExtResource("6_a314k")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="login" type="Sprite2D" parent="Placas5"]
+position = Vector2(-197.5, -2.5)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(711.125, 278, 130.5, 157.5)
+
+[node name="o" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(125, 5)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(229.625, 469.25, 119.25, 153)
+
+[node name="g" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(250, 5)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(78.875, 278, 132.75, 159.75)
+
+[node name="i" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(350, 0)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(373.625, 273.5, 74.25, 162)
+
+[node name="n" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(458.824, 5.88235)
+texture = ExtResource("7_mtehu")
+region_enabled = true
+region_rect = Rect2(78.875, 469.25, 148.5, 159.75)
+
+[node name="show_erro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-229, -316)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro"]
+position = Vector2(395, 2.5)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro"]
+position = Vector2(775, 2.5)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro/Erro8"]
+position = Vector2(395, 2.5)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro/Erro8"]
+position = Vector2(417.5, -1.19209e-06)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro" type="Sprite2D" parent="show_erro"]
+position = Vector2(-257.5, -48.0522)
+scale = Vector2(1, 1.0096)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/Erro"]
+position = Vector2(0, 99.5957)
+texture = ExtResource("5_rmxyw")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro"]
+position = Vector2(1702.5, 99.5958)
+texture = ExtResource("5_rmxyw")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/Erro"]
+position = Vector2(1702.5, 0.546997)
+texture = ExtResource("5_rmxyw")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro2" type="Sprite2D" parent="show_erro"]
+position = Vector2(2.50003, -50.0001)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2"]
+position = Vector2(397.5, 0)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/Erro2"]
+position = Vector2(792.5, 0)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/Erro2"]
+position = Vector2(1190, 105)
+rotation = -3.14159
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2/Erro5"]
+position = Vector2(397.5, 0)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/Erro2/Erro5"]
+position = Vector2(792.5, 0)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2/Erro5/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("5_rmxyw")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="show_erro" type="Node2D" parent="show_erro"]
+position = Vector2(517.5, -280)
+scale = Vector2(2.5, 2.5)
+
+[node name="ColorRect" type="ColorRect" parent="show_erro/show_erro"]
+modulate = Color(1, 1, 1, 0.333333)
+show_behind_parent = true
+offset_left = -333.0
+offset_top = 74.0
 offset_right = 394.0
-offset_bottom = 153.0
+offset_bottom = 151.0
 color = Color(0.403087, 0, 0.11844, 1)
 
-[node name="label_mensagem" type="Label" parent="show_erro"]
+[node name="label_mensagem" type="Label" parent="show_erro/show_erro"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(30, 30)
 offset_left = -328.0
 offset_top = 81.0
-offset_right = 378.0
+offset_right = 391.0
 offset_bottom = 143.0
 pivot_offset = Vector2(95, 0)
 theme_override_fonts/font = SubResource("FontVariation_fvljp")
@@ -412,15 +689,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 
-[node name="TimerErro" type="Timer" parent="show_erro"]
+[node name="TimerErro" type="Timer" parent="show_erro/show_erro"]
 wait_time = 1.9
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro"]
-root_node = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro/show_erro"]
+root_node = NodePath("../../..")
 libraries = {
-&"": SubResource("AnimationLibrary_oi5x6")
+&"": SubResource("AnimationLibrary_fq4k4")
 }
 speed_scale = 6.0
 
+[node name="EnfeitesDeMenu" type="Sprite2D" parent="."]
+position = Vector2(-8, 274)
+texture = ExtResource("8_mtehu")
+region_enabled = true
+region_rect = Rect2(256.625, 944.496, 416.25, 79.504)
+
 [connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
-[connection signal="timeout" from="show_erro/TimerErro" to="." method="_on_timer_erro_timeout"]
+[connection signal="pressed" from="login_btn" to="." method="_on_login_btn_pressed"]
+[connection signal="timeout" from="show_erro/show_erro/TimerErro" to="." method="_on_timer_erro_timeout"]

@@ -1,20 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnp5shbx7mx1b"]
+[gd_scene load_steps=15 format=3 uid="uid://bnp5shbx7mx1b"]
 
 [ext_resource type="Script" uid="uid://sasynxu2mfd8" path="res://scripts/login.gd" id="1_opchc"]
 [ext_resource type="Texture2D" uid="uid://8ujdvm8d0321" path="res://imagens/file_00000000dd746246bbba37e501fe96d3_1.png" id="2_fvljp"]
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="2_tor08"]
 [ext_resource type="Texture2D" uid="uid://cyasht67xgkeb" path="res://imagens/cadastro.png" id="3_xwq4y"]
+[ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="5_oi5x6"]
+[ext_resource type="Texture2D" uid="uid://cqwgnbljnmr5h" path="res://imagens/letras.png" id="6_4fvy5"]
+[ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="7_wytem"]
 
 [sub_resource type="FontVariation" id="FontVariation_xwq4y"]
-base_font = ExtResource("2_tor08")
-
-[sub_resource type="FontVariation" id="FontVariation_uw26t"]
 base_font = ExtResource("2_tor08")
 
 [sub_resource type="FontVariation" id="FontVariation_oi5x6"]
 base_font = ExtResource("2_tor08")
 
-[sub_resource type="Animation" id="Animation_xwq4y"]
+[sub_resource type="FontVariation" id="FontVariation_tol8s"]
+base_font = ExtResource("2_tor08")
+
+[sub_resource type="Animation" id="Animation_jupw8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,7 +29,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -38,39 +41,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-13, -227)]
+"values": [Vector2(-229, -316)]
 }
 
-[sub_resource type="Animation" id="Animation_fvljp"]
+[sub_resource type="Animation" id="Animation_pgk4w"]
 resource_name = "aparecer"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("show_erro:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.635294)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("show_erro:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-13, -227), Vector2(-13, -427)]
-}
-
-[sub_resource type="Animation" id="Animation_uw26t"]
-resource_name = "desaparecer"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -82,7 +57,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-13, -427), Vector2(-13, -227)]
+"values": [Vector2(-229, -200), Vector2(-229, -316)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -94,14 +69,42 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oi5x6"]
+[sub_resource type="Animation" id="Animation_rmxyw"]
+resource_name = "desaparecer"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-229, -316), Vector2(-229, -200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fq4k4"]
 _data = {
-&"RESET": SubResource("Animation_xwq4y"),
-&"aparecer": SubResource("Animation_fvljp"),
-&"desaparecer": SubResource("Animation_uw26t")
+&"RESET": SubResource("Animation_jupw8"),
+&"aparecer": SubResource("Animation_pgk4w"),
+&"desaparecer": SubResource("Animation_rmxyw")
 }
 
 [node name="login" type="Node2D"]
@@ -151,31 +154,36 @@ region_enabled = true
 region_rect = Rect2(793.25, 420.5, 175.5, 52.5)
 
 [node name="Cadastro6" type="Sprite2D" parent="."]
-position = Vector2(324.5, 41.6094)
+position = Vector2(323, 63)
 scale = Vector2(0.5, 0.511116)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
-region_rect = Rect2(925.438, 181.25, 98.562, 745.875)
+region_rect = Rect2(925.438, 255.755, 98.562, 391.027)
 
-[node name="Cadastro5" type="Sprite2D" parent="."]
-position = Vector2(324.5, 11.8438)
-scale = Vector2(0.5, 0.499734)
+[node name="Cadastro5" type="Sprite2D" parent="Cadastro6"]
+position = Vector2(0, -271.954)
+scale = Vector2(1, 0.977731)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
-region_rect = Rect2(925.438, 181.25, 98.562, 705.375)
+region_rect = Rect2(925.438, 320.75, 98.562, 352.284)
 
-[node name="Cadastro7" type="Sprite2D" parent="Cadastro5"]
-position = Vector2(-1278, 46)
+[node name="Cadastro7" type="Sprite2D" parent="."]
+position = Vector2(-305, 65)
+scale = Vector2(0.5, 0.511116)
 texture = ExtResource("3_xwq4y")
+flip_h = true
+flip_v = true
 region_enabled = true
-region_rect = Rect2(17.563, 181.25, 91.125, 745.875)
+region_rect = Rect2(925.438, 255.755, 98.562, 391.027)
 
-[node name="Cadastro6" type="Sprite2D" parent="Cadastro5"]
-position = Vector2(-1278.25, 13.1664)
-scale = Vector2(0.983516, 1.00232)
+[node name="Cadastro5" type="Sprite2D" parent="Cadastro7"]
+position = Vector2(0, -271.954)
+scale = Vector2(1, 0.977731)
 texture = ExtResource("3_xwq4y")
+flip_h = true
+flip_v = true
 region_enabled = true
-region_rect = Rect2(17.563, 181.25, 91.125, 729)
+region_rect = Rect2(925.438, 320.75, 98.562, 352.284)
 
 [node name="Cadastro" type="Sprite2D" parent="."]
 visible = false
@@ -186,14 +194,14 @@ region_enabled = true
 region_rect = Rect2(167.75, 0, 686.667, 221.254)
 
 [node name="Cadastro3" type="Sprite2D" parent="."]
-position = Vector2(-230, 246)
+position = Vector2(-214, 171)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(-39.812, 930.5, 550.469, 104.625)
 
 [node name="Cadastro5" type="Sprite2D" parent="Cadastro3"]
-position = Vector2(906, 0)
+position = Vector2(876, 0)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(516.25, 930.5, 507.75, 104.625)
@@ -205,35 +213,35 @@ region_enabled = true
 region_rect = Rect2(125.563, 930.5, 735.75, 104.625)
 
 [node name="Cadastro4" type="Sprite2D" parent="."]
-position = Vector2(0, -7)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.5, 0.479401)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
-region_rect = Rect2(270.688, 217.219, 502.875, 555.388)
+region_rect = Rect2(270.688, 229.535, 502.875, 536.149)
 
-[node name="Cadastro3" type="Sprite2D" parent="Cadastro4"]
-position = Vector2(-380, 0)
+[node name="Cadastro7" type="Sprite2D" parent="Cadastro4"]
+position = Vector2(-390.5, 7.82228)
+scale = Vector2(1, 0.999354)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
-region_rect = Rect2(109.221, 217.219, 283.5, 555.388)
+region_rect = Rect2(109.221, 229.925, 283.5, 550.919)
 
-[node name="Cadastro3" type="Sprite2D" parent="Cadastro4/Cadastro3"]
-position = Vector2(776, 0)
+[node name="Cadastro3" type="Sprite2D" parent="Cadastro4/Cadastro7"]
+position = Vector2(780, -4)
 rotation = 3.14159
 scale = Vector2(1.08, -1)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
-region_rect = Rect2(109.221, 217.219, 283.5, 555.388)
+region_rect = Rect2(109.221, 229.803, 283.5, 542.804)
 
-[node name="Cadastro4" type="Sprite2D" parent="Cadastro4/Cadastro3"]
-position = Vector2(358, -200)
+[node name="Cadastro4" type="Sprite2D" parent="Cadastro4/Cadastro7"]
+position = Vector2(350.5, -204.032)
 rotation = 3.14159
 scale = Vector2(-1.32, -1)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(179.75, 264.486, 216, 61.5)
 
-[node name="nick_label" type="Label" parent="Cadastro4/Cadastro3/Cadastro4"]
+[node name="nick_label" type="Label" parent="Cadastro4/Cadastro7/Cadastro4"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
 self_modulate = Color(0.360784, 0.196078, 0.12549, 1)
 custom_minimum_size = Vector2(30, 30)
@@ -248,15 +256,15 @@ text = "Nick"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="senha" type="Sprite2D" parent="Cadastro4/Cadastro3"]
-position = Vector2(380, -28)
+[node name="senha" type="Sprite2D" parent="Cadastro4/Cadastro7"]
+position = Vector2(376, -42)
 rotation = 3.14159
 scale = Vector2(-1.32, -1)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(179.75, 264.486, 216, 61.5)
 
-[node name="nick_label" type="Label" parent="Cadastro4/Cadastro3/senha"]
+[node name="nick_label" type="Label" parent="Cadastro4/Cadastro7/senha"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
 self_modulate = Color(0.360784, 0.196078, 0.12549, 1)
 custom_minimum_size = Vector2(30, 30)
@@ -271,13 +279,14 @@ text = "Senha"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cadastro4" type="Sprite2D" parent="Cadastro4"]
-position = Vector2(-14, 198)
+[node name="Cadastro8" type="Sprite2D" parent="Cadastro4"]
+position = Vector2(-22.5, 209.637)
+scale = Vector2(1, 1.04297)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(186.313, 771.875, 627.75, 165.375)
 
-[node name="Cadastro3" type="Sprite2D" parent="Cadastro4/Cadastro4"]
+[node name="Cadastro3" type="Sprite2D" parent="Cadastro4/Cadastro8"]
 position = Vector2(493.086, 0.406097)
 rotation = 3.14159
 scale = Vector2(1.06605, -1.00495)
@@ -285,7 +294,7 @@ texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(109.221, 772.607, 131.092, 164.643)
 
-[node name="Cadastro6" type="Sprite2D" parent="Cadastro4/Cadastro4"]
+[node name="Cadastro6" type="Sprite2D" parent="Cadastro4/Cadastro8"]
 position = Vector2(366, 2)
 rotation = -3.14159
 scale = Vector2(1.08, -1)
@@ -293,38 +302,36 @@ texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(763.438, 771.875, 108, 168.75)
 
-[node name="Cadastro5" type="Sprite2D" parent="Cadastro4/Cadastro4"]
-position = Vector2(-360, -1.08251)
+[node name="Cadastro5" type="Sprite2D" parent="Cadastro4/Cadastro8"]
+position = Vector2(-358, -3.50493)
 rotation = -3.14159
-scale = Vector2(1.08, -1.0361)
+scale = Vector2(1.08, -1.07783)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(763.438, 771.875, 108, 168.75)
 
-[node name="Cadastro4" type="Sprite2D" parent="Cadastro4/Cadastro4"]
-position = Vector2(-433.978, -1.64029)
+[node name="Cadastro4" type="Sprite2D" parent="Cadastro4/Cadastro8"]
+position = Vector2(-436, -8)
 rotation = 3.14159
-scale = Vector2(1.02896, -1.04282)
+scale = Vector2(1.02896, -1.05472)
 texture = ExtResource("3_xwq4y")
 region_enabled = true
-region_rect = Rect2(770.188, 771.875, 148.5, 168.75)
+region_rect = Rect2(770.188, 771.875, 148.5, 156.967)
 
-[node name="ColorRect4" type="ColorRect" parent="Cadastro4/Cadastro4"]
+[node name="ColorRect4" type="ColorRect" parent="Cadastro4/Cadastro8"]
 offset_left = 258.0
 offset_top = -78.0
 offset_right = 484.0
 offset_bottom = 42.0
 color = Color(0.694118, 0.486275, 0.211765, 1)
 
-[node name="senha" type="TextEdit" parent="Cadastro4/Cadastro4"]
-custom_minimum_size = Vector2(250, 0)
-offset_left = -448.0
-offset_top = -180.0
-offset_right = 494.0
-offset_bottom = -110.0
-theme_override_fonts/font = SubResource("FontVariation_uw26t")
-theme_override_font_sizes/font_size = 25
-scroll_past_end_of_file = true
+[node name="senha" type="LineEdit" parent="."]
+offset_left = -238.0
+offset_top = 7.0
+offset_right = 238.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_tor08")
+theme_override_font_sizes/font_size = 20
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -336,61 +343,319 @@ color = Color(0.209908, 0.209908, 0.209908, 1)
 
 [node name="nick" type="TextEdit" parent="."]
 custom_minimum_size = Vector2(250, 0)
-offset_left = -229.0
-offset_top = -81.0
-offset_right = 241.0
-offset_bottom = -49.0
+offset_left = -238.0
+offset_top = -74.0
+offset_right = 238.0
+offset_bottom = -40.0
 theme_override_fonts/font = SubResource("FontVariation_oi5x6")
 theme_override_font_sizes/font_size = 25
 scroll_past_end_of_file = true
 
-[node name="enviar" type="Button" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-clip_contents = true
-custom_minimum_size = Vector2(50, 25)
-offset_left = -118.0
-offset_top = 65.0
-offset_right = 116.0
-offset_bottom = 113.0
-text = "enviar"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
 
-[node name="show_erro" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-13, -227)
+[node name="Cadastro8" type="Sprite2D" parent="."]
+position = Vector2(-68, 72)
+rotation = -3.14159
+scale = Vector2(0.520651, -0.614842)
+texture = ExtResource("3_xwq4y")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
 
-[node name="ColorRect" type="ColorRect" parent="show_erro"]
-offset_left = -340.0
-offset_top = 65.0
+[node name="Cadastro8" type="Sprite2D" parent="Cadastro8"]
+position = Vector2(1.85174, 50.686)
+scale = Vector2(1, 1.13411)
+texture = ExtResource("3_xwq4y")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
+
+[node name="Cadastro9" type="Sprite2D" parent="Cadastro8"]
+position = Vector2(-244.444, 5.26117)
+scale = Vector2(1.02974, 1.03046)
+texture = ExtResource("3_xwq4y")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
+
+[node name="Cadastro8" type="Sprite2D" parent="Cadastro8/Cadastro9"]
+position = Vector2(3.37443, 46.3276)
+scale = Vector2(1.01238, 1)
+texture = ExtResource("3_xwq4y")
+region_enabled = true
+region_rect = Rect2(619.5, 599.013, 246, 65.9999)
+
+[node name="Placas4" type="Sprite2D" parent="."]
+position = Vector2(-100, 89)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_oi5x6")
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas4"]
+position = Vector2(-195, 0)
+texture = ExtResource("5_oi5x6")
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="registro" type="Sprite2D" parent="Placas4"]
+position = Vector2(-260, 2.5)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(600.875, 469.25, 144, 157.5)
+
+[node name="e" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(125, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(618.875, 88.085, 144, 162)
+
+[node name="g" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(250, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(78.875, 278, 132.75, 159.75)
+
+[node name="i" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(350, 0)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(373.625, 273.5, 74.25, 162)
+
+[node name="s" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(440, 0)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(747.125, 467, 112.5, 157.5)
+
+[node name="t" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(550, 0)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(855.125, 467, 123.75, 157.5)
+
+[node name="r" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(675, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(605.375, 471.5, 139.5, 162)
+
+[node name="r2" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(810, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(225.125, 471.5, 126, 155.25)
+
+[node name="Placas5" type="Sprite2D" parent="."]
+position = Vector2(172, 92)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_oi5x6")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas5"]
+position = Vector2(-195, 0)
+texture = ExtResource("5_oi5x6")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="login" type="Sprite2D" parent="Placas5"]
+position = Vector2(-197.5, -2.5)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(711.125, 278, 130.5, 157.5)
+
+[node name="o" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(125, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(229.625, 469.25, 119.25, 153)
+
+[node name="g" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(250, 5)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(78.875, 278, 132.75, 159.75)
+
+[node name="i" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(350, 0)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(373.625, 273.5, 74.25, 162)
+
+[node name="n" type="Sprite2D" parent="Placas5/login"]
+position = Vector2(458.824, 5.88235)
+texture = ExtResource("6_4fvy5")
+region_enabled = true
+region_rect = Rect2(78.875, 469.25, 148.5, 159.75)
+
+[node name="login_btn" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(50, 25)
+offset_left = 36.0
+offset_top = 66.0
+offset_right = 238.0
+offset_bottom = 114.0
+text = "enviar"
+
+[node name="btn_cadastro" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -231.0
+offset_top = 71.0
+offset_right = -40.0
+offset_bottom = 110.0
+
+[node name="show_erro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-229, -316)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro"]
+position = Vector2(395, 2.5)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro"]
+position = Vector2(775, 2.5)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro/Erro8"]
+position = Vector2(395, 2.5)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro/Erro8"]
+position = Vector2(417.5, -1.19209e-06)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro" type="Sprite2D" parent="show_erro"]
+position = Vector2(-257.5, -48.0522)
+scale = Vector2(1, 1.0096)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/Erro"]
+position = Vector2(0, 99.5957)
+texture = ExtResource("7_wytem")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro"]
+position = Vector2(1702.5, 99.5958)
+texture = ExtResource("7_wytem")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/Erro"]
+position = Vector2(1702.5, 0.546997)
+texture = ExtResource("7_wytem")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro2" type="Sprite2D" parent="show_erro"]
+position = Vector2(2.50003, -50.0001)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2"]
+position = Vector2(397.5, 0)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/Erro2"]
+position = Vector2(792.5, 0)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/Erro2"]
+position = Vector2(1190, 105)
+rotation = -3.14159
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2/Erro5"]
+position = Vector2(397.5, 0)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/Erro2/Erro5"]
+position = Vector2(792.5, 0)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/Erro2/Erro5/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("7_wytem")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="show_erro" type="Node2D" parent="show_erro"]
+position = Vector2(517.5, -280)
+scale = Vector2(2.5, 2.5)
+
+[node name="ColorRect" type="ColorRect" parent="show_erro/show_erro"]
+modulate = Color(1, 1, 1, 0.333333)
+show_behind_parent = true
+offset_left = -333.0
+offset_top = 74.0
 offset_right = 394.0
-offset_bottom = 153.0
+offset_bottom = 151.0
 color = Color(0.403087, 0, 0.11844, 1)
 
-[node name="label_mensagem" type="Label" parent="show_erro"]
+[node name="label_mensagem" type="Label" parent="show_erro/show_erro"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(30, 30)
 offset_left = -328.0
 offset_top = 81.0
-offset_right = 378.0
+offset_right = 391.0
 offset_bottom = 143.0
 pivot_offset = Vector2(95, 0)
-theme_override_fonts/font = SubResource("FontVariation_xwq4y")
+theme_override_fonts/font = SubResource("FontVariation_tol8s")
 theme_override_font_sizes/font_size = 35
 text = "vazio"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 
-[node name="TimerErro" type="Timer" parent="show_erro"]
+[node name="TimerErro" type="Timer" parent="show_erro/show_erro"]
 wait_time = 1.9
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro"]
-root_node = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro/show_erro"]
+root_node = NodePath("../../..")
 libraries = {
-&"": SubResource("AnimationLibrary_oi5x6")
+&"": SubResource("AnimationLibrary_fq4k4")
 }
 speed_scale = 6.0
 
-[connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
+[connection signal="pressed" from="login_btn" to="." method="_on_login_btn_pressed"]
+[connection signal="pressed" from="btn_cadastro" to="." method="_on_btn_cadastro_pressed"]

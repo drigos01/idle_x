@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwl3l84knabka"]
+[gd_scene load_steps=13 format=3 uid="uid://bwl3l84knabka"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_0blei"]
 [ext_resource type="Script" uid="uid://df5janu7knv7" path="res://cenas/mundo_1.gd" id="1_eeqrx"]
 [ext_resource type="PackedScene" uid="uid://cnvne3n74tr13" path="res://cenas/token_player.tscn" id="3_eeqrx"]
 [ext_resource type="PackedScene" uid="uid://p6qyoj4tnkep" path="res://cenas/taverna.tscn" id="3_p1jju"]
+[ext_resource type="Script" uid="uid://rixa4nhqmw4m" path="res://cenas/bar_vida.gd" id="5_m4wj0"]
 [ext_resource type="Texture2D" uid="uid://cxtxes5wkqyae" path="res://imagens/file_00000000693861f9868eca809ffaddd1_1_sem_fundo.png" id="7_deh5p"]
 [ext_resource type="PackedScene" uid="uid://bdmnafrfo1mhj" path="res://cenas/inventario.tscn" id="7_eeqrx"]
 [ext_resource type="Texture2D" uid="uid://bcamhkbkdibto" path="res://imagens/file_00000000693861f9868eca809ffaddd1_1.png" id="7_m4wj0"]
@@ -124,6 +125,7 @@ offset_left = 25.0
 offset_top = 170.0
 offset_right = 1158.0
 offset_bottom = 181.0
+script = ExtResource("5_m4wj0")
 
 [node name="bar_vida2" type="ColorRect" parent="token_player/Camera2D/layer_bars/bar_vida"]
 layout_mode = 0
@@ -412,7 +414,28 @@ position = Vector2(-15.6, -4.79992)
 position = Vector2(-832, -42)
 scale = Vector2(1.66667, 1.66667)
 
+[node name="online_layer" parent="token_player/chat_global" index="7"]
+visible = false
+
+[node name="minimizar2" parent="token_player/chat_global/online_layer" index="3"]
+visible = true
+
+[node name="maximizar9" parent="token_player/chat_global/online_layer" index="4"]
+visible = false
+
 [node name="chat_global3" parent="token_player/chat_global/chat/fundo_chat/chat_global" index="0"]
 scale = Vector2(1.29351, 0.972278)
+
+[node name="chat_global3" parent="token_player/chat_global/chat/fundo_chat/chat_global5" index="0"]
+position = Vector2(0.00194097, 381.464)
+
+[node name="chat_global4" parent="token_player/chat_global/chat/fundo_chat/chat_global5" index="1"]
+position = Vector2(0.00355196, 705.811)
+
+[node name="maximizar8" parent="token_player/chat_global/chat/fundo_chat" index="8"]
+visible = false
+
+[node name="minimizar" parent="token_player/chat_global/chat/fundo_chat" index="9"]
+visible = false
 
 [editable path="token_player/chat_global"]

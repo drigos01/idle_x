@@ -13,7 +13,7 @@ func _input(event: InputEvent) -> void:
 			Global.mouse_sobre_chat = true
 		elif not event.pressed:
 			arrastando = false
-			Global.mouse_sobre_chat = false
+			#Global.mouse_sobre_chat = false
 
 	elif event is InputEventMouseMotion and arrastando and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		$"../..".global_position = get_global_mouse_position() + offset
