@@ -7,89 +7,90 @@
 [ext_resource type="Script" uid="uid://d2acr2ioqjguk" path="res://cenas/fora_area.gd" id="5_x4056"]
 [ext_resource type="Script" uid="uid://4demqpiwvctk" path="res://cenas/mexer_layer.gd" id="6_pf4d4"]
 [ext_resource type="Texture2D" uid="uid://b3iaabrun30xu" path="res://imagens/file_000000008a70622f8f18a9b1d4d928c1_1.png" id="7_udbpm"]
+[ext_resource type="PackedScene" uid="uid://puh2eydbdmk4" path="res://cenas/mensagem_slot.tscn" id="8_87c3r"]
 [ext_resource type="Texture2D" uid="uid://cpcxdd4waibfr" path="res://imagens/chat_global_1.png" id="8_eldgv"]
 
 [sub_resource type="FontVariation" id="FontVariation_pf4d4"]
 base_font = ExtResource("1_qjpr8")
 
-[sub_resource type="Animation" id="Animation_udbpm"]
+[sub_resource type="Animation" id="Animation_87c3r"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("chat/online_layer:position")
+tracks/0/path = NodePath("ChatGlobal1/chat_global2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(237, 103)]
+"values": [Vector2(11.4285, 264.762)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("chat/online_layer:scale")
+tracks/1/path = NodePath("ChatGlobal1/ChatGlobal2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.2, 0.2)]
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("chat/online_layer/minimizar2:visible")
+tracks/2/path = NodePath("ChatGlobal1/ChatGlobal2:region_rect")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Rect2(0, 0, 421, 608)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("chat/online_layer/maximizar9:position")
+tracks/3/path = NodePath("online_layer:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(345, -184)]
+"values": [Vector2(254.286, -62.9535)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("chat/online_layer/maximizar9:scale")
+tracks/4/path = NodePath("online_layer:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.22, 0.4)]
+"update": 1,
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("chat/online_layer/maximizar9:visible")
+tracks/5/path = NodePath("online_layer/minimizar2:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("chat/online_layer:visible")
+tracks/6/path = NodePath("online_layer/maximizar9:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -101,1004 +102,191 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("chat/fundo_chat/chat_global2:position")
+tracks/7/path = NodePath("ChatGlobal1/ScrollContainer_usuarios_online:size")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(117, 352)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("chat/fundo_chat/chat_global/chat_global3/chat_global5:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(4.8305, 232.658)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("chat/fundo_chat/chat_global5/chat_global4:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.00355196, 705.811)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("chat/fundo_chat/ColorRect2:size")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(210, 260)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("chat/fundo_chat/chat_global5/chat_global3:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.00194097, 381.464)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("chat/fundo_chat/chat_global/chat_global3:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(32.2012, 532.664)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("chat/fundo_chat/chat_global/chat_global3/chat_global5:region_rect")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(335.375, 287.025, 688.625, 180.225)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("chat/fundo_chat/chat_global/chat_global3:region_rect")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(335.375, 287.025, 688.625, 380.225)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("chat/fundo_chat/chat_global5/chat_global4:region_rect")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(819.75, 266.253, 204.25, 349.247)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("chat/fundo_chat/chat_global5/chat_global3:region_rect")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(819.75, 266.253, 204.25, 349.247)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("chat/fundo_chat/chat_global5:region_rect")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(819.75, 0, 204.25, 415.5)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("chat/fundo_chat/chat_global4:region_rect")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(819.75, 0, 204.25, 680.75)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("chat/fundo_chat/chat_global4:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(237, 64)]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("chat/fundo_chat/chat_global:region_rect")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(177.875, 0, 846.125, 667.25)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("chat/fundo_chat/chat_global:position")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(133, 62)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("chat/ChatGlobal1/ScrollContainer:size")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(305, 340)]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("chat/fundo_chat/ColorRect2:position")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.94375, 41.5848)]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("chat/ChatGlobal1/ScrollContainer:visible")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("chat/fundo_chat:size")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(228, 308)]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("chat/ChatGlobal1/minimizar:visible")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("chat/ChatGlobal1/maximizar8:visible")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_87c3r"]
-resource_name = "maximizar_chat_global"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("chat/online_layer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(236, 90), Vector2(60, 92)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("chat/online_layer:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.2, 0.2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("chat/online_layer/minimizar2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("chat/online_layer/maximizar9:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(345, -184)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("chat/online_layer/maximizar9:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.22, 0.4)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("chat/online_layer/maximizar9:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("chat/online_layer:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("chat/fundo_chat/chat_global2:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(117, 362), Vector2(112.793, 81.585)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("chat/fundo_chat/chat_global/chat_global3/chat_global5:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 3.96667, 4.00554, 4.62607, 5.1, 5.18607, 5.59607, 5.82607, 5.97, 6.62562, 7.23607, 7.55, 7.72607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(5.34652, 290.869), Vector2(5.347, 290.869), Vector2(6.03104, 300.006), Vector2(6.03158, 228.805), Vector2(6.03125, 251.025), Vector2(6.03184, 159.438), Vector2(6.03155, 122.451), Vector2(6.03166, 73.4709), Vector2(6.03164, 54.1862), Vector2(8.25914, -20.2509), Vector2(54.2867, 12.2452), Vector2(69.1592, 10.3992), Vector2(74.0011, 8.06508), Vector2(-6.0319, 6.12256)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("chat/fundo_chat/chat_global5/chat_global4:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 3.66, 5.08632, 6.13607, 6.13632, 6.59607, 7.62607, 7.72607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.00353575, 728.25), Vector2(0.00353879, 722.13), Vector2(0, 605.827), Vector2(2.75699, 352.751), Vector2(2.75764, 385.516), Vector2(0.00156212, 318.227), Vector2(0.000808716, 177.473), Vector2(0.000878334, 159.113), Vector2(-52.0486, 128.515)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("chat/fundo_chat/ColorRect2:size")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 3.98, 3.98632, 4.01, 5.10632, 6.1, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(210, 276), Vector2(210, 280), Vector2(210, 260), Vector2(210, 275), Vector2(210, 191), Vector2(210, 151), Vector2(210, 46)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("chat/fundo_chat/chat_global5/chat_global3:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 4.00554, 5.85607, 7.62607, 7.72607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2.75744, 379.396), Vector2(0.00208277, 434.502), Vector2(0.00118685, 244.79), Vector2(0.00091362, 177.473), Vector2(0.000894547, 165.233), Vector2(-32.53, 146.874)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("chat/fundo_chat/chat_global/chat_global3:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 3.65, 4.00554, 5.1, 5.82607, 5.83607, 6.12562, 6.59607, 7.23607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(30.0526, 482.413), Vector2(36.0388, 353.577), Vector2(36.9322, 366.83), Vector2(39.6827, 309.189), Vector2(41.5073, 287.016), Vector2(41.5325, 274.972), Vector2(42.2603, 256.289), Vector2(43.4425, 284.092), Vector2(-17.5772, 205.09), Vector2(-62.6286, 165.309)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("chat/fundo_chat/chat_global/chat_global3/chat_global5:region_rect")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 3.97, 5.08607, 6.07554, 6.12607, 6.13607, 6.14607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(335.375, 287.025, 688.625, 380.225), Rect2(335.375, 287.025, 688.625, 380.975), Rect2(335.375, 287.025, 688.625, 325.379), Rect2(335.375, 287.025, 688.625, 276.09), Rect2(335.375, 287.025, 688.625, 273.573), Rect2(335.375, 287.025, 688.625, 273.075), Rect2(335.375, 287.025, 688.625, 272.576), Rect2(335.375, 287.025, 688.625, 180.225)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("chat/fundo_chat/chat_global/chat_global3:region_rect")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(335.375, 287.025, 688.625, 380.225), Rect2(335.375, 287.025, 688.625, 180.225)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("chat/fundo_chat/chat_global5/chat_global4:region_rect")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 3.99, 4.00554, 6.13607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(819.75, 266.253, 204.25, 449.247), Rect2(819.75, 266.253, 204.25, 349.497), Rect2(819.75, 266.253, 204.25, 348.721), Rect2(819.75, 266.253, 204.25, 242.327), Rect2(819.75, 266.253, 204.25, 149.247)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("chat/fundo_chat/chat_global5/chat_global3:region_rect")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0, 4.00554, 6.14607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(819.75, 266.253, 204.25, 349.247), Rect2(819.75, 266.253, 204.25, 449.109), Rect2(819.75, 266.253, 204.25, 288.42), Rect2(819.75, 266.253, 204.25, 149.247)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("chat/fundo_chat/chat_global5:region_rect")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0, 4.00554),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(819.75, 0, 204.25, 415.5), Rect2(819.75, 0, 204.25, 415.5)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("chat/fundo_chat/chat_global4:region_rect")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(819.75, 0, 204.25, 680.75), Rect2(819.75, 0, 204.25, 280.75)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("chat/fundo_chat/chat_global4:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(237, 64), Vector2(235.434, -2.41474)]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("chat/fundo_chat/chat_global:region_rect")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(177.875, 0, 846.125, 667.25), Rect2(177.875, 0, 846.125, 367.25)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("chat/fundo_chat/chat_global:position")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0, 4.00554, 8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(133, 62), Vector2(129.968, 35.7563), Vector2(126.944, 9.58507)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("chat/ChatGlobal1/ScrollContainer:size")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(305, 340), Vector2(305, 340)]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("chat/fundo_chat/ColorRect2:position")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(6.18607),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.94375, 41.5848)]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("chat/ChatGlobal1/ScrollContainer:visible")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("chat/fundo_chat:size")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(228, 308), Vector2(228, 72)]
-}
-
-[sub_resource type="Animation" id="Animation_32da3"]
-resource_name = "maximizar_chat_global_fechar_com_mini_fechado"
-length = 5.0
-
-[sub_resource type="Animation" id="Animation_ng838"]
-resource_name = "minimizar_com_mini_minimizado"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("chat/online_layer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(89, 90), Vector2(50, 84)]
-}
-
-[sub_resource type="Animation" id="Animation_tfs8q"]
-resource_name = "minimizar_global"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("chat/online_layer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(236, 90), Vector2(60, 92)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("chat/online_layer:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.2, 0.2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("chat/online_layer/minimizar2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("chat/online_layer/maximizar9:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(345, -184)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("chat/online_layer/maximizar9:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.22, 0.4)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("chat/online_layer/maximizar9:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("chat/online_layer:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("chat/fundo_chat/chat_global2:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(117, 362), Vector2(112.793, 81.585)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("chat/fundo_chat/chat_global/chat_global3/chat_global5:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 3.96667, 4.00554, 4.62607, 5.09607, 5.1, 5.18607, 5.59607, 5.82607, 6.54607, 7.23607, 7.62607, 7.72607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(5.34652, 290.869), Vector2(5.347, 290.869), Vector2(6.03104, 300.006), Vector2(6.03158, 228.805), Vector2(6.03128, 183.391), Vector2(6.03153, 136.455), Vector2(6.03184, 159.438), Vector2(6.03155, 122.451), Vector2(6.03166, 73.4709), Vector2(6.03199, -35.0926), Vector2(54.2867, 12.2452), Vector2(67.9859, 3.72095), Vector2(74.0011, 8.06508), Vector2(-6.0319, 6.12256)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("chat/fundo_chat/chat_global5/chat_global4:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 3.66, 5.08632, 6.13607, 6.13632, 6.59607, 7.62607, 7.72607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.00353575, 728.25), Vector2(0.00353879, 722.13), Vector2(0, 605.827), Vector2(2.75699, 352.751), Vector2(2.75764, 385.516), Vector2(0.00156212, 318.227), Vector2(0.000808716, 177.473), Vector2(0.000878334, 159.113), Vector2(-52.0486, 128.515)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("chat/fundo_chat/ColorRect2:size")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 3.98, 3.98632, 4.01, 5.10632, 6.1, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(210, 276), Vector2(210, 280), Vector2(210, 260), Vector2(210, 277), Vector2(210, 191), Vector2(210, 151), Vector2(210, 46)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("chat/fundo_chat/chat_global5/chat_global3:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 4.00554, 5.85607, 6.59607, 7.62607, 7.72607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2.75744, 379.396), Vector2(0.00208277, 434.502), Vector2(0.00118685, 244.79), Vector2(0.00140285, 263.149), Vector2(0.00091362, 177.473), Vector2(0.000894547, 165.233), Vector2(-32.53, 146.874)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("chat/fundo_chat/chat_global/chat_global3:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 4.00554, 5.1, 5.82607, 5.83607, 6.18, 6.6, 7.23607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(30.0526, 482.413), Vector2(36.9322, 366.83), Vector2(39.6827, 309.189), Vector2(41.5073, 287.016), Vector2(41.5325, 274.972), Vector2(42.3967, 270.895), Vector2(43.4425, 284.092), Vector2(-17.5772, 205.09), Vector2(-62.6286, 165.309)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("chat/fundo_chat/chat_global/chat_global3/chat_global5:region_rect")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 3.97, 5.08607, 6.07554, 6.12607, 6.13607, 6.14607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(335.375, 287.025, 688.625, 380.225), Rect2(335.375, 287.025, 688.625, 380.975), Rect2(335.375, 287.025, 688.625, 325.379), Rect2(335.375, 287.025, 688.625, 276.09), Rect2(335.375, 287.025, 688.625, 273.573), Rect2(335.375, 287.025, 688.625, 273.075), Rect2(335.375, 287.025, 688.625, 272.576), Rect2(335.375, 287.025, 688.625, 180.225)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("chat/fundo_chat/chat_global/chat_global3:region_rect")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 6.31, 8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Rect2(335.375, 287.025, 688.625, 380.225), Rect2(335.375, 287.025, 688.625, 222.475), Rect2(335.375, 287.025, 688.625, 180.225)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("chat/fundo_chat/chat_global5/chat_global4:region_rect")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 3.99, 4.00554, 6.13607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(819.75, 266.253, 204.25, 449.247), Rect2(819.75, 266.253, 204.25, 349.497), Rect2(819.75, 266.253, 204.25, 348.721), Rect2(819.75, 266.253, 204.25, 242.327), Rect2(819.75, 266.253, 204.25, 149.247)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("chat/fundo_chat/chat_global5/chat_global3:region_rect")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0, 4.00554, 6.14607, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(819.75, 266.253, 204.25, 349.247), Rect2(819.75, 266.253, 204.25, 449.109), Rect2(819.75, 266.253, 204.25, 288.42), Rect2(819.75, 266.253, 204.25, 149.247)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("chat/fundo_chat/chat_global5:region_rect")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0, 4.00554, 8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Rect2(819.75, 0, 204.25, 415.5), Rect2(819.75, 0, 204.25, 415.5), Rect2(819.75, 0, 204.25, 415.5)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("chat/fundo_chat/chat_global4:region_rect")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(819.75, 0, 204.25, 680.75), Rect2(819.75, 0, 204.25, 280.75)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("chat/fundo_chat/chat_global4:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(237, 64), Vector2(235.434, -2.41474)]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("chat/fundo_chat/chat_global:region_rect")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(177.875, 0, 846.125, 667.25), Rect2(177.875, 0, 846.125, 367.25)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("chat/fundo_chat/chat_global:position")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0, 4.00554, 8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(133, 62), Vector2(129.968, 35.7563), Vector2(126.944, 9.58507)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("chat/ChatGlobal1/ScrollContainer:size")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(305, 340), Vector2(305, 340)]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("chat/fundo_chat/ColorRect2:position")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(6.18607),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.94375, 41.5848)]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("chat/fundo_chat:size")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(228, 308), Vector2(228, 84)]
-}
-
-[sub_resource type="Animation" id="Animation_llqas"]
-resource_name = "minimizar_player_online"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("chat/online_layer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(236, 90), Vector2(89, 92)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("chat/online_layer:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.2, 0.2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("chat/online_layer/minimizar2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("chat/online_layer/maximizar9:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(345, -184)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("chat/online_layer/maximizar9:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.22, 0.4)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("chat/online_layer/maximizar9:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"values": [Vector2(407, 493)]
 }
 
 [sub_resource type="Animation" id="Animation_eldgv"]
-resource_name = "minimizar_player_online_2"
+resource_name = "abrir"
 length = 4.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("chat/online_layer:position")
+tracks/0/path = NodePath("ChatGlobal1/chat_global2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(11.4285, 264.762), Vector2(13.9682, -147.936)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatGlobal1/ChatGlobal2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-7.57624e-05, -239.365)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatGlobal1/ChatGlobal2:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 421, 608), Rect2(0, 0, 421, 108)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ChatGlobal1/ScrollContainer_usuarios_online:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(407, 493), Vector2(407, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_llqas"]
+resource_name = "fechar"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatGlobal1/chat_global2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(89, 90), Vector2(238, 92)]
+"values": [Vector2(13.429, -147.936), Vector2(13.429, 261.351)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("chat/online_layer:scale")
+tracks/1/path = NodePath("ChatGlobal1/ChatGlobal2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-0.0333333, 0),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2)]
+"values": [Vector2(0, -239.365), Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("chat/online_layer/minimizar2:visible")
+tracks/2/path = NodePath("ChatGlobal1/ChatGlobal2:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 421, 108), Rect2(0, 0, 421, 608)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ChatGlobal1/ScrollContainer_usuarios_online:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(407, 0), Vector2(407, 493)]
+}
+
+[sub_resource type="Animation" id="Animation_ng838"]
+resource_name = "usuarios_online_abrir"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("online_layer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(99, -62.953), Vector2(254.286, -62.9535)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("online_layer/maximizar9:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("online_layer/minimizar2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_tfs8q"]
+resource_name = "usuarios_online_fechar"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("online_layer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(254.286, -62.953), Vector2(99, -62.953)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("online_layer/minimizar2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("online_layer/maximizar9:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1110,49 +298,52 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("chat/online_layer/maximizar9:position")
+tracks/3/path = NodePath("online_layer:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(345, -184)]
+"update": 1,
+"values": [true]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = false
-tracks/4/path = NodePath("chat/online_layer/maximizar9:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+
+[sub_resource type="Animation" id="Animation_32da3"]
+resource_name = "usuarios_online_fechar_completo"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("online_layer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.22, 0.4), Vector2(0.22, 0.4)]
+"values": [Vector2(99, -62.953), Vector2(50, -62.953)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("chat/online_layer/maximizar9:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("online_layer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ng838"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llqas"]
 _data = {
-&"RESET": SubResource("Animation_udbpm"),
-&"maximizar_chat_global": SubResource("Animation_87c3r"),
-&"maximizar_chat_global_fechar_com_mini_fechado": SubResource("Animation_32da3"),
-&"minimizar_com_mini_minimizado": SubResource("Animation_ng838"),
-&"minimizar_global": SubResource("Animation_tfs8q"),
-&"minimizar_player_online": SubResource("Animation_llqas"),
-&"minimizar_player_online_2": SubResource("Animation_eldgv")
+&"RESET": SubResource("Animation_87c3r"),
+&"abrir": SubResource("Animation_eldgv"),
+&"fechar": SubResource("Animation_llqas"),
+&"usuarios_online_abrir": SubResource("Animation_ng838"),
+&"usuarios_online_fechar": SubResource("Animation_tfs8q"),
+&"usuarios_online_fechar_completo": SubResource("Animation_32da3")
 }
 
 [node name="chat_global" type="Node2D"]
@@ -1160,64 +351,84 @@ position = Vector2(537, 39)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_vkkos")
 
-[node name="painel_arrasto" type="PanelContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
-offset_left = -114.0
-offset_top = 20.0
-offset_right = -96.0
-offset_bottom = 390.0
+[node name="layer_arratavel_online" type="Node2D" parent="."]
+position = Vector2(-87, 289)
 
-[node name="painel_arrasto2" type="PanelContainer" parent="."]
+[node name="painel_arrasto4" type="PanelContainer" parent="layer_arratavel_online"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 118.0
-offset_top = 26.0
-offset_right = 140.0
-offset_bottom = 378.0
+offset_left = 201.0
+offset_top = -21.0
+offset_right = 328.0
+offset_bottom = -12.0
 
-[node name="painel_arrasto3" type="PanelContainer" parent="."]
+[node name="painel_arrasto5" type="PanelContainer" parent="layer_arratavel_online"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 302.0
-offset_top = 80.0
-offset_right = 314.0
-offset_bottom = 324.0
+offset_left = 201.0
+offset_top = -202.0
+offset_right = 311.0
+offset_bottom = -185.0
 
-[node name="painel_arrasto4" type="PanelContainer" parent="."]
+[node name="painel_arrasto3" type="PanelContainer" parent="layer_arratavel_online"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 134.0
-offset_top = 56.0
-offset_right = 292.0
-offset_bottom = 84.0
+offset_left = 319.0
+offset_top = -186.0
+offset_right = 327.0
+offset_bottom = -12.0
 
-[node name="painel_arrasto5" type="PanelContainer" parent="."]
+[node name="layer_arratavel_chat" type="Node2D" parent="."]
+
+[node name="painel_arrasto" type="PanelContainer" parent="layer_arratavel_chat"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 136.0
-offset_top = 312.0
-offset_right = 310.0
-offset_bottom = 324.0
+offset_left = -83.0
+offset_top = 69.0
+offset_right = -67.0
+offset_bottom = 303.0
 
-[node name="painel_arrasto6" type="PanelContainer" parent="."]
+[node name="painel_arrasto2" type="PanelContainer" parent="layer_arratavel_chat"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -114.0
-offset_top = 304.0
-offset_right = 136.0
-offset_bottom = 378.0
+offset_left = 101.0
+offset_top = 69.0
+offset_right = 116.0
+offset_bottom = 290.0
 
-[node name="painel_arrasto7" type="PanelContainer" parent="."]
+[node name="painel_arrasto6" type="PanelContainer" parent="layer_arratavel_chat"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -87.0
+offset_top = 289.0
+offset_right = 69.0
+offset_bottom = 307.0
+
+[node name="painel_arrasto7" type="PanelContainer" parent="layer_arratavel_chat"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -88.0
-offset_top = -14.0
-offset_right = 108.0
-offset_bottom = 32.0
+offset_top = 341.0
+offset_right = 68.0
+offset_bottom = 353.0
+
+[node name="painel_arrasto8" type="PanelContainer" parent="layer_arratavel_chat"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -88.0
+offset_top = 299.0
+offset_right = -79.0
+offset_bottom = 353.0
+
+[node name="layer_arratavel_chat2" type="Node2D" parent="."]
+
+[node name="painel_arrasto9" type="PanelContainer" parent="layer_arratavel_chat2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -57.0
+offset_top = 35.0
+offset_right = 89.0
+offset_bottom = 74.0
 
 [node name="chat" type="Node2D" parent="."]
 position = Vector2(8, 172)
 rotation = 3.14159
-scale = Vector2(-0.4, -0.472)
+scale = Vector2(-0.7, -0.826)
 
 [node name="online_layer" type="Sprite2D" parent="chat"]
-visible = false
-position = Vector2(237, 103)
-scale = Vector2(0.2, 0.2)
+position = Vector2(254.286, -62.9535)
+scale = Vector2(0.2, 0.171687)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(150.875, 0, 873.125, 606.691)
@@ -1249,7 +460,7 @@ region_enabled = true
 region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
 
 [node name="online_layer2" type="Sprite2D" parent="chat/online_layer/online_layer3/online_layer3"]
-position = Vector2(-520, 5)
+position = Vector2(-519.048, 34.1872)
 scale = Vector2(-1.2, 1)
 texture = ExtResource("2_vkkos")
 region_enabled = true
@@ -1263,11 +474,12 @@ region_enabled = true
 region_rect = Rect2(45.125, 604.161, 940.5, 101.25)
 
 [node name="online_layer4" type="Sprite2D" parent="chat/online_layer/online_layer3/online_layer3"]
-position = Vector2(-505, 220)
-scale = Vector2(-1.01531, 1)
+position = Vector2(-151.832, 209.369)
+scale = Vector2(-1.1781, 0.996208)
 texture = ExtResource("2_vkkos")
+flip_h = true
 region_enabled = true
-region_rect = Rect2(149.188, 604.161, 573.75, 101.25)
+region_rect = Rect2(45.125, 581.75, 693, 123.661)
 
 [node name="ColorRect4" type="ColorRect" parent="chat/online_layer/online_layer3/online_layer3"]
 offset_left = -435.0
@@ -1275,22 +487,6 @@ offset_top = -880.0
 offset_right = 245.0
 offset_bottom = 160.0
 color = Color(0.635294, 0.47451, 0.254902, 1)
-
-[node name="ScrollContainer_usuarios_online" type="ScrollContainer" parent="chat/online_layer"]
-custom_minimum_size = Vector2(240, 265)
-offset_left = -445.0
-offset_top = -65.0
-offset_right = 468.0
-offset_bottom = 1298.0
-scale = Vector2(0.8, 0.8)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="chat/online_layer/ScrollContainer_usuarios_online"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="chat/online_layer/ScrollContainer_usuarios_online"]
-visible = false
-layout_mode = 2
-alignment = 2
 
 [node name="minimizar2" type="Sprite2D" parent="chat/online_layer"]
 position = Vector2(330.5, -162)
@@ -1368,27 +564,15 @@ region_rect = Rect2(94.25, 625.465, 113.056, 28.4445)
 [node name="ChatGlobal1" type="Sprite2D" parent="chat"]
 position = Vector2(13.3333, 25.4238)
 scale = Vector2(0.75, 0.635593)
+region_rect = Rect2(0, 0, 421, 101.25)
+
+[node name="ChatGlobal2" type="Sprite2D" parent="chat/ChatGlobal1"]
 texture = ExtResource("8_eldgv")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="chat/ChatGlobal1"]
-custom_minimum_size = Vector2(240, 265)
-offset_left = -178.155
-offset_top = -253.973
-offset_right = 126.845
-offset_bottom = 86.0266
-scale = Vector2(0.8, 0.8)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="chat/ChatGlobal1/ScrollContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="chat/ChatGlobal1/ScrollContainer"]
-visible = false
-layout_mode = 2
-alignment = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 421, 608)
 
 [node name="minimizar" type="Sprite2D" parent="chat/ChatGlobal1"]
-visible = false
-position = Vector2(-187.589, -298.68)
+position = Vector2(-165.079, -259.683)
 rotation = 3.14159
 scale = Vector2(0.266667, -0.314667)
 texture = ExtResource("7_udbpm")
@@ -1401,10 +585,10 @@ anchors_preset = -1
 anchor_top = -2.357
 anchor_right = 1.208
 anchor_bottom = 3.0
-offset_left = -66.0
-offset_top = -16.004
-offset_right = -70.504
-offset_bottom = -18.0
+offset_left = -77.0
+offset_top = 13.996
+offset_right = -51.712
+offset_bottom = -32.0
 
 [node name="layer_mexer_objeto_pai" type="Node2D" parent="chat/ChatGlobal1"]
 visible = false
@@ -1413,18 +597,18 @@ scale = Vector2(1.57233, 1.57333)
 
 [node name="mexer_layer" type="PanelContainer" parent="chat/ChatGlobal1/layer_mexer_objeto_pai"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -561.0
-offset_top = 366.0
-offset_right = -535.0
-offset_bottom = 762.0
+offset_left = -517.0
+offset_top = 417.0
+offset_right = -498.0
+offset_bottom = 703.0
 script = ExtResource("6_pf4d4")
 
 [node name="mexer_laye2" type="PanelContainer" parent="chat/ChatGlobal1/layer_mexer_objeto_pai"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -295.0
-offset_top = 364.0
-offset_right = -265.0
-offset_bottom = 762.0
+offset_top = 418.0
+offset_right = -275.0
+offset_bottom = 685.0
 script = ExtResource("6_pf4d4")
 
 [node name="mexer_laye3" type="PanelContainer" parent="chat/ChatGlobal1/layer_mexer_objeto_pai"]
@@ -1467,20 +651,8 @@ offset_right = -103.0
 offset_bottom = 448.0
 script = ExtResource("6_pf4d4")
 
-[node name="maximizar2" type="Button" parent="chat/ChatGlobal1"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = -1
-anchor_left = -1.152
-anchor_right = 1.214
-anchor_bottom = 4.833
-offset_left = 100.548
-offset_top = -291.111
-offset_right = 73.5555
-offset_bottom = -289.602
-
 [node name="maximizar8" type="Sprite2D" parent="chat/ChatGlobal1"]
-visible = false
-position = Vector2(150.34, -307.467)
+position = Vector2(149.841, -272.381)
 rotation = 3.14159
 scale = Vector2(0.133333, -0.243867)
 texture = ExtResource("7_udbpm")
@@ -1522,6 +694,76 @@ scale = Vector2(0.614015, 1.45991)
 texture = ExtResource("7_udbpm")
 region_enabled = true
 region_rect = Rect2(94.25, 625.465, 113.056, 28.4445)
+
+[node name="maximizar2" type="Button" parent="chat/ChatGlobal1/maximizar8"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = -1.152
+anchor_right = 1.214
+anchor_bottom = 4.833
+offset_left = -135.976
+offset_top = -23.0
+offset_right = -53.968
+offset_bottom = 1.509
+
+[node name="chat_global2" type="Sprite2D" parent="chat/ChatGlobal1"]
+position = Vector2(11.4285, 264.762)
+scale = Vector2(0.401693, 0.513945)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(-0.228333, 715.179, 1024.23, 308.821)
+
+[node name="chat_global5" type="Sprite2D" parent="chat/ChatGlobal1/chat_global2"]
+position = Vector2(-360.111, -0.00073745)
+texture = ExtResource("2_qjpr8")
+region_enabled = true
+region_rect = Rect2(13.625, 714.308, 416.25, 309.692)
+
+[node name="ColorRect" type="ColorRect" parent="chat/ChatGlobal1/chat_global2"]
+offset_left = -458.0
+offset_top = -73.0
+offset_right = 199.0
+offset_bottom = 19.0
+color = Color(0.137255, 0.109804, 0.0784314, 1)
+
+[node name="mandar_mensagem" type="Button" parent="chat/ChatGlobal1/chat_global2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 221.0
+offset_top = -145.0
+offset_right = 428.0
+offset_bottom = 55.0
+
+[node name="texto_mensagem" type="TextEdit" parent="chat/ChatGlobal1/chat_global2/mandar_mensagem"]
+layout_mode = 0
+offset_left = -695.0
+offset_top = 66.0
+offset_right = -10.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("1_qjpr8")
+theme_override_font_sizes/font_size = 100
+
+[node name="ScrollContainer_usuarios_online" type="ScrollContainer" parent="chat/ChatGlobal1"]
+custom_minimum_size = Vector2(240, 0)
+offset_left = -169.0
+offset_top = -219.0
+offset_right = 238.0
+offset_bottom = 274.0
+scale = Vector2(0.8, 0.8)
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="chat/ChatGlobal1/ScrollContainer_usuarios_online"]
+layout_mode = 2
+
+[node name="mensagem_slot2" parent="chat/ChatGlobal1/ScrollContainer_usuarios_online/VBoxContainer" instance=ExtResource("8_87c3r")]
+layout_mode = 2
+
+[node name="mensagem_slot" parent="chat/ChatGlobal1/ScrollContainer_usuarios_online/VBoxContainer" instance=ExtResource("8_87c3r")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="chat/ChatGlobal1/ScrollContainer_usuarios_online"]
+visible = false
+layout_mode = 2
+alignment = 2
 
 [node name="fundo_chat" type="ColorRect" parent="chat"]
 visible = false
@@ -1595,43 +837,6 @@ offset_right = 211.944
 offset_bottom = 301.585
 color = Color(0.694118, 0.537255, 0.305882, 1)
 
-[node name="chat_global2" type="Sprite2D" parent="chat/fundo_chat"]
-visible = false
-position = Vector2(117, 352)
-scale = Vector2(0.30127, 0.32666)
-texture = ExtResource("2_qjpr8")
-region_enabled = true
-region_rect = Rect2(-0.228333, 715.179, 1024.23, 308.821)
-
-[node name="chat_global5" type="Sprite2D" parent="chat/fundo_chat/chat_global2"]
-position = Vector2(-360.111, -0.00073745)
-texture = ExtResource("2_qjpr8")
-region_enabled = true
-region_rect = Rect2(13.625, 714.308, 416.25, 309.692)
-
-[node name="ColorRect" type="ColorRect" parent="chat/fundo_chat/chat_global2"]
-offset_left = -458.0
-offset_top = -73.0
-offset_right = 199.0
-offset_bottom = 19.0
-color = Color(0.137255, 0.109804, 0.0784314, 1)
-
-[node name="mandar_mensagem" type="Button" parent="chat/fundo_chat/chat_global2"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 226.0
-offset_top = -135.0
-offset_right = 432.0
-offset_bottom = 55.0
-
-[node name="texto_mensagem" type="TextEdit" parent="chat/fundo_chat/chat_global2/mandar_mensagem"]
-layout_mode = 0
-offset_left = -694.019
-offset_top = 54.1351
-offset_right = -21.0189
-offset_bottom = 158.135
-theme_override_fonts/font = ExtResource("1_qjpr8")
-theme_override_font_sizes/font_size = 25
-
 [node name="titulo_layer" type="Label" parent="chat/fundo_chat"]
 visible = false
 custom_minimum_size = Vector2(30, 30)
@@ -1654,11 +859,11 @@ offset_right = 3.0
 offset_bottom = 366.0
 color = Color(0.219608, 0.219608, 0.219608, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="chat"]
 libraries = {
-&"": SubResource("AnimationLibrary_ng838")
+&"": SubResource("AnimationLibrary_llqas")
 }
-speed_scale = 6.5
+speed_scale = 4.5
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -1668,20 +873,30 @@ offset_right = 1154.0
 offset_bottom = 1266.0
 script = ExtResource("5_x4056")
 
-[connection signal="mouse_entered" from="painel_arrasto" to="." method="_on_painel_arrasto_mouse_entered"]
-[connection signal="mouse_exited" from="painel_arrasto" to="." method="_on_painel_arrasto_mouse_exited"]
-[connection signal="mouse_entered" from="painel_arrasto2" to="." method="_on_painel_arrasto_mouse_entered"]
-[connection signal="mouse_exited" from="painel_arrasto2" to="." method="_on_painel_arrasto_mouse_exited"]
-[connection signal="mouse_entered" from="painel_arrasto3" to="." method="_on_painel_arrasto_mouse_entered"]
-[connection signal="mouse_exited" from="painel_arrasto3" to="." method="_on_painel_arrasto_mouse_exited"]
-[connection signal="mouse_entered" from="painel_arrasto4" to="." method="_on_painel_arrasto_mouse_entered"]
-[connection signal="mouse_exited" from="painel_arrasto4" to="." method="_on_painel_arrasto_mouse_exited"]
-[connection signal="mouse_entered" from="painel_arrasto5" to="." method="_on_painel_arrasto_mouse_entered"]
-[connection signal="mouse_exited" from="painel_arrasto5" to="." method="_on_painel_arrasto_mouse_exited"]
-[connection signal="mouse_entered" from="painel_arrasto6" to="." method="_on_painel_arrasto_mouse_entered"]
-[connection signal="mouse_exited" from="painel_arrasto6" to="." method="_on_painel_arrasto_mouse_exited"]
-[connection signal="mouse_entered" from="painel_arrasto7" to="." method="_on_painel_arrasto_mouse_entered"]
-[connection signal="mouse_exited" from="painel_arrasto7" to="." method="_on_painel_arrasto_mouse_exited"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.056
+
+[node name="time2" type="Timer" parent="."]
+wait_time = 0.435
+
+[connection signal="mouse_entered" from="layer_arratavel_online/painel_arrasto4" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_online/painel_arrasto4" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_online/painel_arrasto5" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_online/painel_arrasto5" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_online/painel_arrasto3" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_online/painel_arrasto3" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_chat/painel_arrasto" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_chat/painel_arrasto" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_chat/painel_arrasto2" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_chat/painel_arrasto2" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_chat/painel_arrasto6" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_chat/painel_arrasto6" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_chat/painel_arrasto7" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_chat/painel_arrasto7" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_chat/painel_arrasto8" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_chat/painel_arrasto8" to="." method="_on_painel_arrasto_mouse_exited"]
+[connection signal="mouse_entered" from="layer_arratavel_chat2/painel_arrasto9" to="." method="_on_painel_arrasto_mouse_entered"]
+[connection signal="mouse_exited" from="layer_arratavel_chat2/painel_arrasto9" to="." method="_on_painel_arrasto_mouse_exited"]
 [connection signal="pressed" from="chat/online_layer/minimizar2/minimizar_user_online" to="." method="_on_minimizar_user_online_pressed"]
 [connection signal="pressed" from="chat/online_layer/maximizar9/maximizar_user_online" to="." method="_on_maximizar_user_online_pressed"]
 [connection signal="pressed" from="chat/ChatGlobal1/minimizar/minimizar" to="." method="_on_minimizar_pressed"]
@@ -1699,7 +914,9 @@ script = ExtResource("5_x4056")
 [connection signal="mouse_exited" from="chat/ChatGlobal1/layer_mexer_objeto_pai/mexer_laye6" to="chat/ChatGlobal1/layer_mexer_objeto_pai/mexer_laye6" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="chat/ChatGlobal1/layer_mexer_objeto_pai/mexer_laye7" to="chat/ChatGlobal1/layer_mexer_objeto_pai/mexer_laye7" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="chat/ChatGlobal1/layer_mexer_objeto_pai/mexer_laye7" to="chat/ChatGlobal1/layer_mexer_objeto_pai/mexer_laye7" method="_on_mouse_exited"]
-[connection signal="pressed" from="chat/ChatGlobal1/maximizar2" to="." method="_on_maximizar_2_pressed"]
-[connection signal="pressed" from="chat/fundo_chat/chat_global2/mandar_mensagem" to="." method="_on_mandar_mensagem_pressed"]
+[connection signal="pressed" from="chat/ChatGlobal1/maximizar8/maximizar2" to="." method="_on_maximizar_2_pressed"]
+[connection signal="pressed" from="chat/ChatGlobal1/chat_global2/mandar_mensagem" to="." method="_on_mandar_mensagem_pressed"]
 [connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer" to="." method="_on_panel_container_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="time2" to="." method="_on_time_2_timeout"]

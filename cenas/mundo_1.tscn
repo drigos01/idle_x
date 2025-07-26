@@ -414,28 +414,7 @@ position = Vector2(-15.6, -4.79992)
 position = Vector2(-832, -42)
 scale = Vector2(1.66667, 1.66667)
 
-[node name="online_layer" parent="token_player/chat_global" index="7"]
-visible = false
-
-[node name="minimizar2" parent="token_player/chat_global/online_layer" index="3"]
-visible = true
-
-[node name="maximizar9" parent="token_player/chat_global/online_layer" index="4"]
-visible = false
-
 [node name="chat_global3" parent="token_player/chat_global/chat/fundo_chat/chat_global" index="0"]
 scale = Vector2(1.29351, 0.972278)
-
-[node name="chat_global3" parent="token_player/chat_global/chat/fundo_chat/chat_global5" index="0"]
-position = Vector2(0.00194097, 381.464)
-
-[node name="chat_global4" parent="token_player/chat_global/chat/fundo_chat/chat_global5" index="1"]
-position = Vector2(0.00355196, 705.811)
-
-[node name="maximizar8" parent="token_player/chat_global/chat/fundo_chat" index="8"]
-visible = false
-
-[node name="minimizar" parent="token_player/chat_global/chat/fundo_chat" index="9"]
-visible = false
 
 [editable path="token_player/chat_global"]

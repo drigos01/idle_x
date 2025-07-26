@@ -46,7 +46,46 @@ func _on_timeout() -> void:
 	aguardando_resposta = false
 	show_erro("Tempo de resposta do servidor excedido. Tente novamente.", Color8(255, 0, 0))
 	_habilitar_envio(true)
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ENTER:
+		if aguardando_resposta:
+			show_erro("Aguarde a resposta do servidor...", Color8(255, 150, 0))
+			return
 
+		var username = $nick.text.strip_edges()
+		var email = $email.text.strip_edges()
+		var senha = senha_input.text.strip_edges()
+
+		# Validações
+		var erro = validar_username(username)
+		if erro != "":
+			show_erro(erro, Color8(255, 0, 0))
+			return
+
+		erro = validar_email(email)
+		if erro != "":
+			show_erro(erro, Color8(255, 0, 0))
+			return
+
+		erro = validar_senha(senha)
+		if erro != "":
+			show_erro(erro, Color8(255, 0, 0))
+			return
+
+		if online:
+			aguardando_resposta = true
+			_habilitar_envio(false)
+			Socket.enviar_json("registering", {
+				"id": Sessao.id,
+				"username": username,
+				"email": email,
+				"password": senha
+			})
+			timer_timeout.start()
+		else:
+			show_erro("Registro simulado (offline).", Color8(0, 200, 0))
+			_limpar_campos()
 func _on_enviar_pressed() -> void:
 	if aguardando_resposta:
 		show_erro("Aguarde a resposta do servidor...", Color8(255, 150, 0))

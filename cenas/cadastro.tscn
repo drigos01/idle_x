@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://5qsbdaev7yq6"]
+[gd_scene load_steps=14 format=3 uid="uid://5qsbdaev7yq6"]
 
 [ext_resource type="Script" uid="uid://dxaq5qfe88y7l" path="res://scripts/cadastro.gd" id="1_2sdqx"]
 [ext_resource type="Texture2D" uid="uid://8ujdvm8d0321" path="res://imagens/file_00000000dd746246bbba37e501fe96d3_1.png" id="2_rmxyw"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="5_rmxyw"]
 [ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="6_a314k"]
 [ext_resource type="Texture2D" uid="uid://cqwgnbljnmr5h" path="res://imagens/letras.png" id="7_mtehu"]
-[ext_resource type="Texture2D" uid="uid://c5m516r35qyfg" path="res://imagens/enfeites_de_menu.png" id="8_mtehu"]
 
 [sub_resource type="FontVariation" id="FontVariation_fvljp"]
 base_font = ExtResource("4_a314k")
@@ -698,12 +697,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_fq4k4")
 }
 speed_scale = 6.0
-
-[node name="EnfeitesDeMenu" type="Sprite2D" parent="."]
-position = Vector2(-8, 274)
-texture = ExtResource("8_mtehu")
-region_enabled = true
-region_rect = Rect2(256.625, 944.496, 416.25, 79.504)
 
 [connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
 [connection signal="pressed" from="login_btn" to="." method="_on_login_btn_pressed"]

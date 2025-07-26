@@ -749,3 +749,4 @@ speed_scale = 6.0
 
 [connection signal="pressed" from="login_btn" to="." method="_on_login_btn_pressed"]
 [connection signal="pressed" from="btn_cadastro" to="." method="_on_btn_cadastro_pressed"]
+[connection signal="timeout" from="show_erro/show_erro/TimerErro" to="." method="_on_timer_erro_timeout"]

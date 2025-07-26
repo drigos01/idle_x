@@ -2,8 +2,8 @@ extends Node2D
 
 var cena_cadastro_packed = preload("res://cenas/cadastro.tscn")
 
-var online := true # Modo offline para testes
-
+var online := false # Modo offline para testes
+var test = false
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 
 # @onready var container_mensagens = $chat/fundo_chat/ScrollContainer/VBoxContainer
@@ -51,20 +51,56 @@ func _on_server_response(flag, response):
 	_limpar_campos()
 
 
-	Sessao.id = response.id
 	Global.players = response.setup
-	return
 	Global.username = Global.players[Sessao.id].username
-
 	get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
+
 
 func _on_timeout() -> void:
 	aguardando_resposta = false
 	show_erro("Tempo de resposta do servidor excedido. Tente novamente.", Color8(255, 0, 0))
 	_habilitar_envio(true)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ENTER:
+		#_limpar_campos()
+		if aguardando_resposta:
+			show_erro("Aguarde a resposta do servidor...", Color8(255, 150, 0))
+			return
+
+		var username = $nick.text.strip_edges()
+		var senha = senha_input.text.strip_edges()
+
+		# Validações
+		var erro = validar_username(username)
+		if erro != "":
+			show_erro(erro, Color8(255, 0, 0))
+			return
+
+		if erro != "":
+			show_erro(erro, Color8(255, 0, 0))
+			return
+
+		erro = validar_senha(senha)
+		if erro != "":
+			show_erro(erro, Color8(255, 0, 0))
+			return
+
+		if online:
+			aguardando_resposta = true
+			_habilitar_envio(false)
+			Socket.enviar_json("logging", {
+				"id": Sessao.id,
+				"username": username,
+				"password": senha
+			})
+			timer_timeout.start()
+		else:
+			show_erro("Registro simulado (offline).", Color8(0, 200, 0))
+			_limpar_campos()
+		
 func _on_login_btn_pressed() -> void:
-	_limpar_campos()
+	#_limpar_campos()
 	if aguardando_resposta:
 		show_erro("Aguarde a resposta do servidor...", Color8(255, 150, 0))
 		return
