@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqwfxcr4thaum"]
+
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_dba71"]
+[ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="2_tp6wb"]
+
+[sub_resource type="FontVariation" id="FontVariation_4uhie"]
+base_font = ExtResource("1_dba71")
+
+[sub_resource type="FontVariation" id="FontVariation_h06t8"]
+base_font = ExtResource("1_dba71")
+
+[node name="online_users" type="HBoxContainer"]
+offset_right = 550.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="espaco - imagem2" type="Label" parent="."]
+self_modulate = Color(0.924942, 0.996734, 1, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_4uhie")
+text = "                                                   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="espaco - imagem" type="Label" parent="."]
+self_modulate = Color(0.924942, 0.996734, 1, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_4uhie")
+text = "            "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="espaco - imagem"]
+layout_mode = 2
+offset_left = -9.0
+offset_right = -9.0
+offset_bottom = 55.0
+pivot_offset = Vector2(15, 15)
+
+[node name="avatar" parent="espaco - imagem/PanelContainer" instance=ExtResource("2_tp6wb")]
+position = Vector2(113, 35)
+scale = Vector2(0.15, 0.15)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="nick" type="Label" parent="VBoxContainer/HBoxContainer"]
+visible = false
+modulate = Color(0.25098, 0.117647, 0.0392157, 1)
+self_modulate = Color(0.129412, 0.0352941, 0.0235294, 1)
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_h06t8")
+theme_override_font_sizes/font_size = 25
+text = "         "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/nick"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="nick" type="Label" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(0.25098, 0.117647, 0.0392157, 1)
+self_modulate = Color(0.129412, 0.0352941, 0.0235294, 1)
+custom_minimum_size = Vector2(600, 10)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_h06t8")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/nick"]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 40.0
+
+[node name="nick2" type="Label" parent="VBoxContainer"]
+modulate = Color(0.25098, 0.117647, 0.0392157, 1)
+self_modulate = Color(0.129412, 0.0352941, 0.0235294, 1)
+custom_minimum_size = Vector2(600, 10)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_h06t8")
+theme_override_font_sizes/font_size = 100
+text = "- nick - "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/nick2"]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 40.0

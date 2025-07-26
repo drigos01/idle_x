@@ -2,7 +2,7 @@ extends Node2D
 
 var cena_cadastro_packed = preload("res://cenas/cadastro.tscn")
 
-var online := false # Modo offline para testes
+var online := true # Modo offline para testes
 var test = false
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 
@@ -50,7 +50,7 @@ func _on_server_response(flag, response):
 
 	_limpar_campos()
 
-
+	Sessao.id = response.id
 	Global.players = response.setup
 	Global.username = Global.players[Sessao.id].username
 	get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")

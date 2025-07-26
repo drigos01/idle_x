@@ -1,7 +1,9 @@
 extends Node2D
 
 @onready var slot_mensagem_scene := preload("res://cenas/mensagem_slot.tscn")
-@onready var container_mensagens := $chat/ChatGlobal1/ScrollContainer_usuarios_online/VBoxContainer
+@onready var slot_mensagem_scene_2 := preload("res://cenas/online_users.tscn")
+@onready var container_mensagens := $chat/ChatGlobal1/ScrollContainer_chat_global/VBoxContainer
+@onready var container_mensagens_2 := $chat/online_layer/ScrollContainer_usuarios_online/VBoxContainer
 @onready var anim_player := $chat/AnimationPlayer
 @onready var timer := $Timer
 @onready var arrastavel_layer := $layer_arratavel_chat
@@ -23,9 +25,13 @@ func _ready():
 	
 	if online:
 		Socket.connect("server_receive", get_message)
+		Socket.connect("server_receive", get_users_online)
+		
 	else:
 		adicionar_mensagem("helcio", "Mensagem offline de teste (recebida)", false)
 		adicionar_mensagem("Você", "Mensagem offline de teste (enviada)", true)
+		adicionar_mensagem_2("helcio - nick ", " infons usuarios- (online)", false)
+		adicionar_mensagem_2("Você", "Mensagem offline de teste (enviada)", true)
 
 	$chat/ChatGlobal1/chat_global2/mandar_mensagem.connect("text_submitted", Callable(self, "_enviar_mensagem"))
 	anim_player.animation_finished.connect(_on_animation_finished)
@@ -39,6 +45,14 @@ func get_message(flag, response):
 	var nome = response.get("username", "Desconhecido")
 	var texto = response.get("message", "")
 	adicionar_mensagem(nome, texto, false)
+	print("💬 Mensagem recebida:", response)
+	
+func get_users_online(flag, response):
+	if flag != "get_users_online":
+		return
+	var nome = response.get("username", "Desconhecido")
+	var texto = response.get("message", "")
+	adicionar_mensagem_2(nome, texto, false)
 	print("💬 Mensagem recebida:", response)
 
 
@@ -64,6 +78,13 @@ func adicionar_mensagem(nick, texto, enviada_por_mim := false):
 	novo_slot.get_node("VBoxContainer/texto").text = texto
 	novo_slot.configurar_espaco(enviada_por_mim)
 	container_mensagens.add_child(novo_slot)
+	
+func adicionar_mensagem_2(nick, texto, enviada_por_mim := false):
+	var novo_slot = slot_mensagem_scene_2.instantiate()
+	novo_slot.get_node("VBoxContainer/HBoxContainer/nick").text = nick
+	#novo_slot.get_node("VBoxContainer/texto").text = texto
+	#novo_slot.configurar_espaco(enviada_por_mim)
+	container_mensagens_2.add_child(novo_slot)
 
 
 # ----------------- ENVIO ------------------

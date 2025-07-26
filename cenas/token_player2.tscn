@@ -1,0 +1,472 @@
+[gd_scene load_steps=13 format=3 uid="uid://bt8v8a3u7l40u"]
+
+[ext_resource type="Script" uid="uid://dp8or11sh78ak" path="res://token_player.gd" id="1_h3g65"]
+[ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="2_qsn2y"]
+[ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="3_lt4tn"]
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="4_i2vfg"]
+[ext_resource type="Script" uid="uid://rixa4nhqmw4m" path="res://cenas/bar_vida.gd" id="5_3nnub"]
+[ext_resource type="Texture2D" uid="uid://bcamhkbkdibto" path="res://imagens/file_00000000693861f9868eca809ffaddd1_1.png" id="6_i3xu1"]
+[ext_resource type="Texture2D" uid="uid://cxtxes5wkqyae" path="res://imagens/file_00000000693861f9868eca809ffaddd1_1_sem_fundo.png" id="7_c2ffx"]
+[ext_resource type="PackedScene" uid="uid://bdmnafrfo1mhj" path="res://cenas/inventario.tscn" id="8_1dex0"]
+[ext_resource type="PackedScene" uid="uid://y2b0s1rfaa4b" path="res://cenas/chat_global.tscn" id="9_hs6yw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cgb5g"]
+radius = 54.7083
+
+[sub_resource type="FontVariation" id="FontVariation_q44j6"]
+base_font = ExtResource("4_i2vfg")
+
+[sub_resource type="FontVariation" id="FontVariation_hkn2p"]
+base_font = ExtResource("4_i2vfg")
+
+[node name="token_player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_h3g65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_cgb5g")
+
+[node name="token_player" parent="." instance=ExtResource("2_qsn2y")]
+
+[node name="show_notificacao" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-230, -476)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_notificacao"]
+position = Vector2(395, 2.5)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_notificacao"]
+position = Vector2(775, 2.5)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_notificacao/Erro8"]
+position = Vector2(395, 2.5)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_notificacao/Erro8"]
+position = Vector2(417.5, -1.19209e-06)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro" type="Sprite2D" parent="show_notificacao"]
+position = Vector2(-257.5, -48.0522)
+scale = Vector2(1, 1.0096)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro5" type="Sprite2D" parent="show_notificacao/Erro"]
+position = Vector2(0, 99.5957)
+texture = ExtResource("3_lt4tn")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro3" type="Sprite2D" parent="show_notificacao/Erro"]
+position = Vector2(1702.5, 99.5958)
+texture = ExtResource("3_lt4tn")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro4" type="Sprite2D" parent="show_notificacao/Erro"]
+position = Vector2(1702.5, 0.546997)
+texture = ExtResource("3_lt4tn")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro2" type="Sprite2D" parent="show_notificacao"]
+position = Vector2(2.50003, -50.0001)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_notificacao/Erro2"]
+position = Vector2(397.5, 0)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_notificacao/Erro2"]
+position = Vector2(792.5, 0)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_notificacao/Erro2/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro5" type="Sprite2D" parent="show_notificacao/Erro2"]
+position = Vector2(1190, 105)
+rotation = -3.14159
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_notificacao/Erro2/Erro5"]
+position = Vector2(397.5, 0)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_notificacao/Erro2/Erro5"]
+position = Vector2(792.5, 0)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_notificacao/Erro2/Erro5/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("3_lt4tn")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="show_erro" type="Node2D" parent="show_notificacao"]
+visibility_layer = 2
+position = Vector2(517.5, -280)
+scale = Vector2(2.5, 2.5)
+
+[node name="label_mensagem" type="Label" parent="show_notificacao/show_erro"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -328.0
+offset_top = 81.0
+offset_right = 391.0
+offset_bottom = 143.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_q44j6")
+theme_override_font_sizes/font_size = 35
+text = "vazio"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="TimerErro" type="Timer" parent="show_notificacao/show_erro"]
+wait_time = 1.9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="show_notificacao"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-6.10352e-05, -0.00012207)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="layer_bars" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-704.398, -572.399)
+scale = Vector2(1.2, 1.2)
+
+[node name="bar_vida" type="ColorRect" parent="Camera2D/layer_bars"]
+offset_left = 25.0
+offset_top = 170.0
+offset_right = 1158.0
+offset_bottom = 181.0
+script = ExtResource("5_3nnub")
+
+[node name="bar_vida2" type="ColorRect" parent="Camera2D/layer_bars/bar_vida"]
+layout_mode = 0
+offset_right = 1134.0
+offset_bottom = 11.0
+color = Color(0.470483, 1.04684e-06, 2.64719e-07, 1)
+
+[node name="valor_bar" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida"]
+position = Vector2(47, -10)
+scale = Vector2(0.1, 0.082875)
+region_enabled = true
+region_rect = Rect2(0, 0, 1536, 529)
+
+[node name="Label" type="Label" parent="Camera2D/layer_bars/bar_vida/valor_bar"]
+offset_left = -400.0
+offset_top = 121.0
+offset_right = 10870.0
+offset_bottom = 265.0
+theme_override_fonts/font = SubResource("FontVariation_hkn2p")
+theme_override_font_sizes/font_size = 150
+text = " 999 "
+horizontal_alignment = 1
+
+[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida"]
+position = Vector2(49, -9)
+scale = Vector2(0.1, 0.082875)
+texture = ExtResource("6_i3xu1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1410.26, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11"]
+position = Vector2(1160, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(2140, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(4310, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+position = Vector2(2140, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(2180, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(2700, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1155.49, 529)
+
+[node name="bar_stamina" type="ColorRect" parent="Camera2D/layer_bars"]
+offset_left = 14.0
+offset_top = 186.0
+offset_right = 1158.0
+offset_bottom = 197.0
+
+[node name="bar_vida2" type="ColorRect" parent="Camera2D/layer_bars/bar_stamina"]
+layout_mode = 0
+offset_right = 1144.0
+offset_bottom = 11.0
+color = Color(0.59, 0.196667, 0, 1)
+
+[node name="valor_bar" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina"]
+position = Vector2(47, -10)
+scale = Vector2(0.1, 0.082875)
+region_enabled = true
+region_rect = Rect2(0, 0, 1536, 529)
+
+[node name="Label" type="Label" parent="Camera2D/layer_bars/bar_stamina/valor_bar"]
+offset_left = -460.0
+offset_top = 121.0
+offset_right = 10970.0
+offset_bottom = 265.0
+theme_override_fonts/font = SubResource("FontVariation_hkn2p")
+theme_override_font_sizes/font_size = 150
+text = "999 "
+horizontal_alignment = 1
+
+[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina"]
+position = Vector2(43, -9)
+scale = Vector2(0.1, 0.082875)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(0, 0, 1410.26, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11"]
+position = Vector2(1160, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(2140, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(4310, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+position = Vector2(2140, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(2180, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(2870, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1155.49, 529)
+
+[node name="bar_magia" type="ColorRect" parent="Camera2D/layer_bars"]
+offset_left = 14.0
+offset_top = 199.0
+offset_right = 1158.0
+offset_bottom = 210.0
+
+[node name="bar_vida2" type="ColorRect" parent="Camera2D/layer_bars/bar_magia"]
+layout_mode = 0
+offset_right = 1144.0
+offset_bottom = 11.0
+color = Color(0.0228, 0.38, 0.374047, 1)
+
+[node name="valor_bar" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia"]
+position = Vector2(47, -10)
+scale = Vector2(0.1, 0.082875)
+region_enabled = true
+region_rect = Rect2(0, 0, 1536, 529)
+
+[node name="Label" type="Label" parent="Camera2D/layer_bars/bar_magia/valor_bar"]
+offset_left = -460.0
+offset_top = 121.0
+offset_right = 10970.0
+offset_bottom = 265.0
+theme_override_fonts/font = SubResource("FontVariation_hkn2p")
+theme_override_font_sizes/font_size = 150
+text = "999 "
+horizontal_alignment = 1
+
+[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia"]
+position = Vector2(43, -9)
+scale = Vector2(0.1, 0.082875)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(0, 0, 1410.26, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11"]
+position = Vector2(1160, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(2140, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+position = Vector2(4310, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+position = Vector2(2140, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(1090, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(2180, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1099.74, 529)
+
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+position = Vector2(2870, 0)
+texture = ExtResource("7_c2ffx")
+region_enabled = true
+region_rect = Rect2(307.331, 0, 1155.49, 529)
+
+[node name="inventario" parent="Camera2D" instance=ExtResource("8_1dex0")]
+visible = false
+position = Vector2(-15.6, -4.79992)
+
+[node name="chat_global2" parent="." instance=ExtResource("9_hs6yw")]
+position = Vector2(-892, -284)
+
+[connection signal="area_entered" from="token_player" to="." method="_on_token_player_area_entered"]
+[connection signal="area_exited" from="token_player" to="." method="_on_token_player_area_exited"]

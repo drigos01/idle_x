@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jjkpw0n5u7wm"
+path="res://.godot/imported/⚗️ Medieval & Celtic (Free Music) - ＂LANDS＂ by @alexproductionsnocopyright  🇮🇹.mp3-39190fc52190b9e51becc001a0c48f16.mp3str"
+
+[deps]
+
+source_file="res://audios/⚗️ Medieval & Celtic (Free Music) - ＂LANDS＂ by @alexproductionsnocopyright  🇮🇹.mp3"
+dest_files=["res://.godot/imported/⚗️ Medieval & Celtic (Free Music) - ＂LANDS＂ by @alexproductionsnocopyright  🇮🇹.mp3-39190fc52190b9e51becc001a0c48f16.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

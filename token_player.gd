@@ -24,6 +24,8 @@ func _input(event: InputEvent) -> void:
 			mostrar_indicador(destino)
 
 func _process(delta: float) -> void:
+	if Global.show_mensagem_alerta != "":
+		$show_notificacao/show_erro/label_mensagem.text = "Global.show_mensagem_alerta"
 	if mouse_pressionado:
 		# Atualiza destino visual constantemente
 		destino_pendente = get_global_mouse_position()

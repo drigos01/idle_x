@@ -9,7 +9,7 @@ func _ready():
 	conectar()
 
 func conectar():
-	var url = "wss://idlegamex.loca.lt"
+	var url = "wss://accurate-reasonably-egret.ngrok-free.app/"
 	socket.connect_to_url(url)
 	print("🔌 Conectando ao servidor:", url)
 	

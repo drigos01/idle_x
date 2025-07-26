@@ -1,0 +1,440 @@
+[gd_scene load_steps=10 format=3 uid="uid://ommw24p1g7rf"]
+
+[ext_resource type="Texture2D" uid="uid://bqhlpcii8ln2y" path="res://imagens/parede_frontal.png" id="1_e8787"]
+[ext_resource type="Script" uid="uid://ba64ws6jrbllt" path="res://scripts/corredores_quartos_players.gd" id="1_ta0dj"]
+[ext_resource type="Texture2D" uid="uid://dw827vvpd0ibn" path="res://imagens/file_00000000cbec61f9a3e4d8bc904c0094_1.png" id="2_lhlnx"]
+[ext_resource type="Texture2D" uid="uid://bva01qpa6gdx4" path="res://imagens/itens_uteis.png" id="2_p0tn2"]
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="3_ta0dj"]
+[ext_resource type="PackedScene" uid="uid://bt8v8a3u7l40u" path="res://cenas/token_player2.tscn" id="6_ta0dj"]
+
+[sub_resource type="FontVariation" id="FontVariation_8020h"]
+base_font = ExtResource("3_ta0dj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfl38"]
+size = Vector2(2997.07, 159.082)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8020h"]
+size = Vector2(2768.19, 182.248)
+
+[node name="corredores_quartos_players" type="Node2D"]
+script = ExtResource("1_ta0dj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -4967.0
+offset_top = -2949.0
+offset_right = 3792.0
+offset_bottom = 3582.0
+color = Color(0, 0, 0, 1)
+
+[node name="piso" type="Sprite2D" parent="."]
+position = Vector2(193, 74)
+texture = ExtResource("2_lhlnx")
+region_enabled = true
+region_rect = Rect2(103.625, 335.382, 834.75, 226.118)
+
+[node name="piso2" type="Sprite2D" parent="piso"]
+position = Vector2(-834, 0)
+texture = ExtResource("2_lhlnx")
+region_enabled = true
+region_rect = Rect2(103.625, 335.382, 834.75, 226.118)
+
+[node name="piso3" type="Sprite2D" parent="piso"]
+position = Vector2(-1667, 0)
+texture = ExtResource("2_lhlnx")
+region_enabled = true
+region_rect = Rect2(103.625, 335.382, 834.75, 226.118)
+
+[node name="piso4" type="Sprite2D" parent="piso"]
+position = Vector2(771, 0)
+texture = ExtResource("2_lhlnx")
+region_enabled = true
+region_rect = Rect2(103.625, 335.382, 834.75, 226.118)
+
+[node name="parede_frontal7" type="Sprite2D" parent="."]
+position = Vector2(-777, -68)
+scale = Vector2(0.73622, 0.77916)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(101.938, 717.875, 857.25, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal7"]
+position = Vector2(-772.867, 0)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(81.688, 717.875, 849.437, 229.5)
+
+[node name="parede_frontal6" type="Sprite2D" parent="parede_frontal7"]
+position = Vector2(-1464.24, -3.8147e-06)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(101.938, 717.875, 857.25, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal7/parede_frontal6"]
+position = Vector2(-535.166, 0)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(308.375, 717.875, 622.75, 229.5)
+
+[node name="parede_frontal4" type="Sprite2D" parent="."]
+position = Vector2(1219, -68)
+scale = Vector2(0.73622, 0.77916)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(101.938, 717.875, 857.25, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal4"]
+position = Vector2(-772.867, 0)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(81.688, 717.875, 849.437, 229.5)
+
+[node name="parede_frontal6" type="Sprite2D" parent="parede_frontal4"]
+position = Vector2(-1464.24, -3.8147e-06)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(101.938, 717.875, 857.25, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal4/parede_frontal6"]
+position = Vector2(-535.166, 0)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(308.375, 717.875, 622.75, 229.5)
+
+[node name="token_player2" parent="." instance=ExtResource("6_ta0dj")]
+position = Vector2(452, 14)
+
+[node name="portas_esquerda" type="Node2D" parent="."]
+position = Vector2(-476, 133)
+scale = Vector2(0.294488, 0.293743)
+
+[node name="ItensUteis" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(2879.57, 0)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -50.9358
+offset_top = -91.917
+offset_right = 54.0642
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="PainelClique" type="Panel" parent="portas_esquerda/ItensUteis"]
+offset_left = -98.0
+offset_top = -742.0
+offset_right = 98.0
+offset_bottom = -423.0
+
+[node name="ItensUteis2" type="Sprite2D" parent="portas_esquerda"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis2"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -54.3315
+offset_top = -91.917
+offset_right = 50.6685
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis3" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(2878.56, -591.996)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis3"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -50.9358
+offset_top = -91.917
+offset_right = 54.0642
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis11" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(-958.61, -581.783)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis11"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -54.3315
+offset_top = -102.13
+offset_right = 50.6685
+offset_bottom = -47.13
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis12" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(-1889.04, -591.996)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis12"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -47.5403
+offset_top = -91.917
+offset_right = 57.4597
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis4" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(-1.01575, -591.996)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis4"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -54.3315
+offset_top = -91.917
+offset_right = 50.6685
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis5" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(1921.98, 10.213)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis5"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -57.7273
+offset_top = -102.13
+offset_right = 47.2727
+offset_bottom = -47.13
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis6" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(-957.594, 10.213)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis6"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -54.3315
+offset_top = -102.13
+offset_right = 50.6685
+offset_bottom = -47.13
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis7" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(-1888.02, 0)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis7"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -47.5403
+offset_top = -91.917
+offset_right = 57.4597
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis8" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(991.551, 0)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis8"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -47.5402
+offset_top = -91.917
+offset_right = 57.4598
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis9" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(1920.96, -581.783)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis9"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -57.7273
+offset_top = -102.13
+offset_right = 47.2727
+offset_bottom = -47.13
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="ItensUteis10" type="Sprite2D" parent="portas_esquerda"]
+position = Vector2(990.535, -591.996)
+scale = Vector2(1, 1)
+texture = ExtResource("2_p0tn2")
+region_enabled = true
+region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
+
+[node name="Label" type="Label" parent="portas_esquerda/ItensUteis10"]
+modulate = Color(0.69, 0.31809, 0.1587, 1)
+offset_left = -47.5402
+offset_top = -91.917
+offset_right = 57.4598
+offset_bottom = -36.917
+theme_override_fonts/font = SubResource("FontVariation_8020h")
+theme_override_font_sizes/font_size = 80
+text = "999"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-476, 133)
+scale = Vector2(0.294488, 0.293743)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-651.979, -881.722)
+scale = Vector2(5, 5.30504)
+shape = SubResource("RectangleShape2D_tfl38")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-476, 133)
+scale = Vector2(0.294488, 0.293743)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-653.676, 554.906)
+scale = Vector2(5, 5.30504)
+shape = SubResource("RectangleShape2D_tfl38")
+
+[node name="parede_frontal5" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-759, 112)
+scale = Vector2(0.73622, 0.77916)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(200.375, 717.875, 758.813, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal5"]
+position = Vector2(-804.108, -9.77516e-06)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(81.688, 717.875, 849.437, 229.5)
+
+[node name="parede_frontal6" type="Sprite2D" parent="parede_frontal5"]
+position = Vector2(-1494.12, -1.35899e-05)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(101.938, 717.875, 530.437, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal5/parede_frontal6"]
+position = Vector2(-569.123, 0)
+scale = Vector2(1.00121, 1)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(324.125, 717.875, 607, 229.5)
+
+[node name="Area2D" type="Area2D" parent="parede_frontal5"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_frontal5/Area2D"]
+position = Vector2(-1002.42, 8.98401)
+shape = SubResource("RectangleShape2D_8020h")
+
+[node name="parede_frontal7" type="Sprite2D" parent="parede_frontal5"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(2745.1, 0)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(200.375, 717.875, 758.813, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal5/parede_frontal7"]
+position = Vector2(-804.108, -9.77516e-06)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(81.688, 717.875, 849.437, 229.5)
+
+[node name="parede_frontal6" type="Sprite2D" parent="parede_frontal5/parede_frontal7"]
+position = Vector2(-1494.12, -1.35899e-05)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(101.938, 717.875, 530.437, 229.5)
+
+[node name="parede_frontal5" type="Sprite2D" parent="parede_frontal5/parede_frontal7/parede_frontal6"]
+position = Vector2(-569.123, 0)
+scale = Vector2(1.00121, 1)
+texture = ExtResource("1_e8787")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(324.125, 717.875, 607, 229.5)
+
+[node name="Area2D" type="Area2D" parent="parede_frontal5/parede_frontal7"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_frontal5/parede_frontal7/Area2D"]
+position = Vector2(-1002.42, 8.98401)
+shape = SubResource("RectangleShape2D_8020h")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-648, 191)
+scale = Vector2(1.47244, 1.55832)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12.8484, 3.08881)
+shape = SubResource("RectangleShape2D_tfl38")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+
+[editable path="token_player2"]
