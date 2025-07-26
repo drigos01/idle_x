@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mm4aq"]
 radius = 543.608
 
-[node name="tokem_inimigos" type="Area2D"]
+[node name="tokem_inimigos" type="Area2D" groups=["inimigos"]]
 scale = Vector2(0.14, 0.14)
 script = ExtResource("2_uclt2")
 

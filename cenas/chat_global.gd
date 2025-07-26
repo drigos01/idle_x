@@ -9,7 +9,7 @@ extends Node2D
 @onready var arrastavel_layer := $layer_arratavel_chat
 @onready var arrastavel_online := $layer_arratavel_online
 
-var online := false
+var online := true
 var arrastando := false
 var offset := Vector2.ZERO
 var pode_arrastar := false
@@ -80,11 +80,11 @@ func adicionar_mensagem(nick, texto, enviada_por_mim := false):
 	container_mensagens.add_child(novo_slot)
 	
 func adicionar_mensagem_2(nick, texto, enviada_por_mim := false):
-	var novo_slot = slot_mensagem_scene_2.instantiate()
-	novo_slot.get_node("VBoxContainer/HBoxContainer/nick").text = nick
+	var novo_slot_2 = slot_mensagem_scene_2.instantiate()
+	novo_slot_2.get_node("VBoxContainer/HBoxContainer2/nick2").text = nick
 	#novo_slot.get_node("VBoxContainer/texto").text = texto
 	#novo_slot.configurar_espaco(enviada_por_mim)
-	container_mensagens_2.add_child(novo_slot)
+	container_mensagens_2.add_child(novo_slot_2)
 
 
 # ----------------- ENVIO ------------------

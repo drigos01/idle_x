@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://di5qtbpuow65x"]
+
+[ext_resource type="Texture2D" uid="uid://cviftmk0c7ote" path="res://imagens/armas_curto_alcance.png" id="1_anorq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mpn8r"]
+radius = 24.0
+height = 218.0
+
+[node name="flecha" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_mpn8r")
+
+[node name="ArmasCurtoAlcance" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+rotation = -1.5708
+texture = ExtResource("1_anorq")
+region_enabled = true
+region_rect = Rect2(373.625, 598.021, 67.5, 243)

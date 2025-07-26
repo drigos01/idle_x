@@ -19,7 +19,7 @@ base_font = ExtResource("4_i2vfg")
 [sub_resource type="FontVariation" id="FontVariation_hkn2p"]
 base_font = ExtResource("4_i2vfg")
 
-[node name="token_player" type="CharacterBody2D"]
+[node name="token_player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 2
