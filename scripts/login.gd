@@ -3,7 +3,7 @@ extends Node2D
 var cena_cadastro_packed = preload("res://cenas/cadastro.tscn")
 
 var online := true # Modo offline para testes
-var test = false
+var test = true
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 
 # @onready var container_mensagens = $chat/fundo_chat/ScrollContainer/VBoxContainer

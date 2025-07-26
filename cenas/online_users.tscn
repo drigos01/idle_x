@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqwfxcr4thaum"]
+[gd_scene load_steps=6 format=3 uid="uid://bqwfxcr4thaum"]
 
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="1_dba71"]
+[ext_resource type="Script" uid="uid://d2fjhw6q88mxg" path="res://cenas/online_users.gd" id="1_tp6wb"]
 [ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="2_tp6wb"]
 
 [sub_resource type="FontVariation" id="FontVariation_4uhie"]
@@ -13,13 +14,15 @@ base_font = ExtResource("1_dba71")
 offset_right = 550.0
 offset_bottom = 40.0
 alignment = 1
+script = ExtResource("1_tp6wb")
+metadata/_edit_group_ = true
 
 [node name="espaco - imagem2" type="Label" parent="."]
 self_modulate = Color(0.924942, 0.996734, 1, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_4uhie")
-text = "                                                   "
+theme_override_font_sizes/font_size = 130
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -28,7 +31,7 @@ self_modulate = Color(0.924942, 0.996734, 1, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_4uhie")
-text = "            "
+text = "                                        "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -88,12 +91,12 @@ offset_bottom = 40.0
 [node name="nick2" type="Label" parent="VBoxContainer"]
 modulate = Color(0.25098, 0.117647, 0.0392157, 1)
 self_modulate = Color(0.129412, 0.0352941, 0.0235294, 1)
-custom_minimum_size = Vector2(600, 10)
+clip_contents = true
+custom_minimum_size = Vector2(685, 10)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_h06t8")
-theme_override_font_sizes/font_size = 100
-text = "- nick - "
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 125
+text = "after"
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/nick2"]

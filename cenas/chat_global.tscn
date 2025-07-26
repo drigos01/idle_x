@@ -490,6 +490,7 @@ region_rect = Rect2(864.125, 0, 159.875, 618.576)
 
 [node name="online_layer3" type="Sprite2D" parent="chat/online_layer"]
 position = Vector2(0, 480)
+scale = Vector2(0.963377, 1.01316)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
@@ -819,6 +820,7 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="chat/ChatGlobal1/ScrollContainer_chat_global"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="chat/ChatGlobal1/ScrollContainer_chat_global"]
 visible = false

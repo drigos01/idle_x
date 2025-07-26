@@ -341,7 +341,7 @@ offset_right = 779.0
 offset_bottom = 421.0
 color = Color(0.209908, 0.209908, 0.209908, 1)
 
-[node name="nick" type="TextEdit" parent="."]
+[node name="nick" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(250, 0)
 offset_left = -238.0
 offset_top = -74.0
@@ -349,7 +349,6 @@ offset_right = 238.0
 offset_bottom = -40.0
 theme_override_fonts/font = SubResource("FontVariation_oi5x6")
 theme_override_font_sizes/font_size = 25
-scroll_past_end_of_file = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
