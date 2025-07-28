@@ -1,21 +1,17 @@
 extends Node2D
 
-
-#var maximizado = true
-#func _on_area_chat_area_entered(area: Area2D) -> void:
-	#if $".".visible:
-		#Global.mouse_sobre_chat = true
-	#else:
-		#Global.mouse_sobre_chat = false
-	#if maximizado:
-		#Global.mouse_sobre_chat = true
-	#else:
-		#Global.mouse_sobre_chat = false
-#
-#
-#func _on_area_chat_area_exited(area: Area2D) -> void:
-	#if maximizado:
-		#Global.mouse_sobre_chat = false
-		#print("falso_inventrario")
-	#else:
-		#Global.mouse_sobre_chat = false
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_action_pressed("i") and not event.echo:
+			var inventario = $"."
+			var anim = inventario.get_node("AnimationPlayer")
+					
+			if inventario.visible:
+				anim.play("desaparecer")
+				await anim.animation_finished
+				inventario.visible = false
+			else:
+				inventario.visible = true
+				anim.play("aparecer")
+				
+			print("🟡 Inventário alternado")

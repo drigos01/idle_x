@@ -9,7 +9,7 @@ extends Node2D
 @onready var arrastavel_layer := $layer_arratavel_chat
 @onready var arrastavel_online := $layer_arratavel_online
 
-var online := true
+var online := false
 var arrastando := false
 var offset := Vector2.ZERO
 var pode_arrastar := false
@@ -21,23 +21,29 @@ var qual_ta_rodando = ""
 # ----------------- READY ------------------
 
 func _ready():
+	
 	$chat/ChatGlobal1/chat_global2/mandar_mensagem.text = ""
 	
 	if online:
 		Socket.connect("server_receive", get_message)
-		Socket.connect("server_receive", get_users_online)
+		Socket.connect("server_receive", get_user_connected)
+
+		for player in Global.players.values():
+			print('Adicionando nick ', player)
+			adicionar_mensagem_2(player.username)
+
 		
 	else:
 		adicionar_mensagem("helcio", "Mensagem offline de teste (recebida)", false)
 		adicionar_mensagem("Você", "Mensagem offline de teste (enviada)", true)
-		adicionar_mensagem_2("helcio - nick ", " infons usuarios- (online)", false)
-		adicionar_mensagem_2("Você", "Mensagem offline de teste (enviada)", true)
+		adicionar_mensagem_2("helcio - nick ")
+		adicionar_mensagem_2("Você")
 
 	$chat/ChatGlobal1/chat_global2/mandar_mensagem.connect("text_submitted", Callable(self, "_enviar_mensagem"))
 	anim_player.animation_finished.connect(_on_animation_finished)
 
 
-# ----------------- MENSAGENS ------------------
+# 	--------------- MENSAGENS ------------------
 
 func get_message(flag, response):
 	if flag != "get_message":
@@ -47,12 +53,21 @@ func get_message(flag, response):
 	adicionar_mensagem(nome, texto, false)
 	print("💬 Mensagem recebida:", response)
 	
-func get_users_online(flag, response):
-	if flag != "get_users_online":
+func get_user_connected(flag, response):
+	if flag != "_new_player_connected":
 		return
-	var nome = response.get("username", "Desconhecido")
-	var texto = response.get("message", "")
-	adicionar_mensagem_2(nome, texto, false)
+
+
+	if Global.players.has(response.keys()[0]) or response.keys()[0] == Sessao.id:
+		return
+
+	var user = response.keys()[0]
+
+	Global.players[user] = response[user]
+	adicionar_mensagem_2(response[user].username)
+
+	adicionar_mensagem(response.username, response.message, false)
+
 	print("💬 Mensagem recebida:", response)
 
 
@@ -60,16 +75,20 @@ func _enviar_mensagem():
 	var chat_enviar = $chat/ChatGlobal1/chat_global2/mandar_mensagem/texto_mensagem.text.strip_edges()
 	if chat_enviar == "":
 		return
+
+	var nome = Sessao.nick if Sessao.has_meta("nick") else "Você"
+
 	if online:
 		Socket.enviar_json("enviar_mensagem_chat", {
 			"id": Sessao.id,
 			"chat_enviar": chat_enviar
 		})
-	else:
-		var nome = Sessao.nick if Sessao.has_meta("nick") else "Voce"
-		adicionar_mensagem(nome, chat_enviar, true)
+
+	# Adiciona localmente sempre, mesmo offline
+	adicionar_mensagem(nome, chat_enviar, true)
 
 	$chat/ChatGlobal1/chat_global2/mandar_mensagem/texto_mensagem.text = ""
+
 
 
 func adicionar_mensagem(nick, texto, enviada_por_mim := false):
@@ -79,12 +98,9 @@ func adicionar_mensagem(nick, texto, enviada_por_mim := false):
 	novo_slot.configurar_espaco(enviada_por_mim)
 	container_mensagens.add_child(novo_slot)
 	
-func adicionar_mensagem_2(nick, texto, enviada_por_mim := false):
-	var novo_slot_2 = slot_mensagem_scene_2.instantiate()
-	novo_slot_2.get_node("VBoxContainer/HBoxContainer2/nick2").text = nick
-	#novo_slot.get_node("VBoxContainer/texto").text = texto
-	#novo_slot.configurar_espaco(enviada_por_mim)
-	container_mensagens_2.add_child(novo_slot_2)
+func adicionar_mensagem_2(nick):
+	var novo_slot = slot_mensagem_scene_2.instantiate()
+	novo_slot.start(nick, container_mensagens_2)
 
 
 # ----------------- ENVIO ------------------
@@ -94,7 +110,6 @@ func _on_enviar_botao_pressed():
 
 func _on_mandar_mensagem_pressed():
 	_enviar_mensagem()
-	print("ndendjnej")
 
 
 # ----------------- ARRASTO ------------------
@@ -158,7 +173,6 @@ func _on_maximizar_2_pressed() -> void:
 		return
 	
 
-
 func _on_minimizar_user_online_pressed() -> void:
 	if anim_player.is_playing() or not online_visivel:
 		return
@@ -217,7 +231,7 @@ func _on_timer_timeout() -> void:
 	if not anim_player.is_playing():
 		if not cascata_minimizar_online and qual_ta_rodando == "abrir":
 			anim_player.play("usuarios_online_fechar_completo")
-			$time2.start() 
+			$time2.start()
 	if not anim_player.is_playing():
 		if not anim_player.is_playing() and qual_ta_rodando == "usuarios_online_fechar_completo_max":
 			anim_player.play_backwards("usuarios_online_fechar_completo")
@@ -230,7 +244,7 @@ func _on_timer_timeout() -> void:
 		if cascata_minimizar_online:
 			anim_player.play("abrir")
 			$chat/online_layer.visible = false
-			qual_ta_rodando = ""  # Limpa após rodar
+			qual_ta_rodando = "" # Limpa após rodar
 	#if not anim_player.is_playing():
 		#if cascata_minimizar_online:
 			##anim_player.play("fechar")
@@ -238,20 +252,17 @@ func _on_timer_timeout() -> void:
 			#qual_ta_rodando = ""  # Limpa após rodar
 			
 			
-		
-
-
 func _on_time_2_timeout() -> void:
 	if qual_ta_rodando != "" and qual_ta_rodando == "abrir":
 		$chat/online_layer.visible = false
 		anim_player.play(qual_ta_rodando)
 		print("▶ Rodando via time_2:", qual_ta_rodando)
-		qual_ta_rodando = ""  # Limpa após rodar
+		qual_ta_rodando = "" # Limpa após rodar
 	if qual_ta_rodando != "" and qual_ta_rodando == "usuarios_online_fechar_completo_max":
 		$chat/online_layer.visible = true
 		anim_player.play("usuarios_online_abrir")
 		print("▶ Rodando via time_2:", qual_ta_rodando)
-		qual_ta_rodando = ""  # Limpa após rodar
+		qual_ta_rodando = "" # Limpa após rodar
 	if qual_ta_rodando != "" and qual_ta_rodando == "usuarios_online_fechar_completo_max_diferente":
 		$chat/online_layer.visible = true
 		#anim_player.play("usuarios_online_abrir")
@@ -263,4 +274,4 @@ func _on_time_2_timeout() -> void:
 		#print("▶ Rodando via time_2:", qual_ta_rodando)
 		#qual_ta_rodando = ""  # Limpa após rodar
 
-	$time2.stop()  # Evita loop infinito
+	$time2.stop() # Evita loop infinito

@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvsjco5ociebr"]
+
+[ext_resource type="Script" uid="uid://bis2xld6hbepk" path="res://panel.gd" id="1_0xlfx"]
+[ext_resource type="FontFile" uid="uid://m8ib5aucaayr" path="res://fontes/PressStart2P-Regular.ttf" id="2_2cmp8"]
+
+[node name="Panel" type="Panel"]
+offset_top = 6.0
+offset_right = 349.0
+offset_bottom = 40.0
+script = ExtResource("1_0xlfx")
+
+[node name="nome_layer" type="Label" parent="."]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_top = 6.0
+offset_right = 254.0
+offset_bottom = 46.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("2_2cmp8")
+theme_override_font_sizes/font_size = 17
+text = "Investigação:
+"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 292.25
+offset_top = 6.25
+offset_right = 331.25
+offset_bottom = 29.25
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect2/ColorRect3"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 1.0
+offset_right = 65.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect2/ColorRect3/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="ColorRect2/ColorRect3/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 249.75
+offset_top = 7.0
+offset_right = 287.75
+offset_bottom = 30.0
+
+[node name="mais" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 292.25
+offset_top = 6.25
+offset_right = 330.25
+offset_bottom = 29.25

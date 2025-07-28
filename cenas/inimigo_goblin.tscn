@@ -1,10 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://1lgpkinxkf1q"]
+[gd_scene load_steps=8 format=3 uid="uid://1lgpkinxkf1q"]
 
 [ext_resource type="Script" uid="uid://ddlyg85jobpjr" path="res://scripts/inimigo_goblin.gd" id="1_lcsfc"]
-[ext_resource type="PackedScene" uid="uid://mlbixh7is7is" path="res://cenas/tokem_inimigos.tscn" id="2_x83ch"]
+[ext_resource type="Script" uid="uid://c28cu2l87lpi1" path="res://cenas/token_player_imagem_cortada.gd" id="2_dvhil"]
+[ext_resource type="Texture2D" uid="uid://b6ee0jkwq6akq" path="res://imagens/personagens/images (2).jpg" id="3_hebfl"]
+[ext_resource type="Texture2D" uid="uid://bvvctkil27ojq" path="res://imagens/layer/token-border-collection-v0-8pv4nqo221ja1.png" id="4_s7yab"]
 
-[node name="inimigo_goblin" type="Node2D"]
-scale = Vector2(0.5, 0.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_08egl"]
+radius = 36.3456
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qptjj"]
+radius = 520.096
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvhil"]
+radius = 54.7083
+
+[node name="inimigo_goblin" type="Node2D" groups=["inimigos"]]
+scale = Vector2(0.04, 0.04)
 script = ExtResource("1_lcsfc")
 
-[node name="tokem_inimigos" parent="." instance=ExtResource("2_x83ch")]
+[node name="token_player2" type="Area2D" parent="."]
+script = ExtResource("2_dvhil")
+
+[node name="imagem_fundo" type="TextureRect" parent="token_player2"]
+custom_minimum_size = Vector2(1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -405.0
+offset_right = 565.0
+offset_bottom = 910.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(600, 600)
+texture = ExtResource("3_hebfl")
+metadata/_edit_use_anchors_ = true
+
+[node name="borda_token" type="TextureRect" parent="token_player2"]
+custom_minimum_size = Vector2(1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -508.0
+offset_top = -480.0
+offset_right = 516.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+texture = ExtResource("4_s7yab")
+metadata/_edit_use_anchors_ = true
+
+[node name="Token-border-collection-v0-61i9u2n221Ja1" type="Sprite2D" parent="token_player2"]
+position = Vector2(1.36239e-07, 28.5714)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_s7yab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="token_player2"]
+shape = SubResource("CircleShape2D_08egl")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="token_player2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="token_player2/CharacterBody2D"]
+position = Vector2(0, 30)
+shape = SubResource("CircleShape2D_qptjj")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_dvhil")

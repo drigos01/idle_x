@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://di5qtbpuow65x"]
+[gd_scene load_steps=4 format=3 uid="uid://di5qtbpuow65x"]
 
-[ext_resource type="Texture2D" uid="uid://cviftmk0c7ote" path="res://imagens/armas_curto_alcance.png" id="1_anorq"]
+[ext_resource type="Script" uid="uid://b8xyki7oxjpjv" path="res://scripts/flecha.gd" id="1_mpn8r"]
+[ext_resource type="Texture2D" uid="uid://csa8gitxnvdam" path="res://imagens/flecha.png" id="2_mpn8r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mpn8r"]
 radius = 24.0
-height = 218.0
+height = 290.0
 
 [node name="flecha" type="Node2D"]
+script = ExtResource("1_mpn8r")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -16,7 +18,7 @@ shape = SubResource("CapsuleShape2D_mpn8r")
 
 [node name="ArmasCurtoAlcance" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
-rotation = -1.5708
-texture = ExtResource("1_anorq")
+rotation = 0.0268971
+texture = ExtResource("2_mpn8r")
 region_enabled = true
-region_rect = Rect2(373.625, 598.021, 67.5, 243)
+region_rect = Rect2(99.668, 474, 306, 98)

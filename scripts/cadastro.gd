@@ -1,6 +1,6 @@
 extends Node2D
 
-var online := false # Modo offline para testes
+var online := true # Modo offline para testes
 
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 #var cena_login_packed = preload("res://cenas/login.tscn")

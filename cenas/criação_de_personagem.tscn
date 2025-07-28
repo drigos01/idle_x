@@ -1,0 +1,3046 @@
+[gd_scene load_steps=27 format=3 uid="uid://cqxjx2rbdp0kp"]
+
+[ext_resource type="Texture2D" uid="uid://b44d73fppj8c6" path="res://imagens/criacao2.png" id="1_ioghj"]
+[ext_resource type="Script" uid="uid://byicguw5stikg" path="res://scripts/criação_de_personagem.gd" id="1_nx86r"]
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="2_srytw"]
+[ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/layer/token-border-collection-v0-61i9u2n221ja1.png" id="3_k3mi4"]
+[ext_resource type="FontFile" uid="uid://m8ib5aucaayr" path="res://fontes/PressStart2P-Regular.ttf" id="3_srytw"]
+[ext_resource type="Texture2D" uid="uid://bnqg04i5jievg" path="res://imagens/layer_atributos.png" id="5_2j8gd"]
+[ext_resource type="PackedScene" uid="uid://bvsjco5ociebr" path="res://cenas/panel.tscn" id="6_ye5uu"]
+[ext_resource type="Texture2D" uid="uid://dugece6s56s2j" path="res://imagens/criacao3.png" id="7_y401i"]
+[ext_resource type="Texture2D" uid="uid://cp7ytyi8w3q8s" path="res://imagens/personagens/humanos.png" id="8_oxsie"]
+[ext_resource type="Texture2D" uid="uid://cgo67rve3ie46" path="res://imagens/layer/toke_1.png" id="8_w3kp3"]
+[ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="11_ye5uu"]
+[ext_resource type="Texture2D" uid="uid://cqwgnbljnmr5h" path="res://imagens/letras.png" id="12_8h76j"]
+[ext_resource type="Script" uid="uid://du0utjw43kdh6" path="res://cenas/show_erro.gd" id="13_ye5uu"]
+
+[sub_resource type="FontVariation" id="FontVariation_nx86r"]
+base_font = ExtResource("2_srytw")
+spacing_space = 8
+spacing_top = 1
+
+[sub_resource type="Animation" id="Animation_y401i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("layer/personagem/fundo_slot_imagem2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8.75, 290)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("layer/personagem/fundo_slot_imagem2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(87.938, 336.5, 300.375, 617.625)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("layer/personagem/fundo_slot_imagem2/ScrollContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-107, -204)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("layer/personagem/fundo_slot_imagem2/ScrollContainer:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(227, 479)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("layer/personagem/fundo_slot_imagem2/Criacao4:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(463, 352.875, 688.063, 671.125)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("layer/personagem/fundo_slot_imagem2/Criacao4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375.923, 74.1246)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("layer/personagem/Criacao5:region_rect")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(572.875, 15.375, 509.625, 71.5139)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("layer/personagem/Criacao5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(346.25, -167.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("layer/personagem/Criacao7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(336.875, -31.25)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("layer/personagem/Criacao7:region_rect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(458.25, 412.509, 667.5, 252)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("layer/personagem/Criacao7:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.723857, 1.04619)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("layer/personagem/fundo_slot_imagem2/ColorRect:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(106.301, -288.951)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("layer/personagem/fundo_slot_imagem2/ColorRect:size")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(60, 92)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("layer/personagem/fundo_slot_imagem2/Criacao5:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56.2011, -251.494)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("layer/personagem/fundo_slot_imagem2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("layer/personagem/Criacao7:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("layer/personagem/Criacao5:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("layer/personagem/Criacao3/PanelContainer2:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2j8gd"]
+resource_name = "personagem_layer_abrir"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("layer/personagem/fundo_slot_imagem2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-8.75, 60), Vector2(-8.75, 290)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("layer/personagem/fundo_slot_imagem2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(87.938, 336.5, 300.375, 57.625), Rect2(87.938, 336.5, 300.375, 617.625)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("layer/personagem/fundo_slot_imagem2/ScrollContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 10.1505),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-107, 0), Vector2(-107, -204), Vector2(-107, -204)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("layer/personagem/fundo_slot_imagem2/ScrollContainer:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 10.1505),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(227, 17), Vector2(227, 479), Vector2(668, 479)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("layer/personagem/fundo_slot_imagem2/Criacao4:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4.99332, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(463, 352.875, 0, 671.125), Rect2(463, 352.875, 688.063, 671.125)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("layer/personagem/fundo_slot_imagem2/Criacao4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.96667, 9.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(121.147, 76.6), Vector2(350.5, 76.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("layer/personagem/Criacao5:region_rect")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(9.99725, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(572.875, 15.375, 0, 71.514), Rect2(572.875, 15.375, 509.625, 71.5139)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("layer/personagem/Criacao5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(9.99725, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, -167.5), Vector2(346.25, -167.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("layer/personagem/Criacao7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15.1544, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(336.25, -160), Vector2(331.094, -31.25)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("layer/personagem/Criacao7:region_rect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(15.1544, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(458.25, 412.509, 667.5, 0), Rect2(458.25, 412.509, 667.5, 252)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("layer/personagem/Criacao7:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.723857, 1.04619)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("layer/personagem/fundo_slot_imagem2/ColorRect:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.98193),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(96.1663, -48.9752), Vector2(106.301, -288.951)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("layer/personagem/fundo_slot_imagem2/ColorRect:size")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 4.98193),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 80), Vector2(60, 82)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("layer/personagem/fundo_slot_imagem2/Criacao5:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 5.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(39.9652, -176.046), Vector2(56.2011, -251.494)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("layer/personagem/fundo_slot_imagem2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("layer/personagem/Criacao7:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("layer/personagem/Criacao5:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("layer/personagem/Criacao3/PanelContainer2:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ioghj"]
+resource_name = "tokens_layer_abrir"
+length = 5.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxsie"]
+_data = {
+&"RESET": SubResource("Animation_y401i"),
+&"personagem_layer_abrir": SubResource("Animation_2j8gd"),
+&"tokens_layer_abrir": SubResource("Animation_ioghj")
+}
+
+[sub_resource type="Animation" id="Animation_ereu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("layer/token/fundo_slot_imagem_investido:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11.6181, 417.187)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("layer/token/fundo_slot_imagem_investido:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.99806, 0.942571)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("layer/token/fundo_slot_imagem_investido:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(87.938, 336.5, 300.375, 617.625)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(227, 479)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-107, -204)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(377.08, 75.7863)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.722482, 0.865997)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:region_rect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(463, 352.875, 688.063, 671.125)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("layer/token/Criacao5_investido:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-358.406, -98.4375)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("layer/token/Criacao5_investido:region_rect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(572.875, 15.375, 509.838, 70.8097)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("layer/token/Criacao7_investido:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-357.564, 79.6875)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("layer/token/Criacao7_investido:region_rect")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(458.25, 412.509, 667.5, 252)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("layer/token/Criacao7_investido/ColorRect:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-431, 63)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("layer/token/Criacao7_investido/ColorRect:size")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(173, 122)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("layer/token/Criacao7_investido/ColorRect2:size")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(173, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("layer/token/Criacao7_investido/ColorRect2:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-513.083, 255.331)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("layer/token/fundo_slot_imagem_investido:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("layer/token/Criacao7_investido:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("layer/token/Criacao5_investido:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("layer/token/Criacao7_investido/ColorRect2:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_oxsie"]
+resource_name = "token_abrir"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("layer/token/fundo_slot_imagem_investido:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.08233),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(11.618, 140.187), Vector2(11.618, 427.187)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("layer/token/fundo_slot_imagem_investido:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.07729),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.99806, 0.942571)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("layer/token/fundo_slot_imagem_investido:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.07729),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(87.938, 336.5, 300.375, 0), Rect2(87.938, 336.5, 300.375, 617.625)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.06434, 5.07505, 5.07602, 10.1274),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(227, 9), Vector2(227, 479), Vector2(227, 479), Vector2(227, 479), Vector2(696, 479)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.06434, 5.07505, 5.07602, 10.1274),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-107, -30), Vector2(-107, -204), Vector2(-107, -204), Vector2(-107, -204), Vector2(-107, -280)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.07013, 10.1194),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(120, 75.786), Vector2(377.08, 75.7863)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(10.1194),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.722482, 0.865997)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:region_rect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(5.07013, 10.1194),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(463, 352.875, 0, 671.125), Rect2(463, 352.875, 688.063, 671.125)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("layer/token/Criacao5_investido:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(10.1166, 15.1314),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-70, -98.437), Vector2(-358.406, -98.4375)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("layer/token/Criacao5_investido:region_rect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(10.1166, 15.1314),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(572.875, 15.375, 0, 70.81), Rect2(572.875, 15.375, 509.838, 70.8097)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("layer/token/Criacao7_investido:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(15.1354, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-357.564, -62), Vector2(-361.39, 89)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("layer/token/Criacao7_investido:region_rect")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(15.1354, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(458.25, 412.509, 667.5, 0), Rect2(458.25, 412.509, 667.5, 252)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("layer/token/Criacao7_investido/ColorRect:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(18.5593, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-431, 95), Vector2(-431, 59)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("layer/token/Criacao7_investido/ColorRect:size")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(18.5593, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(173, 0), Vector2(173, 73)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("layer/token/Criacao7_investido/ColorRect2:size")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(4.93394, 5.06025, 5.62073),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(173, 0), Vector2(173, 5), Vector2(173, 5)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("layer/token/Criacao7_investido/ColorRect2:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(4.93394, 5.06025, 5.07604, 5.62073),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-513.083, 255.331), Vector2(-513.083, 255.331), Vector2(-515.325, 251.485), Vector2(-510.841, 251.485)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("layer/token/Criacao5_investido:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("layer/token/Criacao7_investido:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("layer/token/fundo_slot_imagem_investido:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("layer/token/Criacao7_investido/ColorRect2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3kp3"]
+_data = {
+&"RESET": SubResource("Animation_ereu6"),
+&"token_abrir": SubResource("Animation_oxsie")
+}
+
+[sub_resource type="FontVariation" id="FontVariation_8h76j"]
+base_font = ExtResource("2_srytw")
+
+[sub_resource type="Animation" id="Animation_jupw8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-229, -316)]
+}
+
+[sub_resource type="Animation" id="Animation_pgk4w"]
+resource_name = "aparecer"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-229, -200), Vector2(-229, -316)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rmxyw"]
+resource_name = "desaparecer"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("show_erro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-229, -316), Vector2(-229, -200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fq4k4"]
+_data = {
+&"RESET": SubResource("Animation_jupw8"),
+&"aparecer": SubResource("Animation_pgk4w"),
+&"desaparecer": SubResource("Animation_rmxyw")
+}
+
+[node name="criação de personagem" type="Node2D"]
+script = ExtResource("1_nx86r")
+metadata/_edit_horizontal_guides_ = [-190.0]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -1284.0
+offset_top = -684.0
+offset_right = 1396.0
+offset_bottom = 634.0
+color = Color(0.501961, 0.309804, 0.156863, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 347.0
+offset_right = 1844.0
+offset_bottom = 990.0
+color = Color(0.568399, 0.354739, 0.185187, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 427.0
+offset_right = 1695.0
+offset_bottom = 947.0
+color = Color(0.608395, 0.382279, 0.203273, 1)
+
+[node name="layer" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
+
+[node name="Criacao2" type="Sprite2D" parent="layer"]
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(286.059, 0, 859.358, 1024)
+
+[node name="ColorRect" type="ColorRect" parent="layer/Criacao2"]
+offset_left = -367.0
+offset_top = -412.0
+offset_right = 331.0
+offset_bottom = -130.0
+mouse_filter = 2
+color = Color(0.623529, 0.356863, 0.117647, 1)
+
+[node name="nome_layer4" type="Label" parent="layer"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(10, 10)
+offset_left = -52.5001
+offset_top = -127.5
+offset_right = 66.4999
+offset_bottom = -67.5
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Status"
+vertical_alignment = 1
+
+[node name="layer_atributos2" type="Sprite2D" parent="layer"]
+visible = false
+position = Vector2(145, 28.75)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1144.31, 397.25, 320.628, 182.25)
+
+[node name="layer_atributos2" type="Sprite2D" parent="layer/layer_atributos2"]
+position = Vector2(85, -20)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1192.13, 397.25, 308.25, 144)
+
+[node name="Criacao9" type="Sprite2D" parent="layer/layer_atributos2"]
+position = Vector2(0.250004, 100.25)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1144.31, 467.625, 320.628, 74.75)
+
+[node name="Criacao11" type="Sprite2D" parent="layer/layer_atributos2"]
+position = Vector2(85, 103.75)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1189.88, 480.5, 312.75, 61.875)
+
+[node name="Criacao12" type="Sprite2D" parent="layer/layer_atributos2"]
+position = Vector2(85, 81.25)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1189.88, 480.5, 312.75, 61.875)
+
+[node name="Criacao8" type="Sprite2D" parent="layer/layer_atributos2"]
+position = Vector2(-1.25, 170)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1144.31, 467.625, 317.253, 111.875)
+
+[node name="Criacao10" type="Sprite2D" parent="layer/layer_atributos2"]
+position = Vector2(166.25, 170)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1322.25, 467.625, 211.5, 111.875)
+
+[node name="nome_layer2" type="Label" parent="layer/layer_atributos2"]
+visible = false
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -123.75
+offset_top = -26.25
+offset_right = 199.25
+offset_bottom = 674.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Atletismo  
+
+Acrobacia  
+
+Furtividade  
+
+Prestidigitação  
+
+Arcanismo  
+
+História  
+
+Investigação  
+
+Natureza  
+
+Religião  
+
+Intuição  
+
+Medicina  
+
+Percepção  
+
+Sobrevivência  
+
+Intimidação  
+
+Atuação  
+
+Persuasão
+"
+vertical_alignment = 1
+
+[node name="laye_atributos_basicos2" type="VBoxContainer" parent="layer/layer_atributos2"]
+visible = false
+offset_left = 182.5
+offset_top = 15.0
+offset_right = 222.5
+offset_bottom = 187.0
+theme_override_constants/separation = 39
+
+[node name="Panel" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos2/Panel"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="Panel2" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos2/Panel2"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="Panel3" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos2/Panel3"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="Panel4" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos2/Panel4"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="Panel5" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos2/Panel5"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="laye_atributos_basicos" type="VBoxContainer" parent="layer/layer_atributos2"]
+visible = false
+offset_left = 140.0
+offset_top = 15.0
+offset_right = 180.0
+offset_bottom = 187.0
+theme_override_constants/separation = 39
+
+[node name="Panel" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel2" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel2"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel2"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel2"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel2/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel3" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel3"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel3"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel3"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel3/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel4" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel4"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel4"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel4"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel4/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel5" type="Panel" parent="layer/layer_atributos2/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel5"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel5"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel5"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/layer_atributos2/laye_atributos_basicos/Panel5/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="nome_layer5" type="Label" parent="layer/layer_atributos2"]
+visible = false
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(10, 10)
+offset_left = -27.5
+offset_top = -83.75
+offset_right = 119.5
+offset_bottom = -23.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Perícias"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="layer"]
+offset_left = -368.75
+offset_top = -37.5
+offset_right = 368.25
+offset_bottom = 337.5
+theme_override_constants/separation = 375
+
+[node name="Panel" type="Panel" parent="layer/HBoxContainer"]
+layout_mode = 2
+
+[node name="layer_atributos" type="Sprite2D" parent="layer/HBoxContainer/Panel"]
+position = Vector2(140, 65)
+region_enabled = true
+region_rect = Rect2(1144.31, 397.25, 320.628, 182.25)
+
+[node name="LayerAtributos2" type="Sprite2D" parent="layer/HBoxContainer/Panel/layer_atributos"]
+position = Vector2(51.25, 510)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("5_2j8gd")
+region_enabled = true
+region_rect = Rect2(0, 0, 263.5, 690)
+
+[node name="LayerAtributos" type="Sprite2D" parent="layer/HBoxContainer/Panel/layer_atributos"]
+position = Vector2(51.25, 33.75)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("5_2j8gd")
+region_enabled = true
+region_rect = Rect2(0, 0, 263.5, 203.524)
+
+[node name="nome_layer6" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(10, 10)
+offset_left = -31.25
+offset_top = -87.5
+offset_right = 134.75
+offset_bottom = -27.5
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Atributos"
+vertical_alignment = 1
+
+[node name="nome_layer3" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos"]
+visible = false
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -130.0
+offset_top = -18.75
+offset_right = 193.0
+offset_bottom = 205.25
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Força:
+
+Destreza:
+
+Constituição:
+
+Inteligência:
+
+Sabedoria:
+
+Carisma:"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="layer/HBoxContainer/Panel/layer_atributos"]
+offset_left = -130.0
+offset_top = -19.0
+offset_right = 222.0
+offset_bottom = 291.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Panel" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Força:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel2" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Destreza:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel3" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Constituição:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel4" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Inteligência:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel5" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Sabedoria:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel6" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Carisma:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel2" type="Panel" parent="layer/HBoxContainer"]
+layout_mode = 2
+
+[node name="layer_atributos" type="Sprite2D" parent="layer/HBoxContainer/Panel2"]
+position = Vector2(140, 65)
+region_enabled = true
+region_rect = Rect2(1144.31, 397.25, 320.628, 182.25)
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+visible = false
+offset_left = 122.5
+offset_top = -65.0
+offset_right = 296.5
+offset_bottom = -37.0
+mouse_filter = 2
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="valor_distribuir" type="Label" parent="layer/HBoxContainer/Panel2/layer_atributos/ColorRect2"]
+modulate = Color(0.305882, 0.203922, 0.105882, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 4.74998
+offset_top = -18.0
+offset_right = 123.75
+offset_bottom = 42.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Pontos:"
+vertical_alignment = 1
+
+[node name="LayerAtributos2" type="Sprite2D" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+position = Vector2(51.25, 510)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("5_2j8gd")
+region_enabled = true
+region_rect = Rect2(0, 0, 263.5, 690)
+
+[node name="LayerAtributos" type="Sprite2D" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+position = Vector2(51.25, 33.75)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("5_2j8gd")
+region_enabled = true
+region_rect = Rect2(0, 0, 263.5, 203.524)
+
+[node name="laye_atributos_basicos2" type="VBoxContainer" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+visible = false
+offset_left = 176.25
+offset_top = 16.25
+offset_right = 216.25
+offset_bottom = 188.25
+theme_override_constants/separation = 39
+
+[node name="Panel" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2/Panel2"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="Panel3" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2/Panel3"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="Panel4" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2/Panel4"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="Panel5" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos2/Panel5"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="laye_atributos_basicos" type="VBoxContainer" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+visible = false
+offset_left = 133.75
+offset_top = 16.25
+offset_right = 173.75
+offset_bottom = 188.25
+theme_override_constants/separation = 39
+
+[node name="Panel" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel"]
+layout_mode = 2
+offset_left = -31.25
+offset_top = -41.25
+offset_right = 8.75003
+offset_bottom = -16.25
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel"]
+layout_mode = 2
+offset_left = -50.0
+offset_top = 3.75001
+offset_right = -23.0
+offset_bottom = 9.75001
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel2" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel2"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel2"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel2"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel2/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel3" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel3"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel3"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel3"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel3/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel4" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel4"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel4"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel4"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel4/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="Panel5" type="Panel" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel5"]
+layout_mode = 2
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 15.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel5"]
+layout_mode = 2
+offset_left = 6.25
+offset_top = -1.25
+offset_right = 33.25
+offset_bottom = 4.75
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel5"]
+layout_mode = 2
+offset_left = 58.75
+offset_top = -8.75
+offset_right = 65.75
+offset_bottom = 14.25
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel2/layer_atributos/laye_atributos_basicos/Panel5/ColorRect3"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="nome_layer6" type="Label" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(10, 10)
+offset_left = -31.25
+offset_top = -87.5
+offset_right = 134.75
+offset_bottom = -27.5
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Perícias"
+vertical_alignment = 1
+
+[node name="valor_atributos" type="Label" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(10, 10)
+offset_left = 133.75
+offset_top = -85.0
+offset_right = 299.75
+offset_bottom = -25.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "0/0"
+vertical_alignment = 1
+
+[node name="nome_layer3" type="Label" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+visible = false
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -130.0
+offset_top = -18.75
+offset_right = 193.0
+offset_bottom = 205.25
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Força:
+
+Destreza:
+
+Constituição:
+
+Inteligência:
+
+Sabedoria:
+
+Carisma:"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="layer/HBoxContainer/Panel2/layer_atributos"]
+offset_left = -130.0
+offset_top = 0.999998
+offset_right = 222.0
+offset_bottom = 294.0
+
+[node name="pericias_name" type="VBoxContainer" parent="layer/HBoxContainer/Panel2/layer_atributos/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Panel18" parent="layer/HBoxContainer/Panel2/layer_atributos/ScrollContainer/pericias_name" instance=ExtResource("6_ye5uu")]
+layout_mode = 2
+
+[node name="Panel20" parent="layer/HBoxContainer/Panel2/layer_atributos/ScrollContainer/pericias_name" instance=ExtResource("6_ye5uu")]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="layer"]
+offset_left = 692.5
+offset_top = -18.75
+offset_right = 919.5
+offset_bottom = 6.24998
+
+[node name="VBoxContainer" type="VBoxContainer" parent="layer/ScrollContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 140
+
+[node name="Panel_token" type="Panel" parent="layer/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="token" type="Sprite2D" parent="layer/ScrollContainer2/VBoxContainer/Panel_token"]
+position = Vector2(104.349, 86.989)
+scale = Vector2(0.160435, 0.135667)
+texture = ExtResource("3_k3mi4")
+
+[node name="Panel_token2" type="Panel" parent="layer/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="token" type="Sprite2D" parent="layer/ScrollContainer2/VBoxContainer/Panel_token2"]
+position = Vector2(104.349, 86.989)
+scale = Vector2(0.160435, 0.135667)
+texture = ExtResource("3_k3mi4")
+
+[node name="fundo_slot_imagem3" type="Sprite2D" parent="layer"]
+position = Vector2(801.25, -48.75)
+scale = Vector2(1.00087, 0.979476)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(6.938, 336.5, 286.875, 40.425)
+
+[node name="token" type="Sprite2D" parent="layer"]
+position = Vector2(227.5, -296.25)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1160.13, 39, 330.75, 357.75)
+
+[node name="PanelContainer2" type="PanelContainer" parent="layer/token"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -124.0
+offset_top = -65.0
+offset_right = 128.0
+offset_bottom = 156.0
+
+[node name="nome_layer2" type="Label" parent="layer/token"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -146.5
+offset_top = -122.75
+offset_right = 159.5
+offset_bottom = -60.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Tokens"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="imagem_layer2" type="Sprite2D" parent="layer/token"]
+position = Vector2(1146.88, 43.75)
+scale = Vector2(0.247803, 0.141602)
+
+[node name="fundo_slot_imagem_investido" type="Sprite2D" parent="layer/token"]
+visible = false
+position = Vector2(11.6181, 417.187)
+scale = Vector2(-0.99806, 0.942571)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(87.938, 336.5, 300.375, 617.625)
+
+[node name="Criacao4_investido" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido"]
+visible = false
+position = Vector2(377.08, 75.7863)
+scale = Vector2(0.722482, 0.865997)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(463, 352.875, 688.063, 671.125)
+
+[node name="Criacao5_investido" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido"]
+visible = false
+position = Vector2(17.3166, -266.503)
+scale = Vector2(1.40665, 0.610783)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(708.75, 501.5, 186, 181.5)
+
+[node name="ScrollContainer_investido" type="ScrollContainer" parent="layer/token/fundo_slot_imagem_investido"]
+visible = false
+offset_left = -107.0
+offset_top = -204.0
+offset_right = 120.0
+offset_bottom = 275.0
+
+[node name="HBoxContainer_investido" type="HBoxContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_w3kp3")
+region_enabled = true
+region_rect = Rect2(520.375, 493.066, 239.625, 209.25)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_w3kp3")
+region_enabled = true
+region_rect = Rect2(766.813, 262.341, 253.125, 229.5)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Criacao7_investido" type="Sprite2D" parent="layer/token"]
+visible = false
+position = Vector2(-357.564, 79.6875)
+rotation = -3.14159
+scale = Vector2(0.696893, -1.21901)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(458.25, 412.509, 667.5, 252)
+
+[node name="ColorRect" type="ColorRect" parent="layer/token/Criacao7_investido"]
+offset_left = -431.0
+offset_top = 63.0
+offset_right = -258.0
+offset_bottom = 185.0
+color = Color(0.752941, 0.494118, 0.196078, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="layer/token/Criacao7_investido"]
+visible = false
+offset_left = -513.083
+offset_top = 255.331
+offset_right = -340.083
+offset_bottom = 255.331
+color = Color(0.752941, 0.494118, 0.196078, 1)
+
+[node name="Criacao5_investido" type="Sprite2D" parent="layer/token"]
+visible = false
+position = Vector2(-358.406, -98.4375)
+scale = Vector2(-1.08189, 0.996)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(572.875, 15.375, 509.838, 70.8097)
+
+[node name="personagem" type="Sprite2D" parent="layer"]
+position = Vector2(-241.25, -237.5)
+scale = Vector2(0.8, 0.8)
+region_enabled = true
+region_rect = Rect2(1160.13, 161, 330.75, 235.75)
+
+[node name="fundo_slot_imagem2" type="Sprite2D" parent="layer/personagem"]
+visible = false
+position = Vector2(-8.75, 290)
+scale = Vector2(1.00087, 0.944356)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(87.938, 336.5, 300.375, 617.625)
+
+[node name="ColorRect" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2"]
+offset_left = 106.301
+offset_top = -288.951
+offset_right = 166.301
+offset_bottom = -196.951
+color = Color(0.623529, 0.356863, 0.117647, 1)
+
+[node name="Criacao4" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2"]
+position = Vector2(375.923, 74.1246)
+scale = Vector2(0.722482, 0.865997)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(463, 352.875, 688.063, 671.125)
+
+[node name="Criacao5" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2"]
+position = Vector2(56.2011, -251.494)
+scale = Vector2(0.806799, 0.528067)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(708.75, 501.5, 186, 181.5)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="layer/personagem/fundo_slot_imagem2"]
+offset_left = -107.0
+offset_top = -204.0
+offset_right = 120.0
+offset_bottom = 275.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="VBoxContainer" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem2"]
+position = Vector2(107, 78.3321)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_oxsie")
+region_enabled = true
+region_rect = Rect2(6.41696, 1.654, 261, 279)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem2/imagem"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -136.0
+offset_top = -112.0
+offset_right = 138.0
+offset_bottom = 140.0
+
+[node name="Criacao7" type="Sprite2D" parent="layer/personagem"]
+visible = false
+position = Vector2(336.875, -31.25)
+scale = Vector2(0.723857, 1.04619)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(458.25, 412.509, 667.5, 252)
+
+[node name="Criacao5" type="Sprite2D" parent="layer/personagem"]
+visible = false
+position = Vector2(346.25, -167.5)
+scale = Vector2(1.02216, 0.996182)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(572.875, 15.375, 509.625, 71.5139)
+
+[node name="Criacao3" type="Sprite2D" parent="layer/personagem"]
+position = Vector2(-6.25002, -68.75)
+texture = ExtResource("1_ioghj")
+region_enabled = true
+region_rect = Rect2(1160.13, 39, 330.75, 357.75)
+
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/Criacao3"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -124.0
+offset_top = -64.0
+offset_right = 130.0
+offset_bottom = 158.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="layer/personagem/Criacao3"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -116.0
+offset_top = -60.0
+offset_right = 565.0
+offset_bottom = 499.0
+
+[node name="nome_layer" type="Label" parent="layer/personagem/Criacao3"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -152.75
+offset_top = -121.75
+offset_right = 153.25
+offset_bottom = -59.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Personagem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oxsie")
+}
+speed_scale = 29.0
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w3kp3")
+}
+speed_scale = 29.0
+
+[node name="Placas4" type="Sprite2D" parent="."]
+position = Vector2(40, 312)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_ye5uu")
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas4"]
+position = Vector2(-195, 0)
+texture = ExtResource("11_ye5uu")
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="registro" type="Sprite2D" parent="Placas4"]
+position = Vector2(-260, 2.5)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(600.875, 469.25, 144, 157.5)
+
+[node name="e" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(125, 5)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(618.875, 88.085, 144, 162)
+
+[node name="g" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(250, 5)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(78.875, 278, 132.75, 159.75)
+
+[node name="i" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(350, 0)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(373.625, 273.5, 74.25, 162)
+
+[node name="s" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(440, 0)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(747.125, 467, 112.5, 157.5)
+
+[node name="t" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(550, 0)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(855.125, 467, 123.75, 157.5)
+
+[node name="r" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(675, 5)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(605.375, 471.5, 139.5, 162)
+
+[node name="r2" type="Sprite2D" parent="Placas4/registro"]
+position = Vector2(810, 5)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(69.301, 88.217, 165, 169)
+
+[node name="show_erro" type="Node2D" parent="."]
+visible = false
+position = Vector2(-5, -410)
+script = ExtResource("13_ye5uu")
+
+[node name="ColorRect" type="ColorRect" parent="show_erro"]
+modulate = Color(1, 1, 1, 0.333333)
+show_behind_parent = true
+offset_left = -333.0
+offset_top = 74.0
+offset_right = 394.0
+offset_bottom = 151.0
+color = Color(0.403087, 0, 0.11844, 1)
+
+[node name="label_mensagem" type="Label" parent="show_erro"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -328.0
+offset_top = 81.0
+offset_right = 391.0
+offset_bottom = 143.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_8h76j")
+theme_override_font_sizes/font_size = 35
+text = "vazio"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="TimerErro" type="Timer" parent="show_erro"]
+wait_time = 1.9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_fq4k4")
+}
+speed_scale = 6.0
+
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="mouse_entered" from="layer/token/PanelContainer2" to="." method="_on_panel_container_2_mouse_entered"]
+[connection signal="mouse_exited" from="layer/token/PanelContainer2" to="." method="_on_panel_container_2_mouse_exited"]
+[connection signal="mouse_entered" from="layer/personagem/Criacao3/PanelContainer" to="." method="_on_panel_container_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/Criacao3/PanelContainer" to="." method="_on_panel_container_mouse_exited"]
+[connection signal="mouse_entered" from="layer/personagem/Criacao3/PanelContainer2" to="." method="_on_panel_container_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/Criacao3/PanelContainer2" to="." method="_on_panel_container_mouse_exited"]

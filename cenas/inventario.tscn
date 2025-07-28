@@ -21,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -33,7 +33,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(13, 13)]
 }
 
 [sub_resource type="Animation" id="Animation_45pl0"]
@@ -58,10 +58,10 @@ tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.9, 3.96667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3.96667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.1, 0.1), Vector2(0.6, 0.6), Vector2(0.8, 0.8)]
+"values": [Vector2(0.1, 0.1), Vector2(13, 13)]
 }
 
 [sub_resource type="Animation" id="Animation_o1lvm"]
@@ -74,10 +74,10 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(0.6, 0.6), Vector2(0.1, 0.1)]
+"values": [Vector2(13, 13), Vector2(0.1, 0.1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -103,7 +103,8 @@ _data = {
 size = Vector2(912, 769)
 
 [node name="inventario" type="Node2D"]
-modulate = Color(1, 1, 1, 0)
+visible = false
+scale = Vector2(13, 13)
 script = ExtResource("1_p5ggw")
 
 [node name="inventario2" type="Sprite2D" parent="."]

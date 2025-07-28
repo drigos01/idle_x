@@ -1,14 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt8v8a3u7l40u"]
+[gd_scene load_steps=18 format=3 uid="uid://bt8v8a3u7l40u"]
 
-[ext_resource type="Script" uid="uid://dp8or11sh78ak" path="res://token_player.gd" id="1_h3g65"]
-[ext_resource type="PackedScene" uid="uid://btnvbkgjwln82" path="res://cenas/tokem_player.tscn" id="2_qsn2y"]
+[ext_resource type="Script" uid="uid://jsje2m0asuew" path="res://cenas/token_player_2.gd" id="1_lt4tn"]
 [ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="3_lt4tn"]
 [ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="4_i2vfg"]
 [ext_resource type="Script" uid="uid://rixa4nhqmw4m" path="res://cenas/bar_vida.gd" id="5_3nnub"]
 [ext_resource type="Texture2D" uid="uid://bcamhkbkdibto" path="res://imagens/file_00000000693861f9868eca809ffaddd1_1.png" id="6_i3xu1"]
 [ext_resource type="Texture2D" uid="uid://cxtxes5wkqyae" path="res://imagens/file_00000000693861f9868eca809ffaddd1_1_sem_fundo.png" id="7_c2ffx"]
 [ext_resource type="PackedScene" uid="uid://bdmnafrfo1mhj" path="res://cenas/inventario.tscn" id="8_1dex0"]
+[ext_resource type="Script" uid="uid://dxi807ot7d4n3" path="res://scripts/layer_bars.gd" id="8_i2vfg"]
 [ext_resource type="PackedScene" uid="uid://y2b0s1rfaa4b" path="res://cenas/chat_global.tscn" id="9_hs6yw"]
+[ext_resource type="Script" uid="uid://c28cu2l87lpi1" path="res://cenas/token_player_imagem_cortada.gd" id="9_i2vfg"]
+[ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/personagens/images (1).jpg" id="10_3nnub"]
+[ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/layer/token-border-collection-v0-61i9u2n221ja1.png" id="11_i3xu1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cgb5g"]
 radius = 54.7083
@@ -16,20 +19,24 @@ radius = 54.7083
 [sub_resource type="FontVariation" id="FontVariation_q44j6"]
 base_font = ExtResource("4_i2vfg")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c2ffx"]
+radius = 36.3456
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dex0"]
+radius = 520.096
+
 [sub_resource type="FontVariation" id="FontVariation_hkn2p"]
 base_font = ExtResource("4_i2vfg")
 
 [node name="token_player" type="CharacterBody2D" groups=["player"]]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.04, 0.04)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_h3g65")
+script = ExtResource("1_lt4tn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_cgb5g")
-
-[node name="token_player" parent="." instance=ExtResource("2_qsn2y")]
 
 [node name="show_notificacao" type="Sprite2D" parent="."]
 visible = false
@@ -167,34 +174,92 @@ wait_time = 1.9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="show_notificacao"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-6.10352e-05, -0.00012207)
-scale = Vector2(1.66667, 1.66667)
+[node name="token_player2" type="Area2D" parent="."]
+script = ExtResource("9_i2vfg")
 
-[node name="layer_bars" type="Sprite2D" parent="Camera2D"]
+[node name="imagem_fundo" type="TextureRect" parent="token_player2"]
+custom_minimum_size = Vector2(1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -405.0
+offset_right = 565.0
+offset_bottom = 910.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(600, 600)
+texture = ExtResource("10_3nnub")
+metadata/_edit_use_anchors_ = true
+
+[node name="borda_token" type="TextureRect" parent="token_player2"]
+custom_minimum_size = Vector2(1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -508.0
+offset_top = -480.0
+offset_right = 516.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+texture = ExtResource("11_i3xu1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Token-border-collection-v0-61i9u2n221Ja1" type="Sprite2D" parent="token_player2"]
+position = Vector2(1.36239e-07, 28.5714)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("11_i3xu1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="token_player2"]
+shape = SubResource("CircleShape2D_c2ffx")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="token_player2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="token_player2/CharacterBody2D"]
+position = Vector2(0, 30)
+shape = SubResource("CircleShape2D_1dex0")
+
+[node name="camera" type="Node2D" parent="."]
+
+[node name="chat_global2" parent="camera" instance=ExtResource("9_hs6yw")]
+position = Vector2(-10375, -725)
+scale = Vector2(24, 24)
+
+[node name="Camera2D" type="Camera2D" parent="camera"]
+position = Vector2(-6.10352e-05, -0.00012207)
+scale = Vector2(20, 20)
+
+[node name="layer_bars" type="Sprite2D" parent="camera/Camera2D"]
 position = Vector2(-704.398, -572.399)
 scale = Vector2(1.2, 1.2)
+script = ExtResource("8_i2vfg")
 
-[node name="bar_vida" type="ColorRect" parent="Camera2D/layer_bars"]
+[node name="bar_vida" type="ColorRect" parent="camera/Camera2D/layer_bars"]
 offset_left = 25.0
 offset_top = 170.0
 offset_right = 1158.0
 offset_bottom = 181.0
 script = ExtResource("5_3nnub")
 
-[node name="bar_vida2" type="ColorRect" parent="Camera2D/layer_bars/bar_vida"]
+[node name="bar_vida2" type="ColorRect" parent="camera/Camera2D/layer_bars/bar_vida"]
 layout_mode = 0
 offset_right = 1134.0
 offset_bottom = 11.0
 color = Color(0.470483, 1.04684e-06, 2.64719e-07, 1)
 
-[node name="valor_bar" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida"]
+[node name="valor_bar" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida"]
 position = Vector2(47, -10)
 scale = Vector2(0.1, 0.082875)
 region_enabled = true
 region_rect = Rect2(0, 0, 1536, 529)
 
-[node name="Label" type="Label" parent="Camera2D/layer_bars/bar_vida/valor_bar"]
+[node name="Label" type="Label" parent="camera/Camera2D/layer_bars/bar_vida/valor_bar"]
 offset_left = -400.0
 offset_top = 121.0
 offset_right = 10870.0
@@ -204,92 +269,92 @@ theme_override_font_sizes/font_size = 150
 text = " 999 "
 horizontal_alignment = 1
 
-[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida"]
+[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida"]
 position = Vector2(49, -9)
 scale = Vector2(0.1, 0.082875)
 texture = ExtResource("6_i3xu1")
 region_enabled = true
 region_rect = Rect2(0, 0, 1410.26, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11"]
+[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11"]
 position = Vector2(1160, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(2140, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(4310, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
 position = Vector2(2140, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(2180, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_vida/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(2700, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1155.49, 529)
 
-[node name="bar_stamina" type="ColorRect" parent="Camera2D/layer_bars"]
+[node name="bar_stamina" type="ColorRect" parent="camera/Camera2D/layer_bars"]
 offset_left = 14.0
 offset_top = 186.0
 offset_right = 1158.0
 offset_bottom = 197.0
 
-[node name="bar_vida2" type="ColorRect" parent="Camera2D/layer_bars/bar_stamina"]
+[node name="bar_vida2" type="ColorRect" parent="camera/Camera2D/layer_bars/bar_stamina"]
 layout_mode = 0
 offset_right = 1144.0
 offset_bottom = 11.0
 color = Color(0.59, 0.196667, 0, 1)
 
-[node name="valor_bar" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina"]
+[node name="valor_bar" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina"]
 position = Vector2(47, -10)
 scale = Vector2(0.1, 0.082875)
 region_enabled = true
 region_rect = Rect2(0, 0, 1536, 529)
 
-[node name="Label" type="Label" parent="Camera2D/layer_bars/bar_stamina/valor_bar"]
+[node name="Label" type="Label" parent="camera/Camera2D/layer_bars/bar_stamina/valor_bar"]
 offset_left = -460.0
 offset_top = 121.0
 offset_right = 10970.0
@@ -299,92 +364,92 @@ theme_override_font_sizes/font_size = 150
 text = "999 "
 horizontal_alignment = 1
 
-[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina"]
+[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina"]
 position = Vector2(43, -9)
 scale = Vector2(0.1, 0.082875)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(0, 0, 1410.26, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11"]
+[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11"]
 position = Vector2(1160, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(2140, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(4310, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
 position = Vector2(2140, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(2180, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_stamina/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(2870, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1155.49, 529)
 
-[node name="bar_magia" type="ColorRect" parent="Camera2D/layer_bars"]
+[node name="bar_magia" type="ColorRect" parent="camera/Camera2D/layer_bars"]
 offset_left = 14.0
 offset_top = 199.0
 offset_right = 1158.0
 offset_bottom = 210.0
 
-[node name="bar_vida2" type="ColorRect" parent="Camera2D/layer_bars/bar_magia"]
+[node name="bar_vida2" type="ColorRect" parent="camera/Camera2D/layer_bars/bar_magia"]
 layout_mode = 0
 offset_right = 1144.0
 offset_bottom = 11.0
 color = Color(0.0228, 0.38, 0.374047, 1)
 
-[node name="valor_bar" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia"]
+[node name="valor_bar" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia"]
 position = Vector2(47, -10)
 scale = Vector2(0.1, 0.082875)
 region_enabled = true
 region_rect = Rect2(0, 0, 1536, 529)
 
-[node name="Label" type="Label" parent="Camera2D/layer_bars/bar_magia/valor_bar"]
+[node name="Label" type="Label" parent="camera/Camera2D/layer_bars/bar_magia/valor_bar"]
 offset_left = -460.0
 offset_top = 121.0
 offset_right = 10970.0
@@ -394,79 +459,79 @@ theme_override_font_sizes/font_size = 150
 text = "999 "
 horizontal_alignment = 1
 
-[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia"]
+[node name="File00000000693861f9868Eca809Ffaddd11" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia"]
 position = Vector2(43, -9)
 scale = Vector2(0.1, 0.082875)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(0, 0, 1410.26, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11"]
+[node name="File00000000693861f9868Eca809Ffaddd12" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11"]
 position = Vector2(1160, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(2140, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12"]
 position = Vector2(4310, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15"]
 position = Vector2(2140, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd13" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(1090, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd14" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(2180, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1099.74, 529)
 
-[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
+[node name="File00000000693861f9868Eca809Ffaddd15" type="Sprite2D" parent="camera/Camera2D/layer_bars/bar_magia/File00000000693861f9868Eca809Ffaddd11/File00000000693861f9868Eca809Ffaddd12/File00000000693861f9868Eca809Ffaddd15/File00000000693861f9868Eca809Ffaddd14"]
 position = Vector2(2870, 0)
 texture = ExtResource("7_c2ffx")
 region_enabled = true
 region_rect = Rect2(307.331, 0, 1155.49, 529)
 
-[node name="inventario" parent="Camera2D" instance=ExtResource("8_1dex0")]
-visible = false
-position = Vector2(-15.6, -4.79992)
+[node name="inventario" parent="camera" instance=ExtResource("8_1dex0")]
 
-[node name="chat_global2" parent="." instance=ExtResource("9_hs6yw")]
-position = Vector2(-892, -284)
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[connection signal="area_entered" from="token_player" to="." method="_on_token_player_area_entered"]
-[connection signal="area_exited" from="token_player" to="." method="_on_token_player_area_exited"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_cgb5g")

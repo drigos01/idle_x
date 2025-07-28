@@ -123,6 +123,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(979, 1365)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ChatGlobal1/minimizar:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-165.079, -259.683)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ChatGlobal1/maximizar8:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(149.841, -272.381)]
+}
 
 [sub_resource type="Animation" id="Animation_eldgv"]
 resource_name = "abrir"
@@ -175,6 +199,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(407, 493), Vector2(407, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ChatGlobal1/minimizar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-164.883, -260.66), Vector2(-164.883, -251.869)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChatGlobal1/maximizar8:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(150.868, -273.846), Vector2(150.867, -263.589)]
+}
 
 [sub_resource type="Animation" id="Animation_llqas"]
 resource_name = "fechar"
@@ -226,6 +274,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(407, 0), Vector2(407, 493)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ChatGlobal1/minimizar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-164.883, -251.869), Vector2(-165.079, -259.683)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChatGlobal1/maximizar8:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(150.867, -263.589), Vector2(149.841, -272.381)]
 }
 
 [sub_resource type="Animation" id="Animation_ng838"]
@@ -489,13 +561,14 @@ region_enabled = true
 region_rect = Rect2(864.125, 0, 159.875, 618.576)
 
 [node name="online_layer3" type="Sprite2D" parent="chat/online_layer"]
-position = Vector2(0, 480)
+position = Vector2(12.0863, 488.182)
+scale = Vector2(0.963377, 1.01316)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
 
 [node name="online_layer2" type="Sprite2D" parent="chat/online_layer/online_layer3"]
-position = Vector2(-520, 5)
+position = Vector2(-550.376, 18.737)
 scale = Vector2(-1.2, 1)
 texture = ExtResource("2_vkkos")
 region_enabled = true
@@ -508,21 +581,21 @@ region_enabled = true
 region_rect = Rect2(150.875, 237.856, 873.125, 368.835)
 
 [node name="online_layer2" type="Sprite2D" parent="chat/online_layer/online_layer3/online_layer3"]
-position = Vector2(-519.048, 34.1872)
+position = Vector2(-550.377, 49.2097)
 scale = Vector2(-1.2, 1)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(864.125, 229.923, 159.875, 388.653)
 
 [node name="online_layer3" type="Sprite2D" parent="chat/online_layer/online_layer3/online_layer3"]
-position = Vector2(-85.5076, 220)
+position = Vector2(-85.5524, 231.24)
 scale = Vector2(-1.01531, 1)
 texture = ExtResource("2_vkkos")
 region_enabled = true
 region_rect = Rect2(45.125, 604.161, 940.5, 101.25)
 
 [node name="online_layer4" type="Sprite2D" parent="chat/online_layer/online_layer3/online_layer3"]
-position = Vector2(-151.832, 209.369)
+position = Vector2(-182.51, 217.855)
 scale = Vector2(-1.1781, 0.996208)
 texture = ExtResource("2_vkkos")
 flip_h = true
@@ -530,10 +603,10 @@ region_enabled = true
 region_rect = Rect2(45.125, 581.75, 693, 123.661)
 
 [node name="ColorRect4" type="ColorRect" parent="chat/online_layer/online_layer3/online_layer3"]
-offset_left = -435.0
+offset_left = -496.0
 offset_top = -880.0
 offset_right = 245.0
-offset_bottom = 160.0
+offset_bottom = 174.0
 color = Color(0.635294, 0.47451, 0.254902, 1)
 
 [node name="minimizar2" type="Sprite2D" parent="chat/online_layer"]
@@ -611,10 +684,10 @@ region_rect = Rect2(94.25, 625.465, 113.056, 28.4445)
 
 [node name="ScrollContainer_usuarios_online" type="ScrollContainer" parent="chat/online_layer"]
 custom_minimum_size = Vector2(240, 0)
-offset_left = -480.0
-offset_top = -65.0
-offset_right = 499.0
-offset_bottom = 1300.0
+offset_left = -469.0
+offset_top = -62.0
+offset_right = 510.0
+offset_bottom = 1303.0
 scale = Vector2(0.8, 0.8)
 size_flags_vertical = 3
 
@@ -623,7 +696,6 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="HBoxContainer" type="HBoxContainer" parent="chat/online_layer/ScrollContainer_usuarios_online"]
-visible = false
 layout_mode = 2
 alignment = 2
 
@@ -819,6 +891,7 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="chat/ChatGlobal1/ScrollContainer_chat_global"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="chat/ChatGlobal1/ScrollContainer_chat_global"]
 visible = false

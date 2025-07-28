@@ -117,7 +117,6 @@ scale = Vector2(0.294488, 0.293743)
 
 [node name="ItensUteis" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(2879.57, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -139,7 +138,6 @@ offset_right = 98.0
 offset_bottom = -423.0
 
 [node name="ItensUteis2" type="Sprite2D" parent="portas_esquerda"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -156,7 +154,6 @@ text = "999"
 
 [node name="ItensUteis3" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(2878.56, -591.996)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -173,7 +170,6 @@ text = "999"
 
 [node name="ItensUteis11" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(-958.61, -581.783)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -190,7 +186,6 @@ text = "999"
 
 [node name="ItensUteis12" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(-1889.04, -591.996)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -207,7 +202,6 @@ text = "999"
 
 [node name="ItensUteis4" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(-1.01575, -591.996)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -224,7 +218,6 @@ text = "999"
 
 [node name="ItensUteis5" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(1921.98, 10.213)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -241,7 +234,6 @@ text = "999"
 
 [node name="ItensUteis6" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(-957.594, 10.213)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -258,7 +250,6 @@ text = "999"
 
 [node name="ItensUteis7" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(-1888.02, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -275,7 +266,6 @@ text = "999"
 
 [node name="ItensUteis8" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(991.551, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -292,7 +282,6 @@ text = "999"
 
 [node name="ItensUteis9" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(1920.96, -581.783)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
@@ -309,7 +298,6 @@ text = "999"
 
 [node name="ItensUteis10" type="Sprite2D" parent="portas_esquerda"]
 position = Vector2(990.535, -591.996)
-scale = Vector2(1, 1)
 texture = ExtResource("2_p0tn2")
 region_enabled = true
 region_rect = Rect2(55.5, 19.58, 290.25, 382.5)
