@@ -53,12 +53,12 @@ func _physics_process(delta: float) -> void:
 			# Setar a imagem da raça
 			var textura = null
 			var caminho_imagem = dados.get("imagem", "")
-			if caminho_imagem != "":
-				textura = load(caminho_imagem)
-			if textura and textura is Texture:
-				$imagem_raca.texture = textura
-			else:
-				$imagem_raca.texture = null  # limpa a textura se não encontrar
+			#if caminho_imagem != "":
+				#textura = load(caminho_imagem)
+			#if textura and textura is Texture:
+				#$imagem_raca.texture = textura
+			#else:
+				#$imagem_raca.texture = null  # limpa a textura se não encontrar
 
 			# Descrição com word wrap
 			var descricao_node = get_node_or_null("nome_raca/descricao")
@@ -108,5 +108,5 @@ func _physics_process(delta: float) -> void:
 		$nome_raca/atributos.text = ""
 		$nome_raca.text = ""
 		$nome_raca/descricao.text = ""
-		$imagem_raca.texture = null
+		#$imagem_raca.texture = null
 		

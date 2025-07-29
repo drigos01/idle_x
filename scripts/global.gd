@@ -8,6 +8,11 @@ var show_mensagem_alerta = ""
 
 var imagem_apresentacao_token = ""
 var imagem_apresentacao_token_propocao = Rect2(Vector2(0, 0), Vector2(64, 64))
+var alvo_selecionado = ""
+var imagem_apresentacao_personagem = ""
+var imagem_apresentacao_personagem_propocao = Rect2(Vector2(0, 0), Vector2(64, 64))
+var raça_selecionado = ""
+
 
 var inimigos: Dictionary = {}
 var jogador: Dictionary = {}
