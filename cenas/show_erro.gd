@@ -2,6 +2,7 @@ extends Node2D
 
 func _process(delta: float) -> void:
 	if Global.show_erro:
+		print("etapa_1")
 		if Global.valor_show_erro_passar != "":
 			print("jnxjsnxnsxnjs")
 			#show_erro(Global.valor_show_erro_passar, Color(1, 0, 0))  # vermelho puro

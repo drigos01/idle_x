@@ -13,6 +13,7 @@ script = ExtResource("1_0xlfx")
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
 self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
 custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
 offset_top = 6.0
 offset_right = 254.0
 offset_bottom = 46.0
@@ -24,6 +25,7 @@ text = "Investigação:
 vertical_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 292.25
 offset_top = 6.25
 offset_right = 331.25

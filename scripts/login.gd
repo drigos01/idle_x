@@ -2,7 +2,7 @@ extends Node2D
 
 var cena_cadastro_packed = preload("res://cenas/cadastro.tscn")
 
-var online := true # Modo offline para testes
+var online := false # Modo offline para testes
 var test = true
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 

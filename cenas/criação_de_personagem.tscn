@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cqxjx2rbdp0kp"]
+[gd_scene load_steps=39 format=3 uid="uid://cqxjx2rbdp0kp"]
 
 [ext_resource type="Texture2D" uid="uid://b44d73fppj8c6" path="res://imagens/criacao2.png" id="1_ioghj"]
 [ext_resource type="Script" uid="uid://byicguw5stikg" path="res://scripts/criação_de_personagem.gd" id="1_nx86r"]
@@ -10,14 +10,29 @@
 [ext_resource type="Texture2D" uid="uid://dugece6s56s2j" path="res://imagens/criacao3.png" id="7_y401i"]
 [ext_resource type="Texture2D" uid="uid://cp7ytyi8w3q8s" path="res://imagens/personagens/humanos.png" id="8_oxsie"]
 [ext_resource type="Texture2D" uid="uid://cgo67rve3ie46" path="res://imagens/layer/toke_1.png" id="8_w3kp3"]
+[ext_resource type="Script" uid="uid://b2q8o47ggj45d" path="res://cenas/icone_selecao_tolen.gd" id="10_pyyvc"]
+[ext_resource type="Script" uid="uid://byatl2slq4wle" path="res://cenas/humano.gd" id="11_tevnf"]
 [ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="11_ye5uu"]
 [ext_resource type="Texture2D" uid="uid://cqwgnbljnmr5h" path="res://imagens/letras.png" id="12_8h76j"]
+[ext_resource type="Texture2D" uid="uid://lo3pvicy2vnr" path="res://imagens/personagens/elfos.png" id="12_wgpy3"]
+[ext_resource type="Script" uid="uid://db4gbnecyk77a" path="res://scripts/descricao_racas.gd" id="13_b18dr"]
 [ext_resource type="Script" uid="uid://du0utjw43kdh6" path="res://cenas/show_erro.gd" id="13_ye5uu"]
+[ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="14_8h76j"]
+[ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/personagens/images (1).jpg" id="14_x1rxa"]
+[ext_resource type="Script" uid="uid://cc0ud1speduqy" path="res://scripts/mouse_area.gd" id="15_5o3df"]
+[ext_resource type="Texture2D" uid="uid://bvvctkil27ojq" path="res://imagens/layer/token-border-collection-v0-8pv4nqo221ja1.png" id="16_fyjs1"]
+[ext_resource type="Script" uid="uid://bhi1lk22y8wbk" path="res://scripts/preview_token.gd" id="22_6d4l8"]
 
 [sub_resource type="FontVariation" id="FontVariation_nx86r"]
 base_font = ExtResource("2_srytw")
 spacing_space = 8
 spacing_top = 1
+
+[sub_resource type="FontVariation" id="FontVariation_ye5uu"]
+base_font = ExtResource("2_srytw")
+
+[sub_resource type="FontVariation" id="FontVariation_5o3df"]
+base_font = ExtResource("2_srytw")
 
 [sub_resource type="Animation" id="Animation_y401i"]
 length = 0.001
@@ -228,7 +243,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("layer/personagem/Criacao3/PanelContainer2:visible")
+tracks/17/path = NodePath("layer/personagem/descricao_racas:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -448,14 +463,14 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("layer/personagem/Criacao3/PanelContainer2:visible")
+tracks/17/path = NodePath("layer/personagem/descricao_racas:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 20),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ioghj"]
@@ -618,55 +633,55 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("layer/token/Criacao7_investido/ColorRect:position")
+tracks/12/path = NodePath("layer/token/ColorRect:size")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-431, 63)]
+"values": [Vector2(173, 122)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("layer/token/Criacao7_investido/ColorRect:size")
+tracks/13/path = NodePath("layer/token/ColorRect:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(173, 122)]
+"values": [Vector2(-431, 63)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("layer/token/Criacao7_investido/ColorRect2:size")
+tracks/14/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(173, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("layer/token/Criacao7_investido/ColorRect2:position")
+tracks/15/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-513.083, 255.331)]
+"update": 1,
+"values": [false]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:visible")
+tracks/16/path = NodePath("layer/token/fundo_slot_imagem_investido:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -678,7 +693,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:visible")
+tracks/17/path = NodePath("layer/token/Criacao7_investido:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -690,7 +705,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("layer/token/fundo_slot_imagem_investido:visible")
+tracks/18/path = NodePath("layer/token/Criacao5_investido:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -702,7 +717,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("layer/token/Criacao7_investido:visible")
+tracks/19/path = NodePath("layer/token/fundo_slot_imagem_investido/ColorRect:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -714,7 +729,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("layer/token/Criacao5_investido:visible")
+tracks/20/path = NodePath("layer/token/nome_slots_raça2:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -726,7 +741,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("layer/token/Criacao7_investido/ColorRect2:visible")
+tracks/21/path = NodePath("layer/token/ColorRect:visible")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -749,7 +764,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5.08233),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(11.618, 140.187), Vector2(11.618, 427.187)]
+"values": [Vector2(11.618, 140.187), Vector2(11.618, 360.187)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -782,10 +797,10 @@ tracks/3/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContaine
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 5.06434, 5.07505, 5.07602, 10.1274),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.06434, 5.07505, 5.07602, 10.1274, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(227, 9), Vector2(227, 479), Vector2(227, 479), Vector2(227, 479), Vector2(696, 479)]
+"values": [Vector2(227, 9), Vector2(227, 479), Vector2(227, 479), Vector2(227, 479), Vector2(696, 479), Vector2(696, 479)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -794,10 +809,10 @@ tracks/4/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContaine
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5.06434, 5.07505, 5.07602, 10.1274),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.06434, 5.07505, 5.07602, 10.1274, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-107, -30), Vector2(-107, -204), Vector2(-107, -204), Vector2(-107, -204), Vector2(-107, -280)]
+"values": [Vector2(-107, -30), Vector2(-107, -204), Vector2(-107, -204), Vector2(-107, -204), Vector2(-107, -200), Vector2(-107, -212)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -809,7 +824,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(5.07013, 10.1194),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(120, 75.786), Vector2(377.08, 75.7863)]
+"values": [Vector2(120, 75.786), Vector2(377.08, 76.39)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -866,10 +881,10 @@ tracks/10/path = NodePath("layer/token/Criacao7_investido:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(15.1354, 20),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(15.1223, 15.1354, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-357.564, -62), Vector2(-361.39, 89)]
+"values": [Vector2(372.34, -447.114), Vector2(-357.564, -62), Vector2(-361.39, 89)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -886,55 +901,55 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("layer/token/Criacao7_investido/ColorRect:position")
+tracks/12/path = NodePath("layer/token/ColorRect:size")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(18.5593, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-431, 95), Vector2(-431, 59)]
+"values": [Vector2(173, 0), Vector2(173, 73)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("layer/token/Criacao7_investido/ColorRect:size")
+tracks/13/path = NodePath("layer/token/ColorRect:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(18.5593, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(173, 0), Vector2(173, 73)]
+"values": [Vector2(-431, 95), Vector2(-431, 59)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("layer/token/Criacao7_investido/ColorRect2:size")
+tracks/14/path = NodePath("layer/token/Criacao5_investido:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(4.93394, 5.06025, 5.62073),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(173, 0), Vector2(173, 5), Vector2(173, 5)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("layer/token/Criacao7_investido/ColorRect2:position")
+tracks/15/path = NodePath("layer/token/Criacao7_investido:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(4.93394, 5.06025, 5.07604, 5.62073),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-513.083, 255.331), Vector2(-513.083, 255.331), Vector2(-515.325, 251.485), Vector2(-510.841, 251.485)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("layer/token/Criacao5_investido:visible")
+tracks/16/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -946,7 +961,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("layer/token/Criacao7_investido:visible")
+tracks/17/path = NodePath("layer/token/fundo_slot_imagem_investido:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -958,35 +973,35 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("layer/token/fundo_slot_imagem_investido/Criacao4_investido:visible")
+tracks/18/path = NodePath("layer/token/fundo_slot_imagem_investido/ColorRect:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5.13333, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [false, false, true]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("layer/token/fundo_slot_imagem_investido:visible")
+tracks/19/path = NodePath("layer/token/nome_slots_raça2:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("layer/token/Criacao7_investido/ColorRect2:visible")
+tracks/20/path = NodePath("layer/token/fundo_slot_imagem_investido/ScrollContainer_investido:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(20),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -1006,26 +1021,38 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/path = NodePath("criação de personagem/show_erro:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(-10, -351)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("show_erro:position")
+tracks/1/path = NodePath("criação de personagem/show_erro:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-229, -316)]
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("criação de personagem/show_erro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_pgk4w"]
@@ -1034,19 +1061,19 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("show_erro:position")
+tracks/0/path = NodePath("criação de personagem/show_erro:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-229, -200), Vector2(-229, -316)]
+"values": [Vector2(-10, -351), Vector2(-10, -451)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("show_erro:modulate")
+tracks/1/path = NodePath("criação de personagem/show_erro:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1055,41 +1082,68 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("criação de personagem/show_erro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_rmxyw"]
+[sub_resource type="Animation" id="Animation_ye5uu"]
 resource_name = "desaparecer"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("show_erro:modulate")
+tracks/0/path = NodePath("criação de personagem/show_erro:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Vector2(-10, -451), Vector2(-10, -351)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("show_erro:position")
+tracks/1/path = NodePath("criação de personagem/show_erro:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-229, -316), Vector2(-229, -200)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("criação de personagem/show_erro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fq4k4"]
 _data = {
 &"RESET": SubResource("Animation_jupw8"),
 &"aparecer": SubResource("Animation_pgk4w"),
-&"desaparecer": SubResource("Animation_rmxyw")
+&"desaparecer": SubResource("Animation_ye5uu")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5o3df"]
+radius = 7.28011
 
 [node name="criação de personagem" type="Node2D"]
 script = ExtResource("1_nx86r")
@@ -1122,6 +1176,7 @@ color = Color(0.608395, 0.382279, 0.203273, 1)
 scale = Vector2(0.8, 0.8)
 
 [node name="Criacao2" type="Sprite2D" parent="layer"]
+position = Vector2(0, 31.25)
 texture = ExtResource("1_ioghj")
 region_enabled = true
 region_rect = Rect2(286.059, 0, 859.358, 1024)
@@ -1138,10 +1193,10 @@ color = Color(0.623529, 0.356863, 0.117647, 1)
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
 self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
 custom_minimum_size = Vector2(10, 10)
-offset_left = -52.5001
-offset_top = -127.5
-offset_right = 66.4999
-offset_bottom = -67.5
+offset_left = -56.25
+offset_top = -97.5
+offset_right = 62.75
+offset_bottom = -37.5
 pivot_offset = Vector2(95, 0)
 theme_override_fonts/font = SubResource("FontVariation_nx86r")
 theme_override_font_sizes/font_size = 50
@@ -1149,8 +1204,7 @@ text = "Status"
 vertical_alignment = 1
 
 [node name="layer_atributos2" type="Sprite2D" parent="layer"]
-visible = false
-position = Vector2(145, 28.75)
+position = Vector2(776.25, -8.75)
 texture = ExtResource("1_ioghj")
 region_enabled = true
 region_rect = Rect2(1144.31, 397.25, 320.628, 182.25)
@@ -1489,17 +1543,19 @@ text = "Perícias"
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="layer"]
-offset_left = -368.75
-offset_top = -37.5
-offset_right = 368.25
-offset_bottom = 337.5
-theme_override_constants/separation = 375
+visible = false
+offset_left = -413.75
+offset_top = -35.0
+offset_right = 126.25
+offset_bottom = 271.0
+theme_override_constants/separation = 260
 
 [node name="Panel" type="Panel" parent="layer/HBoxContainer"]
 layout_mode = 2
 
 [node name="layer_atributos" type="Sprite2D" parent="layer/HBoxContainer/Panel"]
 position = Vector2(140, 65)
+scale = Vector2(0.7, 0.7)
 region_enabled = true
 region_rect = Rect2(1144.31, 397.25, 320.628, 182.25)
 
@@ -1703,6 +1759,149 @@ offset_right = -4.49997
 offset_bottom = 23.75
 
 [node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel8" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "stamina:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel7" type="Panel" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "velocidade(mov):"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 38.0
@@ -1997,6 +2196,7 @@ layout_mode = 2
 
 [node name="layer_atributos" type="Sprite2D" parent="layer/HBoxContainer/Panel2"]
 position = Vector2(140, 65)
+scale = Vector2(0.7, 0.7)
 region_enabled = true
 region_rect = Rect2(1144.31, 397.25, 320.628, 182.25)
 
@@ -2337,6 +2537,504 @@ layout_mode = 2
 [node name="Panel20" parent="layer/HBoxContainer/Panel2/layer_atributos/ScrollContainer/pericias_name" instance=ExtResource("6_ye5uu")]
 layout_mode = 2
 
+[node name="Panel3" type="Panel" parent="layer/HBoxContainer"]
+layout_mode = 2
+
+[node name="layer_atributos" type="Sprite2D" parent="layer/HBoxContainer/Panel3"]
+position = Vector2(140, 65)
+scale = Vector2(0.7, 0.7)
+region_enabled = true
+region_rect = Rect2(1144.31, 397.25, 320.628, 182.25)
+
+[node name="LayerAtributos2" type="Sprite2D" parent="layer/HBoxContainer/Panel3/layer_atributos"]
+position = Vector2(51.25, 510)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("5_2j8gd")
+region_enabled = true
+region_rect = Rect2(0, 0, 263.5, 690)
+
+[node name="LayerAtributos" type="Sprite2D" parent="layer/HBoxContainer/Panel3/layer_atributos"]
+position = Vector2(51.25, 33.75)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("5_2j8gd")
+region_enabled = true
+region_rect = Rect2(0, 0, 263.5, 203.524)
+
+[node name="nome_layer6" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(10, 10)
+offset_left = -31.25
+offset_top = -87.5
+offset_right = 134.75
+offset_bottom = -27.5
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Atributos"
+vertical_alignment = 1
+
+[node name="nome_layer3" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos"]
+visible = false
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -130.0
+offset_top = -18.75
+offset_right = 193.0
+offset_bottom = 205.25
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Força:
+
+Destreza:
+
+Constituição:
+
+Inteligência:
+
+Sabedoria:
+
+Carisma:"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="layer/HBoxContainer/Panel3/layer_atributos"]
+offset_left = -130.0
+offset_top = -19.0
+offset_right = 222.0
+offset_bottom = 291.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Panel" type="Panel" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Força:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel2" type="Panel" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Destreza:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel3" type="Panel" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Constituição:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel4" type="Panel" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Inteligência:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel5" type="Panel" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Sabedoria:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
+[node name="Panel6" type="Panel" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nome_layer4" type="Label" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.74902, 0.490196, 0.192157, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 8.75
+offset_top = -9.25
+offset_right = 262.75
+offset_bottom = 30.75
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 17
+text = "Carisma:"
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 21.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+layout_mode = 2
+offset_left = -42.0
+offset_right = -6.00003
+offset_bottom = 23.0
+color = Color(0.745098, 0.486275, 0.188235, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/ColorRect4"]
+layout_mode = 2
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 17.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/ColorRect4"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -27.0
+offset_bottom = 14.0
+color = Color(0.376471, 0.227451, 0.0823529, 1)
+
+[node name="menos" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -42.5
+offset_top = 0.750005
+offset_right = -4.49997
+offset_bottom = 23.75
+
+[node name="mais" type="Button" parent="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 23.0
+
 [node name="ScrollContainer2" type="ScrollContainer" parent="layer"]
 offset_left = 692.5
 offset_top = -18.75
@@ -2370,19 +3068,56 @@ texture = ExtResource("1_ioghj")
 region_enabled = true
 region_rect = Rect2(6.938, 336.5, 286.875, 40.425)
 
+[node name="nick" type="LineEdit" parent="layer"]
+custom_minimum_size = Vector2(100, 0)
+offset_left = -82.5
+offset_top = -333.75
+offset_right = 91.5
+offset_bottom = -307.75
+theme_override_fonts/font = SubResource("FontVariation_ye5uu")
+theme_override_font_sizes/font_size = 25
+
+[node name="nick_label" type="Label" parent="layer/nick"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.360784, 0.196078, 0.12549, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = -14.0
+offset_top = -43.0
+offset_right = 191.0
+offset_bottom = 19.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_5o3df")
+theme_override_font_sizes/font_size = 25
+text = "Nome Personagem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="preview_token" type="Node2D" parent="layer/nick"]
+position = Vector2(82.5, 101.25)
+scale = Vector2(1.25, 1.25)
+script = ExtResource("22_6d4l8")
+
+[node name="perosonagem" type="TextureRect" parent="layer/nick/preview_token"]
+offset_left = -57.0
+offset_top = -26.0
+offset_right = 60.0
+offset_bottom = 80.0
+
+[node name="token" type="TextureRect" parent="layer/nick/preview_token/perosonagem"]
+offset_right = 117.0
+offset_bottom = 106.0
+
+[node name="token2" type="Sprite2D" parent="layer/nick/preview_token/perosonagem"]
+position = Vector2(57, 56)
+scale = Vector2(0.5, 0.5)
+region_enabled = true
+
 [node name="token" type="Sprite2D" parent="layer"]
-position = Vector2(227.5, -296.25)
-scale = Vector2(0.8, 0.8)
+position = Vector2(225, -258.75)
 texture = ExtResource("1_ioghj")
 region_enabled = true
 region_rect = Rect2(1160.13, 39, 330.75, 357.75)
-
-[node name="PanelContainer2" type="PanelContainer" parent="layer/token"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -124.0
-offset_top = -65.0
-offset_right = 128.0
-offset_bottom = 156.0
 
 [node name="nome_layer2" type="Label" parent="layer/token"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
@@ -2403,6 +3138,23 @@ vertical_alignment = 1
 position = Vector2(1146.88, 43.75)
 scale = Vector2(0.247803, 0.141602)
 
+[node name="ColorRect" type="ColorRect" parent="layer/token"]
+visible = false
+offset_left = -431.0
+offset_top = 63.0
+offset_right = -258.0
+offset_bottom = 185.0
+color = Color(0.752941, 0.494118, 0.196078, 1)
+
+[node name="Criacao7_investido" type="Sprite2D" parent="layer/token"]
+visible = false
+position = Vector2(-357.564, 79.6875)
+rotation = -3.14159
+scale = Vector2(0.696893, -1.21901)
+texture = ExtResource("7_y401i")
+region_enabled = true
+region_rect = Rect2(458.25, 412.509, 667.5, 252)
+
 [node name="fundo_slot_imagem_investido" type="Sprite2D" parent="layer/token"]
 visible = false
 position = Vector2(11.6181, 417.187)
@@ -2411,6 +3163,14 @@ texture = ExtResource("7_y401i")
 region_enabled = true
 region_rect = Rect2(87.938, 336.5, 300.375, 617.625)
 
+[node name="ColorRect" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido"]
+visible = false
+offset_left = -121.0
+offset_top = -217.0
+offset_right = 138.0
+offset_bottom = -212.0
+color = Color(0.192157, 0.0431373, 0.0235294, 1)
+
 [node name="Criacao4_investido" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido"]
 visible = false
 position = Vector2(377.08, 75.7863)
@@ -2418,6 +3178,13 @@ scale = Vector2(0.722482, 0.865997)
 texture = ExtResource("7_y401i")
 region_enabled = true
 region_rect = Rect2(463, 352.875, 688.063, 671.125)
+
+[node name="ColorRect2" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido"]
+offset_left = 80.5242
+offset_top = -212.384
+offset_right = 135.524
+offset_bottom = -203.384
+color = Color(0.752941, 0.494118, 0.196078, 1)
 
 [node name="Criacao5_investido" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido"]
 visible = false
@@ -2446,59 +3213,119 @@ theme_override_constants/separation = 100
 layout_mode = 2
 
 [node name="imagem" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem"]
-position = Vector2(107, 78.3321)
+position = Vector2(51.0094, 84.235)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("8_w3kp3")
 region_enabled = true
 region_rect = Rect2(520.375, 493.066, 239.625, 209.25)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/imagem"]
+[node name="seleção_grande" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem"]
+visible = false
+modulate = Color(1, 1, 1, 0.592157)
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 101.0
+offset_bottom = 41.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 99.0
+offset_bottom = 97.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_left = 0.164615
+offset_top = 2.81935
+offset_right = 6.16461
+offset_bottom = 95.8194
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 3.0
+offset_right = 99.0
+offset_bottom = 97.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="icone_selecao_tolen" type="PanelContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 99.0
+offset_bottom = 131.0
+script = ExtResource("10_pyyvc")
 
 [node name="Panel_personagem2" type="Panel" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8"]
 layout_mode = 2
 
 [node name="imagem" type="Sprite2D" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2"]
-position = Vector2(107, 78.3321)
+position = Vector2(51.0094, 84.235)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("8_w3kp3")
 region_enabled = true
-region_rect = Rect2(766.813, 262.341, 253.125, 229.5)
+region_rect = Rect2(272.5, 503.077, 222, 201)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/imagem"]
+[node name="seleção_grande" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2"]
+visible = false
+modulate = Color(1, 1, 1, 0.592157)
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 101.0
+offset_bottom = 41.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/seleção_grande"]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 99.0
+offset_bottom = 97.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/seleção_grande"]
+layout_mode = 0
+offset_left = 0.164615
+offset_top = 2.81935
+offset_right = 6.16461
+offset_bottom = 95.8194
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/seleção_grande"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 3.0
+offset_right = 99.0
+offset_bottom = 97.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="icone_selecao_tolen" type="PanelContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 99.0
+offset_bottom = 131.0
+script = ExtResource("10_pyyvc")
 
-[node name="Criacao7_investido" type="Sprite2D" parent="layer/token"]
+[node name="nome_slots_raça2" type="Label" parent="layer/token"]
 visible = false
-position = Vector2(-357.564, 79.6875)
-rotation = -3.14159
-scale = Vector2(0.696893, -1.21901)
-texture = ExtResource("7_y401i")
-region_enabled = true
-region_rect = Rect2(458.25, 412.509, 667.5, 252)
-
-[node name="ColorRect" type="ColorRect" parent="layer/token/Criacao7_investido"]
-offset_left = -431.0
-offset_top = 63.0
-offset_right = -258.0
-offset_bottom = 185.0
-color = Color(0.752941, 0.494118, 0.196078, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="layer/token/Criacao7_investido"]
-visible = false
-offset_left = -513.083
-offset_top = 255.331
-offset_right = -340.083
-offset_bottom = 255.331
-color = Color(0.752941, 0.494118, 0.196078, 1)
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.305882, 0.184314, 0.0745098, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -352.5
+offset_top = 171.25
+offset_right = -116.5
+offset_bottom = 207.25
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Tokens Free"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Criacao5_investido" type="Sprite2D" parent="layer/token"]
 visible = false
@@ -2508,9 +3335,85 @@ texture = ExtResource("7_y401i")
 region_enabled = true
 region_rect = Rect2(572.875, 15.375, 509.838, 70.8097)
 
+[node name="fundo" type="ColorRect" parent="layer/token"]
+offset_left = -84.0
+offset_top = -1.0
+offset_right = 87.0
+offset_bottom = 56.0
+color = Color(0.752941, 0.494118, 0.196078, 1)
+
+[node name="preview" type="Sprite2D" parent="layer/token/fundo"]
+position = Vector2(89, 37.25)
+region_enabled = true
+
+[node name="layer_raca_per" type="Sprite2D" parent="layer"]
+position = Vector2(427.5, -372.5)
+rotation = 3.14159
+scale = Vector2(1.08189, -0.996)
+
+[node name="area_slot2" type="PanelContainer" parent="layer/layer_raca_per"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 716.339
+offset_top = -139.307
+offset_right = 1289.34
+offset_bottom = 930.693
+
+[node name="area_slot3" type="PanelContainer" parent="layer/layer_raca_per"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -504.0
+offset_top = -142.0
+offset_right = 66.0
+offset_bottom = 928.0
+
+[node name="area_slot4" type="PanelContainer" parent="layer/layer_raca_per"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 27.0
+offset_top = -481.0
+offset_right = 732.0
+offset_bottom = -38.0
+
+[node name="area_slot5" type="PanelContainer" parent="layer/layer_raca_per"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -3.46622
+offset_top = 720.382
+offset_right = 746.534
+offset_bottom = 1161.38
+
+[node name="layer_raca_per2" type="Sprite2D" parent="layer"]
+position = Vector2(427.5, -372.5)
+rotation = 3.14159
+scale = Vector2(1.08189, -0.996)
+
+[node name="area_slot_token" type="PanelContainer" parent="layer/layer_raca_per2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 734.825
+offset_top = -92.8735
+offset_right = 1307.83
+offset_bottom = 977.126
+
+[node name="area_slot_token2" type="PanelContainer" parent="layer/layer_raca_per2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -508.37
+offset_top = -146.836
+offset_right = 61.6301
+offset_bottom = 923.164
+
+[node name="area_slot_token3" type="PanelContainer" parent="layer/layer_raca_per2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 27.0
+offset_top = -481.0
+offset_right = 732.0
+offset_bottom = -38.0
+
+[node name="area_slot_token4" type="PanelContainer" parent="layer/layer_raca_per2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1.15722
+offset_top = 793.173
+offset_right = 751.157
+offset_bottom = 1234.17
+
 [node name="personagem" type="Sprite2D" parent="layer"]
-position = Vector2(-241.25, -237.5)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-217.5, -191.25)
 region_enabled = true
 region_rect = Rect2(1160.13, 161, 330.75, 235.75)
 
@@ -2553,304 +3456,330 @@ offset_bottom = 275.0
 layout_mode = 2
 theme_override_constants/separation = 90
 
-[node name="VBoxContainer" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+[node name="slots_humanos2" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 130
+
+[node name="vboxhumano" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="humano" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano"]
 layout_mode = 2
 
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem"]
+[node name="Humano" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 76.0
+offset_top = 29.0
+offset_right = 650.0
+offset_bottom = 223.0
+script = ExtResource("11_tevnf")
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano"]
 position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("8_oxsie")
 region_enabled = true
 region_rect = Rect2(6.41696, 1.654, 261, 279)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
+[node name="seleção_grande" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano"]
+visible = false
+modulate = Color(1, 1, 1, 0.592157)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 36.0
+offset_right = 660.0
+offset_bottom = 40.0
+color = Color(0, 0.528414, 0.230319, 1)
 
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="ColorRect3" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/seleção_grande"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 644.0
+offset_bottom = 202.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/seleção_grande"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 199.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/seleção_grande"]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 3.0
+offset_right = 644.0
+offset_bottom = 198.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="nome_slots_raça" type="Label" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.305882, 0.184314, 0.0745098, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = -69.0968
+offset_top = -11.7555
+offset_right = 236.903
+offset_bottom = 50.2445
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Humanos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano"]
 layout_mode = 2
 
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem2"]
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/Panel_personagem2"]
 position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("8_oxsie")
 region_enabled = true
 region_rect = Rect2(6.41696, 1.654, 261, 279)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer/Panel_personagem2/imagem"]
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/Panel_personagem2/imagem"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -136.0
 offset_top = -112.0
 offset_right = 138.0
 offset_bottom = 140.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+[node name="vboxelfo" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2"]
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo"]
 layout_mode = 2
 
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem"]
+[node name="Elfo" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 76.0
+offset_top = 44.0
+offset_right = 654.0
+offset_bottom = 237.0
+script = ExtResource("11_tevnf")
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem"]
 position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
+texture = ExtResource("12_wgpy3")
 region_enabled = true
 region_rect = Rect2(6.41696, 1.654, 261, 279)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem/imagem"]
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/imagem"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -136.0
 offset_top = -112.0
 offset_right = 138.0
 offset_bottom = 140.0
 
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2"]
+[node name="seleção_grande" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem"]
+visible = false
+modulate = Color(1, 1, 1, 0.592157)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 36.0
+offset_right = 660.0
+offset_bottom = 40.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 644.0
+offset_bottom = 202.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 199.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 3.0
+offset_right = 644.0
+offset_bottom = 198.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="nome_slots_raça2" type="Label" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.305882, 0.184314, 0.0745098, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 2.09127
+offset_top = 1.79671
+offset_right = 112.091
+offset_bottom = 37.7967
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Elfos "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icone_seleção" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem"]
+modulate = Color(1, 1, 1, 0.592157)
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 101.0
+offset_bottom = 41.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/icone_seleção"]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 99.0
+offset_bottom = 97.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/icone_seleção"]
+layout_mode = 0
+offset_left = 0.164615
+offset_top = 2.81935
+offset_right = 6.16461
+offset_bottom = 95.8194
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/icone_seleção"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 3.0
+offset_right = 99.0
+offset_bottom = 97.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo"]
 layout_mode = 2
 
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem2"]
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem2"]
 position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
+texture = ExtResource("12_wgpy3")
 region_enabled = true
 region_rect = Rect2(6.41696, 1.654, 261, 279)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer2/Panel_personagem2/imagem"]
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem2/imagem"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -136.0
 offset_top = -112.0
 offset_right = 138.0
 offset_bottom = 140.0
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
+[node name="vboxelfo2" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3"]
+[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2"]
 layout_mode = 2
 
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem"]
+[node name="Elfo" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 76.0
+offset_top = 44.0
+offset_right = 654.0
+offset_bottom = 237.0
+script = ExtResource("11_tevnf")
+
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem"]
 position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
+texture = ExtResource("12_wgpy3")
 region_enabled = true
 region_rect = Rect2(6.41696, 1.654, 261, 279)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem/imagem"]
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/imagem"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -136.0
 offset_top = -112.0
 offset_right = 138.0
 offset_bottom = 140.0
 
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3"]
+[node name="seleção_grande" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem"]
+visible = false
+modulate = Color(1, 1, 1, 0.592157)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 36.0
+offset_right = 660.0
+offset_bottom = 40.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 644.0
+offset_bottom = 202.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 199.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/seleção_grande"]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 3.0
+offset_right = 644.0
+offset_bottom = 198.0
+color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="nome_slots_raça2" type="Label" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.305882, 0.184314, 0.0745098, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 2.09127
+offset_top = 1.79671
+offset_right = 112.091
+offset_bottom = 37.7967
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Elfos "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2"]
 layout_mode = 2
 
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem2"]
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem2"]
 position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
+texture = ExtResource("12_wgpy3")
 region_enabled = true
 region_rect = Rect2(6.41696, 1.654, 261, 279)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer3/Panel_personagem2/imagem"]
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem2/imagem"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -136.0
 offset_top = -112.0
 offset_right = 138.0
 offset_bottom = 140.0
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4"]
+[node name="Panel_personagem3" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2"]
 layout_mode = 2
 
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem"]
+[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem3"]
 position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
+texture = ExtResource("12_wgpy3")
 region_enabled = true
 region_rect = Rect2(6.41696, 1.654, 261, 279)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem2"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer4/Panel_personagem2/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="VBoxContainer5" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem2"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer5/Panel_personagem2/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="VBoxContainer6" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem2"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer6/Panel_personagem2/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="VBoxContainer7" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem2"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer7/Panel_personagem2/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="VBoxContainer8" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Panel_personagem" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem/imagem"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -136.0
-offset_top = -112.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="Panel_personagem2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8"]
-layout_mode = 2
-
-[node name="imagem" type="Sprite2D" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem2"]
-position = Vector2(107, 78.3321)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_oxsie")
-region_enabled = true
-region_rect = Rect2(6.41696, 1.654, 261, 279)
-
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/VBoxContainer8/Panel_personagem2/imagem"]
+[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem3/imagem"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -136.0
 offset_top = -112.0
@@ -2874,25 +3803,28 @@ region_enabled = true
 region_rect = Rect2(572.875, 15.375, 509.625, 71.5139)
 
 [node name="Criacao3" type="Sprite2D" parent="layer/personagem"]
-position = Vector2(-6.25002, -68.75)
+position = Vector2(-6.25003, -68.75)
 texture = ExtResource("1_ioghj")
 region_enabled = true
 region_rect = Rect2(1160.13, 39, 330.75, 357.75)
 
-[node name="PanelContainer" type="PanelContainer" parent="layer/personagem/Criacao3"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -124.0
-offset_top = -64.0
-offset_right = 130.0
-offset_bottom = 158.0
-
-[node name="PanelContainer2" type="PanelContainer" parent="layer/personagem/Criacao3"]
+[node name="Anao" type="PanelContainer" parent="layer/personagem/Criacao3"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-offset_left = -116.0
-offset_top = -60.0
-offset_right = 565.0
-offset_bottom = 499.0
+offset_left = -99.9999
+offset_top = 590.0
+offset_right = 571.0
+offset_bottom = 795.0
+script = ExtResource("11_tevnf")
+
+[node name="Ork" type="PanelContainer" parent="layer/personagem/Criacao3"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -100.0
+offset_top = 847.5
+offset_right = 571.0
+offset_bottom = 1052.5
+script = ExtResource("11_tevnf")
 
 [node name="nome_layer" type="Label" parent="layer/personagem/Criacao3"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
@@ -2908,6 +3840,111 @@ theme_override_font_sizes/font_size = 50
 text = "Personagem"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="layer/personagem"]
+offset_left = 217.5
+offset_top = -41.25
+offset_right = 257.5
+offset_bottom = -1.25
+
+[node name="descricao_racas" type="ColorRect" parent="layer/personagem"]
+visible = false
+offset_left = 125.0
+offset_top = 87.0
+offset_right = 563.0
+offset_bottom = 92.0
+mouse_filter = 2
+color = Color(0.137255, 0.0784314, 0.0392157, 1)
+script = ExtResource("13_b18dr")
+
+[node name="ColorRect" type="ColorRect" parent="layer/personagem/descricao_racas"]
+layout_mode = 0
+offset_left = -227.0
+offset_top = -206.0
+offset_right = -33.0
+offset_bottom = -15.0
+mouse_filter = 2
+color = Color(0.752941, 0.494118, 0.196078, 1)
+
+[node name="nome_raca" type="Label" parent="layer/personagem/descricao_racas"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.345098, 0.2, 0.0980392, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 41.0
+offset_top = -213.0
+offset_right = 541.0
+offset_bottom = -153.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 30
+text = "Nome Raça"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="descricao" type="RichTextLabel" parent="layer/personagem/descricao_racas/nome_raca"]
+modulate = Color(0.345098, 0.196078, 0.0941176, 1)
+layout_mode = 0
+offset_left = -160.0
+offset_top = 67.0
+offset_right = 402.0
+offset_bottom = 232.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/normal_font = ExtResource("3_srytw")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 1
+text = "Descrição: "
+fit_content = true
+threaded = true
+progress_bar_delay = 500
+
+[node name="atributos" type="RichTextLabel" parent="layer/personagem/descricao_racas/nome_raca"]
+modulate = Color(0.345098, 0.196078, 0.0941176, 1)
+layout_mode = 0
+offset_left = -164.0
+offset_top = 300.0
+offset_right = 402.0
+offset_bottom = 381.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/normal_font = ExtResource("3_srytw")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 1
+text = "atributos:"
+
+[node name="imagem_raca" type="TextureRect" parent="layer/personagem/descricao_racas"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.516
+anchor_top = -42.2
+anchor_right = -0.103
+anchor_bottom = -3.0
+offset_left = 0.00801086
+offset_right = 211.114
+offset_bottom = 202.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_x1rxa")
+
+[node name="area_slot" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -278.0
+offset_top = -302.0
+offset_right = -75.0
+offset_bottom = -85.0
+
+[node name="area_slot_token" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 83.0
+offset_top = -296.0
+offset_right = 283.0
+offset_bottom = -80.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
@@ -2988,26 +4025,136 @@ region_rect = Rect2(69.301, 88.217, 165, 169)
 
 [node name="show_erro" type="Node2D" parent="."]
 visible = false
-position = Vector2(-5, -410)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-10, -351)
 script = ExtResource("13_ye5uu")
+
+[node name="show_erro" type="Sprite2D" parent="show_erro"]
+position = Vector2(-233, 34)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(395, 2.5)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(775, 2.5)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro/show_erro/Erro8"]
+position = Vector2(395, 2.5)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro/show_erro/Erro8"]
+position = Vector2(417.5, -1.19209e-06)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(-257.5, -48.0522)
+scale = Vector2(1, 1.0096)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/show_erro/Erro"]
+position = Vector2(0, 99.5957)
+texture = ExtResource("14_8h76j")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro"]
+position = Vector2(1702.5, 99.5958)
+texture = ExtResource("14_8h76j")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro"]
+position = Vector2(1702.5, 0.546997)
+texture = ExtResource("14_8h76j")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro2" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(2.50003, -50.0001)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
+position = Vector2(397.5, 0)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
+position = Vector2(792.5, 0)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
+position = Vector2(1190, 105)
+rotation = -3.14159
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5"]
+position = Vector2(397.5, 0)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5"]
+position = Vector2(792.5, 0)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("14_8h76j")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
 
 [node name="ColorRect" type="ColorRect" parent="show_erro"]
 modulate = Color(1, 1, 1, 0.333333)
 show_behind_parent = true
-offset_left = -333.0
-offset_top = 74.0
-offset_right = 394.0
-offset_bottom = 151.0
+offset_left = -362.0
+offset_top = -8.0
+offset_right = 365.0
+offset_bottom = 69.0
 color = Color(0.403087, 0, 0.11844, 1)
 
 [node name="label_mensagem" type="Label" parent="show_erro"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
 self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(30, 30)
-offset_left = -328.0
-offset_top = 81.0
-offset_right = 391.0
-offset_bottom = 143.0
+offset_left = -357.0
+offset_top = -1.0
+offset_right = 362.0
+offset_bottom = 61.0
 pivot_offset = Vector2(95, 0)
 theme_override_fonts/font = SubResource("FontVariation_8h76j")
 theme_override_font_sizes/font_size = 35
@@ -3026,10 +4173,69 @@ libraries = {
 }
 speed_scale = 6.0
 
+[node name="mouse_area" type="Area2D" parent="."]
+visible = false
+position = Vector2(-490, -191)
+collision_layer = 128
+collision_mask = 128
+monitoring = false
+script = ExtResource("15_5o3df")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_area"]
+shape = SubResource("CircleShape2D_5o3df")
+
+[node name="Token-border-collection-v0-8Pv4Nqo221Ja1" type="Sprite2D" parent="mouse_area"]
+position = Vector2(2.38419e-07, -7.689e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("16_fyjs1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -158.0
+offset_top = -93.0
+offset_right = -23.0
+offset_bottom = 134.0
+color = Color(1, 1, 1, 0.768627)
+
+[node name="nick_label2" type="Label" parent="ColorRect"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.360784, 0.196078, 0.12549, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = -34.0
+offset_top = -16.0
+offset_right = 171.0
+offset_bottom = 46.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_5o3df")
+theme_override_font_sizes/font_size = 30
+text = "Texto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="nick_label3" type="Label" parent="ColorRect/nick_label2"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.360784, 0.196078, 0.12549, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_top = 20.0
+offset_right = 205.0
+offset_bottom = 82.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_5o3df")
+theme_override_font_sizes/font_size = 25
+text = "Texto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/menos" to="." method="_on_menos_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/mais" to="." method="_on_mais_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/menos" to="." method="_on_menos_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel8/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel7/ColorRect2/mais" to="." method="_on_mais_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/menos" to="." method="_on_menos_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/mais" to="." method="_on_mais_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/menos" to="." method="_on_menos_pressed"]
@@ -3038,9 +4244,42 @@ speed_scale = 6.0
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/mais" to="." method="_on_mais_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/menos" to="." method="_on_menos_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/mais" to="." method="_on_mais_pressed"]
-[connection signal="mouse_entered" from="layer/token/PanelContainer2" to="." method="_on_panel_container_2_mouse_entered"]
-[connection signal="mouse_exited" from="layer/token/PanelContainer2" to="." method="_on_panel_container_2_mouse_exited"]
-[connection signal="mouse_entered" from="layer/personagem/Criacao3/PanelContainer" to="." method="_on_panel_container_mouse_entered"]
-[connection signal="mouse_exited" from="layer/personagem/Criacao3/PanelContainer" to="." method="_on_panel_container_mouse_exited"]
-[connection signal="mouse_entered" from="layer/personagem/Criacao3/PanelContainer2" to="." method="_on_panel_container_mouse_entered"]
-[connection signal="mouse_exited" from="layer/personagem/Criacao3/PanelContainer2" to="." method="_on_panel_container_mouse_exited"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel3/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel4/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel5/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="layer/HBoxContainer/Panel3/layer_atributos/ScrollContainer/VBoxContainer/Panel6/ColorRect2/mais" to="." method="_on_mais_pressed"]
+[connection signal="mouse_entered" from="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/icone_selecao_tolen" to="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/icone_selecao_tolen" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/icone_selecao_tolen" to="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem/icone_selecao_tolen" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/icone_selecao_tolen" to="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/icone_selecao_tolen" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/icone_selecao_tolen" to="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido/HBoxContainer_investido/VBoxContainer8/Panel_personagem2/icone_selecao_tolen" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer/layer_raca_per/area_slot2" to="." method="_on_area_slot_2_mouse_entered"]
+[connection signal="mouse_entered" from="layer/layer_raca_per/area_slot3" to="." method="_on_area_slot_3_mouse_entered"]
+[connection signal="mouse_entered" from="layer/layer_raca_per/area_slot4" to="." method="_on_area_slot_4_mouse_entered"]
+[connection signal="mouse_entered" from="layer/layer_raca_per/area_slot5" to="." method="_on_area_slot_5_mouse_entered"]
+[connection signal="mouse_entered" from="layer/layer_raca_per2/area_slot_token" to="." method="_on_area_slot_token_mouse_entered"]
+[connection signal="mouse_exited" from="layer/layer_raca_per2/area_slot_token" to="." method="_on_area_slot_token_mouse_exited"]
+[connection signal="mouse_entered" from="layer/layer_raca_per2/area_slot_token2" to="." method="_on_area_slot_token_2_mouse_entered"]
+[connection signal="mouse_entered" from="layer/layer_raca_per2/area_slot_token3" to="." method="_on_area_slot_token_3_mouse_entered"]
+[connection signal="mouse_entered" from="layer/layer_raca_per2/area_slot_token4" to="." method="_on_area_slot_token_4_mouse_entered"]
+[connection signal="mouse_entered" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/Humano" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/Humano" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/Humano" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/Humano" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/Elfo" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/Elfo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/Elfo" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/Elfo" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/Elfo" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/Elfo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/Elfo" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo2/Panel_personagem/Elfo" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer/personagem/Criacao3/Anao" to="layer/personagem/Criacao3/Anao" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/Criacao3/Anao" to="layer/personagem/Criacao3/Anao" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer/personagem/Criacao3/Ork" to="layer/personagem/Criacao3/Ork" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/Criacao3/Ork" to="layer/personagem/Criacao3/Ork" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="area_slot" to="." method="_on_area_slot_mouse_entered"]
+[connection signal="mouse_exited" from="area_slot" to="." method="_on_area_slot_mouse_exited"]
+[connection signal="mouse_entered" from="area_slot_token" to="." method="_on_area_slot_token_mouse_entered"]
+[connection signal="mouse_exited" from="area_slot_token" to="." method="_on_area_slot_token_mouse_exited"]
