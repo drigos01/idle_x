@@ -1,0 +1,270 @@
+[gd_scene load_steps=6 format=3 uid="uid://bltro3rrxa3ps"]
+
+[ext_resource type="Texture2D" uid="uid://61py8cbs0t3d" path="res://imagens/cenario/chao_pedra_1.png" id="1_pd4h2"]
+[ext_resource type="Texture2D" uid="uid://ba6r36ulp7apc" path="res://imagens/cenario/casa1.png" id="2_k3mk2"]
+[ext_resource type="Texture2D" uid="uid://b5aei8nhhvu53" path="res://imagens/cenario/casa_2.png" id="3_xn76b"]
+[ext_resource type="Texture2D" uid="uid://cfaljllje5xue" path="res://imagens/cenario/casa_3.png" id="4_75ifb"]
+[ext_resource type="PackedScene" uid="uid://bt8v8a3u7l40u" path="res://cenas/token_player2.tscn" id="7_lpmi1"]
+
+[node name="cidade_1" type="Node2D"]
+
+[node name="ChaoPedra2" type="Sprite2D" parent="."]
+position = Vector2(421, -41)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pd4h2")
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra2"]
+position = Vector2(-900, 308)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra2/ChaoPedra3"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra2/ChaoPedra3/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra2/ChaoPedra3"]
+position = Vector2(378, 160)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra2/ChaoPedra3/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra2/ChaoPedra3/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra2"]
+position = Vector2(-498, 100)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra2/ChaoPedra4"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra2/ChaoPedra4/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra2/ChaoPedra4"]
+position = Vector2(378, 160)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra2/ChaoPedra4/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra2/ChaoPedra4/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra2"]
+position = Vector2(-58, -110)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra2/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra2/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra2/ChaoPedra5"]
+position = Vector2(378, 160)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra2/ChaoPedra5/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra2/ChaoPedra5/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="."]
+position = Vector2(783, 115)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pd4h2")
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra3"]
+position = Vector2(-900, 308)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra3/ChaoPedra3"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra3/ChaoPedra3/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra3/ChaoPedra3"]
+position = Vector2(378, 160)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra3/ChaoPedra3/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra3/ChaoPedra3/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra3"]
+position = Vector2(-498, 100)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra3/ChaoPedra4"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra3/ChaoPedra4/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra3/ChaoPedra4"]
+position = Vector2(378, 160)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra3/ChaoPedra4/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra3/ChaoPedra4/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra3"]
+position = Vector2(-58, -110)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra3/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra3/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra5" type="Sprite2D" parent="ChaoPedra3/ChaoPedra5"]
+position = Vector2(378, 160)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="ChaoPedra4" type="Sprite2D" parent="ChaoPedra3/ChaoPedra5/ChaoPedra5"]
+position = Vector2(126, 42)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(413.281, 689.188, 610.719, 334.813)
+
+[node name="ChaoPedra3" type="Sprite2D" parent="ChaoPedra3/ChaoPedra5/ChaoPedra5/ChaoPedra4"]
+position = Vector2(116, 60)
+texture = ExtResource("1_pd4h2")
+region_enabled = true
+region_rect = Rect2(346.875, 683.875, 677.125, 340.125)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(38, 13)
+scale = Vector2(0.5, 0.5)
+
+[node name="Casa1" type="Sprite2D" parent="Node2D"]
+position = Vector2(318, -330)
+texture = ExtResource("2_k3mk2")
+
+[node name="Casa2" type="Sprite2D" parent="Node2D"]
+position = Vector2(746, -202)
+texture = ExtResource("3_xn76b")
+
+[node name="Casa3" type="Sprite2D" parent="Node2D"]
+position = Vector2(1280, -40)
+texture = ExtResource("4_75ifb")
+
+[node name="Casa4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-380, 26)
+texture = ExtResource("3_xn76b")
+
+[node name="Casa5" type="Sprite2D" parent="Node2D"]
+position = Vector2(94, 230)
+texture = ExtResource("2_k3mk2")
+
+[node name="Casa6" type="Sprite2D" parent="Node2D"]
+position = Vector2(522, 358)
+texture = ExtResource("3_xn76b")
+
+[node name="Casa7" type="Sprite2D" parent="Node2D"]
+position = Vector2(972, 586)
+texture = ExtResource("3_xn76b")
+
+[node name="token_player" parent="." instance=ExtResource("7_lpmi1")]
+position = Vector2(388, 123)

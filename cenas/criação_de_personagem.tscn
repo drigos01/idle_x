@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cqxjx2rbdp0kp"]
+[gd_scene load_steps=41 format=3 uid="uid://cqxjx2rbdp0kp"]
 
 [ext_resource type="Texture2D" uid="uid://b44d73fppj8c6" path="res://imagens/criacao2.png" id="1_ioghj"]
 [ext_resource type="Script" uid="uid://byicguw5stikg" path="res://scripts/criação_de_personagem.gd" id="1_nx86r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bnqg04i5jievg" path="res://imagens/layer_atributos.png" id="5_2j8gd"]
 [ext_resource type="PackedScene" uid="uid://bvsjco5ociebr" path="res://cenas/panel.tscn" id="6_ye5uu"]
 [ext_resource type="Texture2D" uid="uid://dugece6s56s2j" path="res://imagens/criacao3.png" id="7_y401i"]
+[ext_resource type="Script" uid="uid://buochkj2mpb3x" path="res://scripts/nome_sobre_token.gd" id="8_bas6i"]
 [ext_resource type="Texture2D" uid="uid://cp7ytyi8w3q8s" path="res://imagens/personagens/humanos.png" id="8_oxsie"]
 [ext_resource type="Texture2D" uid="uid://cgo67rve3ie46" path="res://imagens/layer/toke_1.png" id="8_w3kp3"]
 [ext_resource type="Script" uid="uid://b2q8o47ggj45d" path="res://cenas/icone_selecao_tolen.gd" id="10_pyyvc"]
@@ -1042,10 +1043,10 @@ tracks/0/path = NodePath("criação de personagem/show_erro:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 2.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-10, -351), Vector2(-10, -451)]
+"values": [Vector2(-10, -330), Vector2(-10, -390)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1085,7 +1086,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-10, -451), Vector2(-10, -351)]
+"values": [Vector2(-10, -390), Vector2(-10, -330)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1106,10 +1107,10 @@ tracks/2/path = NodePath("criação de personagem/show_erro:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fq4k4"]
@@ -1159,10 +1160,10 @@ region_enabled = true
 region_rect = Rect2(286.059, 0, 859.358, 1024)
 
 [node name="ColorRect" type="ColorRect" parent="layer/Criacao2"]
-offset_left = -367.0
-offset_top = -412.0
-offset_right = 331.0
-offset_bottom = -130.0
+offset_left = -347.0
+offset_top = -344.0
+offset_right = 351.0
+offset_bottom = -142.0
 mouse_filter = 2
 color = Color(0.623529, 0.356863, 0.117647, 1)
 
@@ -1181,6 +1182,7 @@ text = "Status"
 vertical_alignment = 1
 
 [node name="layer_atributos2" type="Sprite2D" parent="layer"]
+visible = false
 position = Vector2(1436.25, -35)
 texture = ExtResource("1_ioghj")
 region_enabled = true
@@ -3046,13 +3048,17 @@ region_enabled = true
 region_rect = Rect2(6.938, 336.5, 286.875, 40.425)
 
 [node name="nick" type="LineEdit" parent="layer"]
+self_modulate = Color(0.83, 0.543373, 0.2158, 1)
 custom_minimum_size = Vector2(100, 0)
 offset_left = -372.0
 offset_top = -6.0
 offset_right = 380.0
 offset_bottom = 29.0
+mouse_filter = 1
 theme_override_fonts/font = SubResource("FontVariation_ye5uu")
 theme_override_font_sizes/font_size = 25
+placeholder_text = "nome aqui."
+script = ExtResource("8_bas6i")
 
 [node name="nick_label" type="Label" parent="layer/nick"]
 modulate = Color(0.999546, 0.982296, 0.966632, 1)
@@ -3071,12 +3077,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="preview_token" type="Node2D" parent="layer/nick"]
-position = Vector2(372, -202.75)
-scale = Vector2(1.25, 1.25)
+position = Vector2(373.25, -216.5)
+scale = Vector2(1.8, 1.8)
 script = ExtResource("22_6d4l8")
 
 [node name="personagem" type="Sprite2D" parent="layer/nick/preview_token"]
-position = Vector2(0, 30)
+position = Vector2(0, 17.3611)
 scale = Vector2(0.3, 0.3)
 region_enabled = true
 region_rect = Rect2(29.375, 5.076, 234, 281.25)
@@ -3084,6 +3090,50 @@ region_rect = Rect2(29.375, 5.076, 234, 281.25)
 [node name="token2" type="Sprite2D" parent="layer/nick/preview_token/personagem"]
 scale = Vector2(1.5, 1.5)
 region_enabled = true
+
+[node name="Label2" type="Label" parent="layer/nick/preview_token/personagem"]
+modulate = Color(0.309804, 0.196078, 0.0627451, 1)
+offset_left = -146.019
+offset_top = -220.37
+offset_right = 140.981
+offset_bottom = -180.37
+pivot_offset = Vector2(144, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Label" type="Label" parent="layer/nick/preview_token/personagem"]
+modulate = Color(0.309804, 0.196078, 0.0627451, 1)
+offset_left = -439.815
+offset_top = -211.333
+offset_right = 430.185
+offset_bottom = -171.333
+pivot_offset = Vector2(440, 0)
+theme_override_fonts/font = ExtResource("3_srytw")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+clip_text = true
+
+[node name="descricao_result" type="RichTextLabel" parent="layer"]
+modulate = Color(0.345098, 0.196078, 0.0941176, 1)
+offset_left = -372.5
+offset_top = 37.75
+offset_right = 127.5
+offset_bottom = 277.75
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_srytw")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 1
+bbcode_enabled = true
+fit_content = true
+threaded = true
+progress_bar_delay = 500
+script = ExtResource("16_tvx5v")
 
 [node name="token" type="Sprite2D" parent="layer"]
 position = Vector2(225, -258.75)
@@ -3539,8 +3589,24 @@ offset_right = 99.0
 offset_bottom = 103.0
 color = Color(0, 0.528414, 0.230319, 1)
 
+[node name="humano" type="Label" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "humano"
+
 [node name="humano2" type="Panel" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano"]
 layout_mode = 2
+
+[node name="Humano" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 76.0
+offset_top = 29.0
+offset_right = 650.0
+offset_bottom = 223.0
+script = ExtResource("11_tevnf")
 
 [node name="selecao_slot_personagem" type="PanelContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2"]
 layout_mode = 0
@@ -3555,7 +3621,7 @@ position = Vector2(107, 78.3321)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("8_oxsie")
 region_enabled = true
-region_rect = Rect2(257.5, 11.826, 254.25, 270)
+region_rect = Rect2(6.41696, 1.654, 261, 279)
 
 [node name="seleção_grande" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2"]
 visible = false
@@ -3589,6 +3655,22 @@ offset_right = 644.0
 offset_bottom = 198.0
 color = Color(0, 0.528414, 0.230319, 1)
 
+[node name="nome_slots_raça" type="Label" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0.305882, 0.184314, 0.0745098, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = -69.0968
+offset_top = -11.7555
+offset_right = 236.903
+offset_bottom = 50.2445
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_nx86r")
+theme_override_font_sizes/font_size = 50
+text = "Humanos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="icone_seleção" type="ColorRect" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2"]
 visible = false
 modulate = Color(1, 1, 1, 0.592157)
@@ -3621,6 +3703,13 @@ offset_top = 3.0
 offset_right = 99.0
 offset_bottom = 103.0
 color = Color(0, 0.528414, 0.230319, 1)
+
+[node name="humano" type="Label" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "humano"
 
 [node name="vboxelfo" type="VBoxContainer" parent="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2"]
 layout_mode = 2
@@ -3890,26 +3979,6 @@ offset_top = -41.25
 offset_right = 257.5
 offset_bottom = -1.25
 
-[node name="descricao_result" type="RichTextLabel" parent="layer/personagem"]
-visible = false
-modulate = Color(0.345098, 0.196078, 0.0941176, 1)
-offset_left = -155.0
-offset_top = 229.0
-offset_right = 345.0
-offset_bottom = 482.0
-scale = Vector2(1.5, 1.5)
-theme_override_fonts/normal_font = ExtResource("3_srytw")
-theme_override_font_sizes/bold_italics_font_size = 1
-theme_override_font_sizes/italics_font_size = 1
-theme_override_font_sizes/mono_font_size = 1
-theme_override_font_sizes/normal_font_size = 15
-theme_override_font_sizes/bold_font_size = 1
-text = "Descrição: "
-fit_content = true
-threaded = true
-progress_bar_delay = 500
-script = ExtResource("16_tvx5v")
-
 [node name="descricao_racas" type="ColorRect" parent="layer/personagem"]
 visible = false
 offset_left = 125.0
@@ -4077,6 +4146,12 @@ texture = ExtResource("12_8h76j")
 region_enabled = true
 region_rect = Rect2(69.301, 88.217, 165, 169)
 
+[node name="cadastra" type="Button" parent="botao"]
+offset_left = -340.0
+offset_top = -52.0
+offset_right = 157.0
+offset_bottom = 61.0
+
 [node name="show_erro" type="Node2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -4211,7 +4286,7 @@ offset_right = 362.0
 offset_bottom = 61.0
 pivot_offset = Vector2(95, 0)
 theme_override_fonts/font = SubResource("FontVariation_8h76j")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "vazio"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -4283,6 +4358,111 @@ text = "Texto"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Placas7" type="Sprite2D" parent="."]
+position = Vector2(94, -335)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_ye5uu")
+region_enabled = true
+region_rect = Rect2(447.875, 341, 353.25, 132.75)
+
+[node name="Placas5" type="Sprite2D" parent="Placas7"]
+position = Vector2(-333.333, 0)
+texture = ExtResource("11_ye5uu")
+region_enabled = true
+region_rect = Rect2(65.375, 341, 315, 132.75)
+
+[node name="login" type="Sprite2D" parent="Placas7"]
+position = Vector2(-448.333, -3.33333)
+scale = Vector2(0.3, 0.4)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(360.125, 72.335, 123.75, 175.5)
+
+[node name="o" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(125.49, 11.7647)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(600.875, 471.5, 148.5, 164.25)
+
+[node name="o3" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(486.274, 15.6863)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(600.875, 471.5, 148.5, 164.25)
+
+[node name="o2" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(239.216, 7.84316)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(371.375, 266.75, 81, 175.5)
+
+[node name="g" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(337.255, 3.92159)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(80.3707, 59.076, 156.004, 204.75)
+
+[node name="i" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(1313.73, 3.92157)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(63.125, 455.75, 162, 166.5)
+
+[node name="i2" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(1466.67, -16.6667)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(81.125, 30.5, 155.25, 216)
+
+[node name="i3" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(1589.72, 6.42159)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(76.625, 270.856, 135, 157.5)
+
+[node name="i4" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(1719.13, 2.50002)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(627.875, 68.75, 135, 180)
+
+[node name="i5" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(1844.44, 4.16666)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(837.125, 271.25, 112.5, 164.25)
+
+[node name="i6" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(1922.22, 4.16673)
+texture = ExtResource("12_8h76j")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(835.078, 273.129, 94.6667, 163.333)
+
+[node name="n" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(690.196, 7.84313)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(349, 469.25, 125.875, 155.25)
+
+[node name="n2" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(811.765, -3.8147e-06)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(623.375, 53, 128.25, 207)
+
+[node name="n3" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(1192.16, 3.92156)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(220.625, 460.25, 126, 168.75)
+
+[node name="n4" type="Sprite2D" parent="Placas7/login"]
+position = Vector2(996.078, 7.84313)
+texture = ExtResource("12_8h76j")
+region_enabled = true
+region_rect = Rect2(596.375, 462.5, 261, 166.5)
+
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/menos" to="." method="_on_menos_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel/ColorRect2/mais" to="." method="_on_mais_pressed"]
 [connection signal="pressed" from="layer/HBoxContainer/Panel/layer_atributos/ScrollContainer/VBoxContainer/Panel2/ColorRect2/menos" to="." method="_on_menos_pressed"]
@@ -4327,6 +4507,8 @@ vertical_alignment = 1
 [connection signal="mouse_exited" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/Humano" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/Humano" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/selecao_slot_personagem" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/selecao_slot_personagem" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/selecao_slot_personagem" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano/selecao_slot_personagem" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/Humano" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/Humano" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/Humano" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/Humano" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/selecao_slot_personagem" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/selecao_slot_personagem" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/selecao_slot_personagem" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxhumano/humano2/selecao_slot_personagem" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/Elfo" to="layer/personagem/fundo_slot_imagem2/ScrollContainer/HBoxContainer/slots_humanos2/vboxelfo/Panel_personagem/Elfo" method="_on_mouse_entered"]
@@ -4341,3 +4523,7 @@ vertical_alignment = 1
 [connection signal="mouse_exited" from="area_slot" to="." method="_on_area_slot_mouse_exited"]
 [connection signal="mouse_entered" from="area_slot_token" to="." method="_on_area_slot_token_mouse_entered"]
 [connection signal="mouse_exited" from="area_slot_token" to="." method="_on_area_slot_token_mouse_exited"]
+[connection signal="pressed" from="botao/cadastra" to="." method="_on_cadastra_pressed"]
+[connection signal="timeout" from="show_erro/TimerErro" to="." method="_on_timer_erro_timeout"]
+[connection signal="timeout" from="show_erro/TimerErro" to="show_erro" method="_on_timer_erro_timeout"]
+[connection signal="animation_finished" from="show_erro/AnimationPlayer" to="show_erro" method="_on_animation_player_animation_finished"]

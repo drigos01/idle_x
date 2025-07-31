@@ -3,7 +3,7 @@ extends CharacterBody2D
 var vida := 100
 var vida_maxima := 100
 
-@export var controle_manual := false
+@export var controle_manual := true
 @export var alcance_ataque := 60.0
 @export var distancia_parada := 400.0
 @export var distancia_corpo := 40.0
@@ -14,7 +14,7 @@ var vida_maxima := 100
 @onready var token_player: Node2D = $token_player2
 @onready var barra_vida := $camera/Camera2D/layer_bars
 
-var level = true
+var level = false
 
 var inimigos_indicados := {}
 var destino: Vector2
@@ -31,7 +31,7 @@ func _ready():
 		$camera.scale = Vector2(2.0, 2.0)
 		$camera/Camera2D.zoom = Vector2(0.5, 0.5)
 	else:
-		$Camera2D.zoom = Vector2(1, 1)
+		$camera.scale = Vector2(1.0, 1.0)
 
 	Global.jogador[name] = self
 	destino = global_position

@@ -68,7 +68,7 @@ extends PanelContainer
 
 
 func _on_mouse_entered() -> void:
-	Global.descricao_raca = self.name.capitalize()
+	Global.descricao_raca = $"../humano".name.capitalize()
 	$"../seleção_grande".visible = true
 
 
