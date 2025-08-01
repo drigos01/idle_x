@@ -259,7 +259,6 @@ region_rect = Rect2(36.125, 0, 409.5, 1024)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Muralha1/StaticBody2D"]
 position = Vector2(819.363, -273.61)
 rotation = -0.599204
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pd4h2")
 
 [node name="Node2D" type="Node2D" parent="."]
