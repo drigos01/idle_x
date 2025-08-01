@@ -4,14 +4,15 @@ var valor_atual: int = 0
 
 var valor_recebido = 0
 
-func _process(delta: float) -> void:
-	
-	# Inicializa o label com texto original + valor
-	$nome_layer.text = "%s: %d" % [$nome_layer.text.get_slice(":", 0), valor_atual]
-
+func _ready():
 	# Conectando botões individualmente
 	$menos.connect("pressed", Callable(self, "_on_menos_pressed"))
 	$mais.connect("pressed", Callable(self, "_on_mais_pressed"))
+
+func _process(_delta: float) -> void:
+	# Inicializa o label com texto original + valor
+	$nome_layer.text = "%s: %d" % [$nome_layer.text.get_slice(":", 0), valor_atual]
+
 
 func _on_mais_pressed() -> void:
 	var pontos_disponiveis = Global.valor_total_distribuir_criacao_personagem - Global.pontos_usados

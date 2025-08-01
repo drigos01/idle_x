@@ -1,7 +1,7 @@
 extends Panel
 
 var ultimo_tempo_clique := 0.0
-var intervalo_duplo_clique := 0.3  # segundos
+var intervalo_duplo_clique := 0.3 # segundos
 var dentro = false
 
 func _input(event: InputEvent) -> void:
@@ -22,22 +22,22 @@ func _input(event: InputEvent) -> void:
 		#print("cheio")
 		
 
-		if tempo_atual - ultimo_tempo_clique < intervalo_duplo_clique:
-			print("Clique duplo detectado!")
-			get_tree().change_scene_to_file("res://cenas/criacao_de_personagem.tscn")
+	# if tempo_atual - ultimo_tempo_clique < intervalo_duplo_clique:
+	# 	print("Clique duplo detectado!")
+	# 	get_tree().change_scene_to_file("res://cenas/criacao_de_personagem.tscn")
+	# else:
+		if dentro:
+			$slots_selecao/selecionar2.visible = true
+			Global.selecionado_slots_selecao = self.name
+			print(Global.selecionado_slots_selecao)
+			Global.selecionado_slots_estado = $slots_selecao/organizador/nome.text
+			print(Global.selecionado_slots_estado)
+			
 		else:
-			if dentro:
-				$slots_selecao/selecionar2.visible = true
-				Global.selecionado_slots_selecao = self.name
-				print(Global.selecionado_slots_selecao)
-				Global.selecionado_slots_estado = $slots_selecao/organizador/nome.text
-				print(Global.selecionado_slots_estado)
-				
-			else:
-				$slots_selecao/selecionar2.visible = false
-			#print("Clique simples.")
+			$slots_selecao/selecionar2.visible = false
+		#print("Clique simples.")
 
-		ultimo_tempo_clique = tempo_atual
+	# ultimo_tempo_clique = tempo_atual
 
 func _on_panel_mouse_entered() -> void:
 	$slots_selecao/selecionar.visible = true

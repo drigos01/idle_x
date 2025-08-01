@@ -3077,11 +3077,13 @@ custom_minimum_size = Vector2(100, 0)
 offset_left = -372.0
 offset_top = -6.0
 offset_right = 380.0
-offset_bottom = 29.0
+offset_bottom = 54.0
 mouse_filter = 1
+theme_override_constants/caret_width = 5
 theme_override_fonts/font = SubResource("FontVariation_ye5uu")
-theme_override_font_sizes/font_size = 25
-placeholder_text = "nome aqui."
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Nome aqui."
+max_length = 16
 script = ExtResource("8_mg701")
 
 [node name="nick_label" type="Label" parent="layer/nick"]
@@ -3140,18 +3142,18 @@ horizontal_alignment = 1
 clip_text = true
 
 [node name="descricao_result" type="RichTextLabel" parent="layer"]
-modulate = Color(0.345098, 0.196078, 0.0941176, 1)
-offset_left = -372.5
-offset_top = 37.75
-offset_right = 127.5
-offset_bottom = 277.75
+modulate = Color(0.246336, 0.133803, 0.0567138, 1)
+offset_left = -372.0
+offset_top = 60.0
+offset_right = 128.0
+offset_bottom = 285.0
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_1efpb")
 theme_override_font_sizes/bold_italics_font_size = 1
 theme_override_font_sizes/italics_font_size = 1
 theme_override_font_sizes/mono_font_size = 1
-theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/normal_font_size = 15
 theme_override_font_sizes/bold_font_size = 1
 bbcode_enabled = true
 fit_content = true
@@ -4060,8 +4062,9 @@ offset_right = 157.0
 offset_bottom = 61.0
 
 [node name="show_erro" type="Node2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-10, -330)
+position = Vector2(-10, -351)
 script = ExtResource("21_ph34t")
 
 [node name="show_erro" type="Sprite2D" parent="show_erro"]

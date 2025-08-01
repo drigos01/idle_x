@@ -4,10 +4,10 @@ extends Node2D
 @onready var slot_severs = preload("res://cenas/panel_serve.tscn")
 
 @onready var painel_container = $"SeleçãoPersonagem/ScrollContainer/HBoxContainer"
-@onready var container_mensagens = $SlotSeerve/ScrollContainer/VBoxContainer  # Altere esse caminho para o container real onde você quer instanciar os servidores
+@onready var container_mensagens = $SlotSeerve/ScrollContainer/VBoxContainer # Altere esse caminho para o container real onde você quer instanciar os servidores
 
 var slot_selecionado = Global.selecionado_slots_selecao
-var online = false
+var online = true
 
 func _ready():
 	if !online:
@@ -57,18 +57,18 @@ func mostrar_slots_excedentes():
 		painel_container.add_child(slot)
 
 
-func _on_login_2_pressed():
+func _on_login_pressed():
 	if Global.selecionado_slots_estado == "Vazio":
 		get_tree().change_scene_to_file("res://cenas/criacao_de_personagem.tscn")
 	elif Global.selecionado_slots_estado != "Vazio":
 		get_tree().change_scene_to_file("res://cenas/cidade_1.tscn")
 
 
-func _on_login_2_mouse_entered() -> void:
+func _on_login_mouse_entered() -> void:
 	Global.botao_selecao = true
 
 
-func _on_login_2_mouse_exited() -> void:
+func _on_login_mouse_exited() -> void:
 	Global.botao_selecao = false
 
 
@@ -104,9 +104,6 @@ func _on_resposta_busca_servidores(data):
 	instanciar_slots_servidor(data.servidores)
 
 
-
-
-
 func instanciar_slots_servidor(lista_servidores: Array):
 	for child in container_mensagens.get_children():
 		child.queue_free()
@@ -134,13 +131,12 @@ func conectar_servidor(ip: String):
 	show_erro("Conectando ao servidor " + ip, Color8(0, 150, 255))
 
 	if !online:
-		await get_tree().create_timer(1.0).timeout  # Simula um tempo de espera
+		await get_tree().create_timer(1.0).timeout # Simula um tempo de espera
 		show_erro("Conexão simulada (offline) com " + ip + " estabelecida.", Color8(0, 255, 0))
 		return
 
 	# Conexão real
 	Socket.conectar_ao_servidor(ip)
-
 
 
 func show_erro(texto: String, cor_fundo: Color = Color8(255, 0, 0)) -> void:
@@ -169,3 +165,7 @@ func _on_timer_erro_timeout() -> void:
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "desaparecer":
 		$show_erro.visible = false
+
+
+func _on_criar_personagem_pressed():
+	get_tree().change_scene_to_file("res://cenas/criacao_de_personagem.tscn")

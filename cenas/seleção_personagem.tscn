@@ -1,8 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkrn821xnfwxw"]
+[gd_scene load_steps=22 format=3 uid="uid://dkrn821xnfwxw"]
 
 [ext_resource type="Script" uid="uid://l8klh3jubh4" path="res://scripts/seleção_personagem.gd" id="1_dbwua"]
 [ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="1_rcnp2"]
 [ext_resource type="Texture2D" uid="uid://cqwgnbljnmr5h" path="res://imagens/letras.png" id="2_dbwua"]
+[ext_resource type="Texture2D" uid="uid://bdfgcv1npr68m" path="res://imagens/entrar.png" id="2_qyb81"]
+[ext_resource type="Texture2D" uid="uid://crx0r3h02r2bk" path="res://imagens/criar_personagem_btn.png" id="3_dmxof"]
 [ext_resource type="Script" uid="uid://cc0ud1speduqy" path="res://scripts/mouse_area.gd" id="6_dmxof"]
 [ext_resource type="Texture2D" uid="uid://bvvctkil27ojq" path="res://imagens/layer/token-border-collection-v0-8pv4nqo221ja1.png" id="7_22ejx"]
 [ext_resource type="Script" uid="uid://2efouuflycfe" path="res://cenas/h_box_container.gd" id="7_rcnp2"]
@@ -21,6 +23,33 @@ base_font = ExtResource("9_bh0q7")
 
 [sub_resource type="FontVariation" id="FontVariation_bh0q7"]
 base_font = ExtResource("13_27sag")
+
+[sub_resource type="Animation" id="Animation_pv6r6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -330)]
+}
 
 [sub_resource type="Animation" id="Animation_4pdsd"]
 resource_name = "aparecer"
@@ -48,33 +77,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-10, -330), Vector2(-10, -390)]
-}
-
-[sub_resource type="Animation" id="Animation_pv6r6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-10, -330)]
 }
 
 [sub_resource type="Animation" id="Animation_m3l8s"]
@@ -138,57 +140,21 @@ offset_right = 1695.0
 offset_bottom = 947.0
 color = Color(0.608395, 0.382279, 0.203273, 1)
 
-[node name="Placas6" type="Sprite2D" parent="."]
-position = Vector2(49, 306)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_rcnp2")
-flip_v = true
-region_enabled = true
-region_rect = Rect2(447.875, 341, 353.25, 132.75)
+[node name="login" type="TextureButton" parent="."]
+offset_left = -44.0
+offset_top = 104.0
+offset_right = 980.0
+offset_bottom = 1128.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("2_qyb81")
 
-[node name="Placas5" type="Sprite2D" parent="Placas6"]
-position = Vector2(-195, 0)
-texture = ExtResource("1_rcnp2")
-flip_v = true
-region_enabled = true
-region_rect = Rect2(65.375, 341, 315, 132.75)
-
-[node name="login" type="Sprite2D" parent="Placas6"]
-position = Vector2(-197.5, -2.5)
-scale = Vector2(0.425, 0.425)
-texture = ExtResource("2_dbwua")
-region_enabled = true
-region_rect = Rect2(711.125, 278, 130.5, 157.5)
-
-[node name="o" type="Sprite2D" parent="Placas6/login"]
-position = Vector2(125, 5)
-texture = ExtResource("2_dbwua")
-region_enabled = true
-region_rect = Rect2(229.625, 469.25, 119.25, 153)
-
-[node name="g" type="Sprite2D" parent="Placas6/login"]
-position = Vector2(250, 5)
-texture = ExtResource("2_dbwua")
-region_enabled = true
-region_rect = Rect2(78.875, 278, 132.75, 159.75)
-
-[node name="i" type="Sprite2D" parent="Placas6/login"]
-position = Vector2(350, 0)
-texture = ExtResource("2_dbwua")
-region_enabled = true
-region_rect = Rect2(373.625, 273.5, 74.25, 162)
-
-[node name="n" type="Sprite2D" parent="Placas6/login"]
-position = Vector2(458.824, 5.88235)
-texture = ExtResource("2_dbwua")
-region_enabled = true
-region_rect = Rect2(78.875, 469.25, 148.5, 159.75)
-
-[node name="login2" type="Button" parent="Placas6"]
-offset_left = -345.625
-offset_top = -61.25
-offset_right = 151.375
-offset_bottom = 51.75
+[node name="criar_personagem" type="TextureButton" parent="."]
+offset_left = 417.0
+offset_top = -297.0
+offset_right = 1441.0
+offset_bottom = 727.0
+scale = Vector2(0.125, 0.125)
+texture_normal = ExtResource("3_dmxof")
 
 [node name="mouse_area" type="Area2D" parent="."]
 visible = false
@@ -554,6 +520,7 @@ libraries = {
 }
 speed_scale = 4.5
 
-[connection signal="mouse_entered" from="Placas6/login2" to="." method="_on_login_2_mouse_entered"]
-[connection signal="pressed" from="Placas6/login2" to="." method="_on_login_2_pressed"]
+[connection signal="mouse_entered" from="login" to="." method="_on_login_mouse_entered"]
+[connection signal="pressed" from="login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="criar_personagem" to="." method="_on_criar_personagem_pressed"]
 [connection signal="timeout" from="show_erro/TimerErro" to="show_erro" method="_on_timer_erro_timeout"]
