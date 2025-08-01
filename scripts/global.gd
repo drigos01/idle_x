@@ -17,7 +17,8 @@ var imagem_apresentacao_personagem_propocao = Rect2(Vector2(0, 0), Vector2(64, 6
 var _raça_selecionado: String = ""
 
 var slots_disponiveis = 3
-var personagem_selecionado: Dictionary = {}
+var personagem_selecionado: Array = []
+
 var selecionado_slots_selecao = ""
 var selecionado_slots_estado = ""
 

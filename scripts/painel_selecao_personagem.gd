@@ -31,6 +31,25 @@ func _input(event: InputEvent) -> void:
 			Global.selecionado_slots_selecao = self.name
 			print(Global.selecionado_slots_selecao)
 			Global.selecionado_slots_estado = $slots_selecao/organizador/nome.text
+			
+
+			# Obtém dados reais do slot
+			var imagem_node = $slots_selecao/organizador/imagem_fundo
+			var token_node = $slots_selecao/organizador/token
+			var nivel_raw = $slots_selecao/organizador/Nivel.text.strip_edges()
+			var nivel = int(nivel_raw.replace("Nv.", "").strip_edges())
+			var nome_texto = $slots_selecao/organizador/nome.text
+			Global.personagem_selecionado = [{
+				"nome": nome_texto,
+				"imagem": imagem_node.texture,
+				"imagem_position": imagem_node.region_rect,
+				"token": token_node.texture,
+				"token_position": token_node.region_rect,
+				"nivel": nivel
+			}]
+
+			print("Slot selecionado:", Global.selecionado_slots_selecao)
+			print("Personagem:", Global.personagem_selecionado)
 			print(Global.selecionado_slots_estado)
 			
 		else:
