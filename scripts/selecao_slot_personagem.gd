@@ -12,7 +12,6 @@ func _on_mouse_entered() -> void:
 	$"../../../../../../../descricao_racas/nome_raca/personagem".region_rect = $"../imagem".region_rect
 	
 
-
 func _on_mouse_exited() -> void:
 	dentro = false
 	$"../icone_seleção".visible = false
@@ -28,4 +27,4 @@ func _input(event: InputEvent) -> void:
 		#print("dnkdsskimdsjdsnmdksmkdmsmkdsdmk")
 		Global.imagem_apresentacao_personagem = $"../imagem".texture
 		Global.imagem_apresentacao_personagem_propocao = $"../imagem".region_rect
-	
+		Global.raça_selecionado = $"../../../../../../../descricao_racas/nome_raca".text

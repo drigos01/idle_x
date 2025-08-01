@@ -13,7 +13,6 @@ var aguardando_resposta := false
 var timer_timeout: Timer
 
 func _ready() -> void:
-	
 	Socket.connect("server_receive", _on_server_response)
 	var anim_player = $show_erro/show_erro.get_node("AnimationPlayer")
 	anim_player.animation_finished.connect(_on_animation_finished)
@@ -87,6 +86,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			show_erro("Registro simulado (offline).", Color8(0, 200, 0))
 			_limpar_campos()
+			
 func _on_enviar_pressed() -> void:
 	if aguardando_resposta:
 		show_erro("Aguarde a resposta do servidor...", Color8(255, 150, 0))
@@ -179,10 +179,6 @@ func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "desaparecer":
 		$show_erro.visible = false
 		
-#func _on_timer_erro_timeout() -> void:
-	#$show_erro/AnimationPlayer.play("desaparecer")
-	#await $show_erro/AnimationPlayer.animation_finished
-	#$show_erro.visible = false
 
 func _limpar_campos() -> void:
 	$nick.text = ""
@@ -190,6 +186,8 @@ func _limpar_campos() -> void:
 	senha_input.text = ""
 	$nick.grab_focus()
 	get_tree().change_scene_to_file("res://cenas/login.tscn")
+
+
 func _habilitar_envio(habilitar: bool) -> void:
 	btn_enviar.disabled = !habilitar
 	btn_enviar.text = "Enviando..." if !habilitar else "Enviar"
@@ -197,4 +195,3 @@ func _habilitar_envio(habilitar: bool) -> void:
 
 func _on_login_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/login.tscn")
-	

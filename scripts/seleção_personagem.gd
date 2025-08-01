@@ -28,9 +28,14 @@ func mostrar_slots_excedentes():
 			selecionar_rect.visible = false
 
 		var area_mouse = slot.get_node_or_null("slots_selecao")
+
 		if area_mouse:
-			area_mouse.connect("mouse_entered", Callable(self, "_on_slot_mouse_entered").bind(selecionar_rect))
-			area_mouse.connect("mouse_exited", Callable(self, "_on_slot_mouse_exited").bind(selecionar_rect))
+			if (
+				not area_mouse.is_connected("mouse_entered", Callable(self, "_on_slot_mouse_entered").bind(selecionar_rect)) and
+				not area_mouse.is_connected("mouse_exited", Callable(self, "_on_slot_mouse_exited").bind(selecionar_rect))
+			):
+				area_mouse.connect("mouse_entered", Callable(self, "_on_slot_mouse_entered").bind(selecionar_rect))
+				area_mouse.connect("mouse_exited", Callable(self, "_on_slot_mouse_exited").bind(selecionar_rect))
 
 		if i < Global.personagens_criados.size():
 			var dados = Global.personagens_criados[i]

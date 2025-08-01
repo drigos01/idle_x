@@ -2,7 +2,7 @@ extends Node2D
 
 var cena_cadastro_packed = preload("res://cenas/cadastro.tscn")
 
-var online := false # Modo offline para testes
+var online := true # Modo offline para testes
 var test = true
 @onready var slot_mensagem_scene = preload("res://cenas/mensagem_slot.tscn")
 
@@ -42,8 +42,6 @@ func _on_server_response(flag, response):
 	aguardando_resposta = false
 	timer_timeout.stop()
 	
-	print(response)
-
 	if response.has("status") && response.status != 200:
 		show_erro(response.message, Color8(255, 0, 0))
 		return
@@ -53,7 +51,7 @@ func _on_server_response(flag, response):
 	Sessao.id = response.id
 	Global.players = response.setup
 	Global.username = Global.players[Sessao.id].username
-	get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
+	get_tree().change_scene_to_file("res://cenas/seleção_personagem.tscn")
 
 
 func _on_timeout() -> void:
