@@ -277,29 +277,21 @@ texture = ExtResource("3_xn76b")
 position = Vector2(1280, -40)
 texture = ExtResource("4_75ifb")
 
-[node name="rua 2" type="Node2D" parent="Node2D"]
-
 [node name="Casa4" type="Sprite2D" parent="Node2D"]
-modulate = Color(1, 1, 1, 0.00392157)
 position = Vector2(-380, 26)
 texture = ExtResource("3_xn76b")
 
 [node name="Casa5" type="Sprite2D" parent="Node2D"]
-modulate = Color(1, 1, 1, 0.00392157)
 position = Vector2(94, 230)
 texture = ExtResource("2_k3mk2")
 
 [node name="Casa6" type="Sprite2D" parent="Node2D"]
-modulate = Color(1, 1, 1, 0.00392157)
 position = Vector2(522, 358)
 texture = ExtResource("3_xn76b")
 
 [node name="Casa7" type="Sprite2D" parent="Node2D"]
-modulate = Color(1, 1, 1, 0.00392157)
 position = Vector2(972, 586)
 texture = ExtResource("3_xn76b")
 
-[node name="rua 1" type="Node2D" parent="Node2D"]
-
-[node name="token_player" parent="Node2D/rua 1" instance=ExtResource("7_lpmi1")]
+[node name="token_player" parent="." instance=ExtResource("7_lpmi1")]
 position = Vector2(388, 123)
