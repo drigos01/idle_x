@@ -13,14 +13,14 @@ var anim = "personagem_layer_abrir"
 var total_disponivel = Global.valor_total_distribuir_criacao_personagem
 var usado = Global.pontos_usados
 
-var online := false  # <---- MODO ONLINE/TESTE OFFLINE
+var online := true # <---- MODO ONLINE/TESTE OFFLINE
 var aguardando_resposta := false
 var timer_timeout: Timer
 
 func _ready():
 	#
 	$layer/nick/preview_token/personagem.texture = null
-	$layer/nick/preview_token/personagem/token2.texture = null 
+	$layer/nick/preview_token/personagem/token2.texture = null
 	
 	Socket.connect("server_receive", _on_server_response)
 	timer_timeout = Timer.new()
@@ -28,12 +28,13 @@ func _ready():
 	timer_timeout.one_shot = true
 	timer_timeout.timeout.connect(_on_timeout)
 	add_child(timer_timeout)
-func _process(delta: float) -> void:
+	
+func _process(_delta: float) -> void:
 	$layer/HBoxContainer/Panel2/layer_atributos/valor_atributos.text = "%d/%d" % [usado, Global.pontos_usados]
 
 func _on_menos_pressed() -> void:
-	$layer/HBoxContainer/Panel2/layer_atributos/ScrollContainer/pericias_name/Panel/nome_layer4
-
+	# $layer/HBoxContainer/Panel2/layer_atributos/ScrollContainer/pericias_name/Panel/nome_layer4
+	pass
 func _on_mais_pressed() -> void:
 	pass
 
@@ -127,15 +128,14 @@ func _on_area_slot_token_3_mouse_entered() -> void: fechar_token_layer()
 func _on_area_slot_token_4_mouse_entered() -> void: fechar_token_layer()
 
 
-
 func _on_cadastra_pressed() -> void:
 	if aguardando_resposta:
 		show_erro("Aguarde a resposta do servidor...", Color8(255, 150, 0))
 		return
 
 	var nome = $layer/nick.text.strip_edges()
-	if nome.length() < 1 or nome.length() > 20:
-		show_erro("O nome do seu personagem deve ter entre 1 e 20 caracteres.", Color8(255, 0, 0))
+	if nome.length() < 1 or nome.length() > 15:
+		show_erro("O nome do seu personagem deve ter entre 1 e 15 caracteres.", Color8(255, 0, 0))
 		return
 
 	var skin_texture = $layer/nick/preview_token/personagem.texture
@@ -148,22 +148,26 @@ func _on_cadastra_pressed() -> void:
 		show_erro("Um token deve ser escolhido", Color8(255, 0, 0))
 		return
 
-	var raca = $layer/descricao_result.text.strip_edges()
+	var raca = Global.raça_selecionado.strip_edges()
 	if raca == "":
 		show_erro("Uma raça deve ser definida.", Color8(255, 0, 0))
 		return
 
-	# Enviar para o servidor
 	if online:
 		aguardando_resposta = true
 		timer_timeout.start()
 
-		Socket.enviar_json("cadastrar_personagem", {
+		var personagem_node = $layer/nick/preview_token/personagem
+		var token_node = personagem_node.get_node("token2")
+
+		Socket.enviar_json("registering_character", {
 			"id": Sessao.id,
-			"nome": nome,
-			"raca": raca,
-			"skin": skin_texture.resource_path,
-			"token": token_texture.resource_path
+			"name": nome,
+			"race": raca,
+			"cover": skin_texture.resource_path,
+			"token": token_texture.resource_path,
+			"cover_region": personagem_node.region_rect,
+			"token_region": token_node.region_rect,
 		})
 	else:
 		show_erro("Cadastro simulado (offline).", Color8(0, 200, 0))
@@ -187,7 +191,7 @@ func _on_cadastra_pressed() -> void:
 			Global.personagens_criados.append(novo_personagem)
 
 		# Troca de cena mesmo no modo offline
-		print(Global.personagens_criados)
+		# print(Global.personagens_criados)
 		get_tree().change_scene_to_file("res://cenas/seleção_personagem.tscn")
 		
 		

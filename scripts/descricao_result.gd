@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var nome = Global.raça_selecionado.strip_edges()
 	nome = nome.replace(" ", "")
 	var regex := RegEx.new()
@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	nome = regex.sub(nome, "", true)
 
 	# Atualiza os atributos com o nome limpo
-	Global.raça_selecionado = nome  # isso vai disparar o setter e atualizar atributos_completos
+	Global.raça_selecionado = nome # isso vai disparar o setter e atualizar atributos_completos
 
 	var dados = Global.racas.get(nome, null)
 	if not dados:

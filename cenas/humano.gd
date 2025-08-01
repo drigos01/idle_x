@@ -74,9 +74,11 @@ func _on_mouse_entered() -> void:
 	else:
 		print("O nó '../seleção_grande' não foi encontrado.")
 
-	var humano_node = get_node_or_null("../../humano")  # substitua "MinhaCena" pelo nome da sua cena principal
+	var humano_node = get_node_or_null("../../humano") # substitua "MinhaCena" pelo nome da sua cena principal
 	if humano_node:
 		Global.descricao_raca = humano_node.name.capitalize()
+
+		print("ESTOU AQUI")
 	else:
 		printerr("Nó 'humano' não encontrado no caminho absoluto")
 	

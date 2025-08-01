@@ -346,7 +346,7 @@ offset_right = 779.0
 offset_bottom = 421.0
 color = Color(0.209908, 0.209908, 0.209908, 1)
 
-[node name="nick" type="TextEdit" parent="."]
+[node name="nick" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(250, 0)
 offset_left = -229.0
 offset_top = -81.0
@@ -354,7 +354,6 @@ offset_right = 241.0
 offset_bottom = -49.0
 theme_override_fonts/font = SubResource("FontVariation_opchc")
 theme_override_font_sizes/font_size = 25
-scroll_past_end_of_file = true
 
 [node name="senha" type="LineEdit" parent="."]
 offset_left = -232.0
@@ -364,7 +363,7 @@ offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("4_a314k")
 theme_override_font_sizes/font_size = 20
 
-[node name="email" type="TextEdit" parent="."]
+[node name="email" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(250, 0)
 offset_left = -230.0
 offset_top = 4.0
@@ -372,7 +371,6 @@ offset_right = 240.0
 offset_bottom = 34.0
 theme_override_fonts/font = SubResource("FontVariation_opchc")
 theme_override_font_sizes/font_size = 25
-scroll_past_end_of_file = true
 
 [node name="enviar" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -503,47 +501,37 @@ texture = ExtResource("7_mtehu")
 region_enabled = true
 region_rect = Rect2(225.125, 471.5, 126, 155.25)
 
-[node name="Placas5" type="Sprite2D" parent="."]
-position = Vector2(-91, 167)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_a314k")
-flip_v = true
-region_enabled = true
-region_rect = Rect2(447.875, 341, 353.25, 132.75)
-
-[node name="Placas5" type="Sprite2D" parent="Placas5"]
-position = Vector2(-195, 0)
-texture = ExtResource("6_a314k")
-flip_v = true
-region_enabled = true
-region_rect = Rect2(65.375, 341, 315, 132.75)
-
-[node name="login" type="Sprite2D" parent="Placas5"]
-position = Vector2(-197.5, -2.5)
-scale = Vector2(0.425, 0.425)
+[node name="login" type="Sprite2D" parent="."]
+modulate = Color(0.325339, 0.218436, 0, 1)
+position = Vector2(-170, 166)
+scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_mtehu")
 region_enabled = true
 region_rect = Rect2(711.125, 278, 130.5, 157.5)
 
-[node name="o" type="Sprite2D" parent="Placas5/login"]
+[node name="o" type="Sprite2D" parent="login"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(125, 5)
 texture = ExtResource("7_mtehu")
 region_enabled = true
 region_rect = Rect2(229.625, 469.25, 119.25, 153)
 
-[node name="g" type="Sprite2D" parent="Placas5/login"]
+[node name="g" type="Sprite2D" parent="login"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(250, 5)
 texture = ExtResource("7_mtehu")
 region_enabled = true
 region_rect = Rect2(78.875, 278, 132.75, 159.75)
 
-[node name="i" type="Sprite2D" parent="Placas5/login"]
+[node name="i" type="Sprite2D" parent="login"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(350, 0)
 texture = ExtResource("7_mtehu")
 region_enabled = true
 region_rect = Rect2(373.625, 273.5, 74.25, 162)
 
-[node name="n" type="Sprite2D" parent="Placas5/login"]
+[node name="n" type="Sprite2D" parent="login"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(458.824, 5.88235)
 texture = ExtResource("7_mtehu")
 region_enabled = true

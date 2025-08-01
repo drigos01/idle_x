@@ -1,11 +1,11 @@
 extends ColorRect
 
-var comprimento_linha_separadora := 29  # ajuste aqui o tamanho da linha de traços
+var comprimento_linha_separadora := 29 # ajuste aqui o tamanho da linha de traços
 
-func repeat_char(char: String, times: int) -> String:
+func repeat_char(chararacteres: String, times: int) -> String:
 	var result = ""
 	for i in range(times):
-		result += char
+		result += chararacteres
 	return result
 
 func pad_end(text: String, length: int) -> String:
@@ -13,14 +13,14 @@ func pad_end(text: String, length: int) -> String:
 		return text
 	return text + repeat_char(" ", length - text.length())
 	
-func centered_line(char: String, total_length: int) -> String:
+func centered_line(character: String, total_length: int) -> String:
 	if total_length < 3:
-		return repeat_char(char, total_length)
+		return repeat_char(character, total_length)
 	var line_length = total_length - 2
 	if line_length < 1:
 		line_length = 1
-	var line = repeat_char(char, line_length)
-	var padding = int((total_length - line_length) / 2)
+	var line = repeat_char(character, line_length)
+	var padding = int((total_length - line_length) / 2.0)
 	var espacos_esq = repeat_char(" ", padding)
 	var espacos_dir = repeat_char(" ", total_length - line_length - padding)
 	return espacos_esq + line + espacos_dir
@@ -42,17 +42,17 @@ func word_wrap(text: String, max_line_length: int) -> String:
 		lines.append(current_line)
 	return "\n".join(lines)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Global.descricao_raca != "":
 		var nome_raca = Global.descricao_raca
 		if Global.racas.has(nome_raca):
 			var dados = Global.racas[nome_raca]
 
 			$nome_raca.text = nome_raca
-
+			print(nome_raca)
 			# Setar a imagem da raça
-			var textura = null
-			var caminho_imagem = dados.get("imagem", "")
+			# var textura = null
+			# var caminho_imagem = dados.get("imagem", "")
 			#if caminho_imagem != "":
 				#textura = load(caminho_imagem)
 			#if textura and textura is Texture:
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 			var descricao_node = get_node_or_null("nome_raca/descricao")
 			if descricao_node:
 				var descricao_raw = dados.get("descricao", "Sem descrição.")
-				var max_desc_length = 50  # ajuste conforme o tamanho do seu Label
+				var max_desc_length = 50 # ajuste conforme o tamanho do seu Label
 				descricao_node.text = word_wrap(descricao_raw, max_desc_length)
 			else:
 				print("Erro: Nó 'nome_raca/descricao' não encontrado!")
@@ -109,4 +109,3 @@ func _physics_process(delta: float) -> void:
 		$nome_raca.text = ""
 		$nome_raca/descricao.text = ""
 		#$imagem_raca.texture = null
-		
