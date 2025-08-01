@@ -16,6 +16,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	dentro = false
 	$"../icone_seleção".visible = false
+	
 	$"../../../../../../../descricao_racas/nome_raca/personagem".texture = null
 	$"../../../../../../../descricao_racas/ColorRect".visible = false
 	#$"../../../../../../fundo/preview".visible = false

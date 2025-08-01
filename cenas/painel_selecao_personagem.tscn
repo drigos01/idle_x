@@ -1,0 +1,189 @@
+[gd_scene load_steps=6 format=3 uid="uid://v61dha15wh0x"]
+
+[ext_resource type="Script" uid="uid://dahonjkxb7u5b" path="res://scripts/painel_selecao_personagem.gd" id="1_jlmij"]
+[ext_resource type="Texture2D" uid="uid://i10t8ficq3ni" path="res://imagens/layer/sele_layer.png" id="1_kh723"]
+[ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="2_jlmij"]
+[ext_resource type="FontFile" uid="uid://m8ib5aucaayr" path="res://fontes/PressStart2P-Regular.ttf" id="3_aur5r"]
+
+[sub_resource type="FontVariation" id="FontVariation_ogsl3"]
+base_font = ExtResource("3_aur5r")
+
+[node name="painel_selecao_personagem" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jlmij")
+
+[node name="slots_selecao" type="Sprite2D" parent="."]
+position = Vector2(128, 99.5)
+texture = ExtResource("1_kh723")
+region_enabled = true
+region_rect = Rect2(112.625, -8.25, 193.5, 213.75)
+
+[node name="organizador" type="Sprite2D" parent="slots_selecao"]
+region_enabled = true
+region_rect = Rect2(31.063, 29.375, 229.5, 256.5)
+
+[node name="imagem_fundo" type="Sprite2D" parent="slots_selecao/organizador"]
+position = Vector2(-2, -4)
+scale = Vector2(0.43, 0.43)
+region_enabled = true
+region_rect = Rect2(24.313, 12.5, 243, 280.125)
+
+[node name="token" type="Sprite2D" parent="slots_selecao/organizador"]
+position = Vector2(-1, -1)
+scale = Vector2(0.59, 0.59)
+region_enabled = true
+region_rect = Rect2(19.875, 486.75, 229.5, 226.125)
+
+[node name="mais" type="ColorRect" parent="slots_selecao/organizador/token"]
+visible = false
+offset_left = -8.47458
+offset_top = -58.4746
+offset_right = 5.52542
+offset_bottom = 56.5254
+color = Color(0.34902, 0.152941, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="slots_selecao/organizador/token/mais"]
+layout_mode = 0
+offset_left = 64.4068
+offset_top = 47.4576
+offset_right = 78.4068
+offset_bottom = 162.458
+rotation = 1.57801
+color = Color(0.34902, 0.152941, 0, 1)
+
+[node name="SeleçãoPersonagem4" type="Sprite2D" parent="slots_selecao/organizador"]
+texture = ExtResource("1_kh723")
+region_enabled = true
+region_rect = Rect2(473.188, 6.104, 263.25, 189.646)
+
+[node name="Placas" type="Sprite2D" parent="slots_selecao/organizador"]
+position = Vector2(-25, 94)
+rotation = -1.5708
+scale = Vector2(0.530292, 0.383957)
+texture = ExtResource("2_jlmij")
+region_enabled = true
+region_rect = Rect2(823.625, 374.75, 137.25, 405)
+
+[node name="SeleçãoPersonagem2" type="Sprite2D" parent="slots_selecao/organizador/Placas"]
+position = Vector2(171.603, 348.998)
+rotation = 1.5708
+scale = Vector2(2.60446, 1.88575)
+texture = ExtResource("1_kh723")
+region_enabled = true
+region_rect = Rect2(314.563, -10.5, 74.25, 226.125)
+
+[node name="SeleçãoPersonagem3" type="Sprite2D" parent="slots_selecao/organizador/Placas"]
+position = Vector2(173.49, -229.191)
+rotation = 1.5708
+scale = Vector2(2.60446, 1.88575)
+texture = ExtResource("1_kh723")
+region_enabled = true
+region_rect = Rect2(314.563, -10.5, 74.25, 226.125)
+
+[node name="Placas2" type="Sprite2D" parent="slots_selecao/organizador/Placas"]
+position = Vector2(3.77151, 171.894)
+texture = ExtResource("2_jlmij")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(823.625, 374.75, 137.25, 308.25)
+
+[node name="nome" type="Label" parent="slots_selecao/organizador"]
+modulate = Color(0.792157, 0.576471, 0.247059, 1)
+offset_left = -76.0
+offset_top = 81.0
+offset_right = 874.0
+offset_bottom = 231.0
+scale = Vector2(0.16, 0.16)
+theme_override_fonts/font = SubResource("FontVariation_ogsl3")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Nivel" type="Label" parent="slots_selecao/organizador"]
+modulate = Color(0.792157, 0.576471, 0.247059, 1)
+offset_left = -19.0
+offset_top = -66.0
+offset_right = 71.0
+offset_bottom = -36.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = SubResource("FontVariation_ogsl3")
+theme_override_font_sizes/font_size = 30
+
+[node name="selecionar" type="ColorRect" parent="slots_selecao"]
+visible = false
+offset_left = 89.0
+offset_top = -93.0
+offset_right = 93.0
+offset_bottom = 69.0
+color = Color(0.192, 0.64, 0.363733, 0.72549)
+
+[node name="ColorRect2" type="ColorRect" parent="slots_selecao/selecionar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 189.0
+rotation = 1.5708
+color = Color(0.192, 0.64, 0.363733, 0.72549)
+
+[node name="ColorRect3" type="ColorRect" parent="slots_selecao/selecionar"]
+layout_mode = 0
+offset_left = -189.0
+offset_right = -185.0
+offset_bottom = 160.0
+color = Color(0.192, 0.64, 0.363733, 0.72549)
+
+[node name="ColorRect2" type="ColorRect" parent="slots_selecao/selecionar/ColorRect3"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 159.0
+offset_right = 192.0
+offset_bottom = 348.0
+rotation = 1.5708
+color = Color(0.192, 0.64, 0.363733, 0.72549)
+
+[node name="selecionar2" type="ColorRect" parent="slots_selecao"]
+visible = false
+offset_left = 89.0
+offset_top = -93.0
+offset_right = 93.0
+offset_bottom = 69.0
+color = Color(0.257148, 0.518511, 0.997892, 0.72549)
+
+[node name="ColorRect2" type="ColorRect" parent="slots_selecao/selecionar2"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 189.0
+rotation = 1.5708
+color = Color(0.258824, 0.517647, 0.996078, 0.72549)
+
+[node name="ColorRect3" type="ColorRect" parent="slots_selecao/selecionar2"]
+layout_mode = 0
+offset_left = -189.0
+offset_right = -185.0
+offset_bottom = 160.0
+color = Color(0.258824, 0.517647, 0.996078, 0.72549)
+
+[node name="ColorRect2" type="ColorRect" parent="slots_selecao/selecionar2/ColorRect3"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 159.0
+offset_right = 192.0
+offset_bottom = 348.0
+rotation = 1.5708
+color = Color(0.258824, 0.517647, 0.996078, 0.72549)
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 3.5
+offset_right = 221.0
+offset_bottom = 179.5
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]

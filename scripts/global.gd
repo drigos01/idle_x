@@ -16,25 +16,28 @@ var imagem_apresentacao_personagem_propocao = Rect2(Vector2(0, 0), Vector2(64, 6
 # Variável privada
 var _raça_selecionado: String = ""
 
+var slots_disponiveis = 3
+var personagem_selecionado: Dictionary = {}
+var selecionado_slots_selecao = ""
+var selecionado_slots_estado = ""
 
-var personagem_1_nome = ""
-var personagem_1_imagem = ""
-var personagem_1_imagem_position = ""
-var personagem_1_token = ""
-var personagem_1_token_position = ""
-var personagem_1_nivel = 1
 
-var personagem_2_nome = ""
-var personagem_2_imagem = ""
-var personagem_2_imagem_position = ""
-var personagem_2_nivel = 1
+var botao_selecao = false
+var slot_selecionado_node = null
 
-var personagem_3_nome = ""
-var personagem_3_imagem = ""
-var personagem_3_imagem_position = ""
-var personagem_3_nivel = 1
 
-var personagens_criados: Array = []
+var dinheiro = 0
+# Agora uma lista de personagens (não mais um dicionário único)
+var personagens_criados: Array = [
+	{
+		"nome": "drig_dev",
+		"imagem": preload("res://imagens/personagens/elfos.png"),
+		"imagem_position": Rect2(Vector2(6.41696, 1.654), Vector2(261.0, 279.0)),
+		"token": preload("res://imagens/layer/toke_1.png"),
+		"token_position": Rect2(Vector2(520.375, 493.066), Vector2(239.625, 209.25)),
+		"nivel": 1
+	}
+]
 
 # Propriedade com getter e setter
 var raça_selecionado:
@@ -107,7 +110,19 @@ func atualizar_atributos_completos():
 		var valor_bonus = dados.get("bonus", {}).get(chave, 0)
 		atributos_completos[chave] = valor_attr + valor_bonus
 
-	print("Atributos atualizados:", atributos_completos) # para debug
+	print("Atributos atualizados:", atributos_completos)
+
+# Função para adicionar um novo personagem na lista
+func adicionar_personagem(dados: Dictionary) -> void:
+	if personagens_criados.size() >= slots_disponiveis:
+		print("Limite de personagens atingido.")
+		return
+	personagens_criados.append(dados)
+	print("Personagem adicionado:", dados.nome)
+
+# Função auxiliar: retorna total de personagens criados
+func total_personagens() -> int:
+	return personagens_criados.size()
 
 func _ready():
 	inimigos.clear()

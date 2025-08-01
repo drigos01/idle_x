@@ -1,152 +1,116 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkrn821xnfwxw"]
+[gd_scene load_steps=20 format=3 uid="uid://dkrn821xnfwxw"]
 
 [ext_resource type="Script" uid="uid://l8klh3jubh4" path="res://scripts/seleção_personagem.gd" id="1_dbwua"]
 [ext_resource type="Texture2D" uid="uid://b0w4a3vo4d127" path="res://imagens/placas.png" id="1_rcnp2"]
 [ext_resource type="Texture2D" uid="uid://cqwgnbljnmr5h" path="res://imagens/letras.png" id="2_dbwua"]
-[ext_resource type="Script" uid="uid://du0utjw43kdh6" path="res://cenas/show_erro.gd" id="3_15l8f"]
-[ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="4_t26t2"]
-[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="5_qyb81"]
 [ext_resource type="Script" uid="uid://cc0ud1speduqy" path="res://scripts/mouse_area.gd" id="6_dmxof"]
 [ext_resource type="Texture2D" uid="uid://bvvctkil27ojq" path="res://imagens/layer/token-border-collection-v0-8pv4nqo221ja1.png" id="7_22ejx"]
+[ext_resource type="Script" uid="uid://2efouuflycfe" path="res://cenas/h_box_container.gd" id="7_rcnp2"]
 [ext_resource type="Texture2D" uid="uid://i10t8ficq3ni" path="res://imagens/layer/sele_layer.png" id="8_27sag"]
 [ext_resource type="FontFile" uid="uid://m8ib5aucaayr" path="res://fontes/PressStart2P-Regular.ttf" id="9_bh0q7"]
+[ext_resource type="Texture2D" uid="uid://pvqyvv2k05e6" path="res://imagens/layer/slot_seerve.png" id="11_15l8f"]
+[ext_resource type="Script" uid="uid://du0utjw43kdh6" path="res://cenas/show_erro.gd" id="11_dmxof"]
+[ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="12_22ejx"]
+[ext_resource type="FontFile" uid="uid://ceala3nd5qfyv" path="res://fontes/ByteBounce.ttf" id="13_27sag"]
 
-[sub_resource type="FontVariation" id="FontVariation_4pdsd"]
-base_font = ExtResource("5_qyb81")
+[sub_resource type="CircleShape2D" id="CircleShape2D_pv6r6"]
+radius = 7.28011
 
-[sub_resource type="Animation" id="Animation_jupw8"]
-length = 0.001
+[sub_resource type="FontVariation" id="FontVariation_rcnp2"]
+base_font = ExtResource("9_bh0q7")
+
+[sub_resource type="FontVariation" id="FontVariation_bh0q7"]
+base_font = ExtResource("13_27sag")
+
+[sub_resource type="Animation" id="Animation_4pdsd"]
+resource_name = "aparecer"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("criação de personagem/show_erro:position")
+tracks/0/path = NodePath("..:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-10, -351)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("criação de personagem/show_erro:modulate")
+tracks/1/path = NodePath("..:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-10, -330), Vector2(-10, -390)]
+}
+
+[sub_resource type="Animation" id="Animation_pv6r6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("criação de personagem/show_erro:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_pgk4w"]
-resource_name = "aparecer"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("criação de personagem/show_erro:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-10, -330), Vector2(-10, -390)]
-}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("criação de personagem/show_erro:modulate")
+tracks/1/path = NodePath("..:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("criação de personagem/show_erro:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(-10, -330)]
 }
 
-[sub_resource type="Animation" id="Animation_ye5uu"]
+[sub_resource type="Animation" id="Animation_m3l8s"]
 resource_name = "desaparecer"
-length = 3.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("criação de personagem/show_erro:position")
+tracks/0/path = NodePath("..:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-10, -390), Vector2(-10, -330)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("criação de personagem/show_erro:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("criação de personagem/show_erro:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Vector2(-10, -390), Vector2(-10, -330)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fq4k4"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ta8dn"]
 _data = {
-&"RESET": SubResource("Animation_jupw8"),
-&"aparecer": SubResource("Animation_pgk4w"),
-&"desaparecer": SubResource("Animation_ye5uu")
+&"RESET": SubResource("Animation_pv6r6"),
+&"aparecer": SubResource("Animation_4pdsd"),
+&"desaparecer": SubResource("Animation_m3l8s")
 }
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pv6r6"]
-radius = 7.28011
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m3l8s"]
-
-[sub_resource type="FontVariation" id="FontVariation_ta8dn"]
-base_font = ExtResource("9_bh0q7")
 
 [node name="seleção_personagem" type="Node2D"]
 script = ExtResource("1_dbwua")
@@ -175,7 +139,7 @@ offset_bottom = 947.0
 color = Color(0.608395, 0.382279, 0.203273, 1)
 
 [node name="Placas6" type="Sprite2D" parent="."]
-position = Vector2(57, 306)
+position = Vector2(49, 306)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_rcnp2")
 flip_v = true
@@ -226,156 +190,6 @@ offset_top = -61.25
 offset_right = 151.375
 offset_bottom = 51.75
 
-[node name="show_erro" type="Node2D" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-10, -351)
-script = ExtResource("3_15l8f")
-
-[node name="show_erro" type="Sprite2D" parent="show_erro"]
-position = Vector2(-233, 34)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
-
-[node name="Erro7" type="Sprite2D" parent="show_erro/show_erro"]
-position = Vector2(395, 2.5)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
-
-[node name="Erro8" type="Sprite2D" parent="show_erro/show_erro"]
-position = Vector2(775, 2.5)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
-
-[node name="Erro7" type="Sprite2D" parent="show_erro/show_erro/Erro8"]
-position = Vector2(395, 2.5)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
-
-[node name="Erro8" type="Sprite2D" parent="show_erro/show_erro/Erro8"]
-position = Vector2(417.5, -1.19209e-06)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
-
-[node name="Erro" type="Sprite2D" parent="show_erro/show_erro"]
-position = Vector2(-257.5, -48.0522)
-scale = Vector2(1, 1.0096)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
-
-[node name="Erro5" type="Sprite2D" parent="show_erro/show_erro/Erro"]
-position = Vector2(0, 99.5957)
-texture = ExtResource("4_t26t2")
-flip_v = true
-region_enabled = true
-region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
-
-[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro"]
-position = Vector2(1702.5, 99.5958)
-texture = ExtResource("4_t26t2")
-flip_h = true
-flip_v = true
-region_enabled = true
-region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
-
-[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro"]
-position = Vector2(1702.5, 0.546997)
-texture = ExtResource("4_t26t2")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
-
-[node name="Erro2" type="Sprite2D" parent="show_erro/show_erro"]
-position = Vector2(2.50003, -50.0001)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(177.875, 135.545, 400.5, 81)
-
-[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
-position = Vector2(397.5, 0)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 135.545, 398.25, 81)
-
-[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
-position = Vector2(792.5, 0)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(177.875, 135.545, 400.5, 81)
-
-[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro4"]
-position = Vector2(397.5, 0)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 135.545, 398.25, 81)
-
-[node name="Erro5" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
-position = Vector2(1190, 105)
-rotation = -3.14159
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(177.875, 135.545, 400.5, 81)
-
-[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5"]
-position = Vector2(397.5, 0)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 135.545, 398.25, 81)
-
-[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5"]
-position = Vector2(792.5, 0)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(177.875, 135.545, 400.5, 81)
-
-[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5/Erro4"]
-position = Vector2(397.5, 0)
-texture = ExtResource("4_t26t2")
-region_enabled = true
-region_rect = Rect2(180.125, 135.545, 398.25, 81)
-
-[node name="ColorRect" type="ColorRect" parent="show_erro"]
-modulate = Color(1, 1, 1, 0.333333)
-show_behind_parent = true
-offset_left = -362.0
-offset_top = -8.0
-offset_right = 365.0
-offset_bottom = 69.0
-color = Color(0.403087, 0, 0.11844, 1)
-
-[node name="label_mensagem" type="Label" parent="show_erro"]
-modulate = Color(0.999546, 0.982296, 0.966632, 1)
-self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(30, 30)
-offset_left = -357.0
-offset_top = -1.0
-offset_right = 362.0
-offset_bottom = 61.0
-pivot_offset = Vector2(95, 0)
-theme_override_fonts/font = SubResource("FontVariation_4pdsd")
-theme_override_font_sizes/font_size = 30
-text = "vazio"
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
-
-[node name="TimerErro" type="Timer" parent="show_erro"]
-wait_time = 1.9
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro"]
-root_node = NodePath("../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_fq4k4")
-}
-speed_scale = 6.0
-
 [node name="mouse_area" type="Area2D" parent="."]
 visible = false
 position = Vector2(-490, -191)
@@ -394,185 +208,45 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_22ejx")
 
 [node name="SeleçãoPersonagem" type="Sprite2D" parent="."]
-position = Vector2(-84, -8)
-texture = SubResource("CompressedTexture2D_m3l8s")
+position = Vector2(8, 3.60001)
+texture = ExtResource("8_27sag")
 region_enabled = true
 region_rect = Rect2(0, 208.375, 604.5, 283.625)
 
 [node name="SeleçãoPersonagem7" type="Sprite2D" parent="SeleçãoPersonagem"]
 position = Vector2(128, 0)
-texture = SubResource("CompressedTexture2D_m3l8s")
+texture = ExtResource("8_27sag")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(0, 208.375, 604.5, 283.625)
 
-[node name="slots_selecao" type="Sprite2D" parent="SeleçãoPersonagem"]
-position = Vector2(-155, 8)
-texture = ExtResource("8_27sag")
-region_enabled = true
-region_rect = Rect2(112.625, -8.25, 193.5, 213.75)
-
-[node name="layer" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao"]
-
-[node name="SeleçãoPersonagem4" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao/layer"]
-texture = ExtResource("8_27sag")
-region_enabled = true
-region_rect = Rect2(473.188, 6.104, 263.25, 189.646)
-
-[node name="Placas" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao/layer"]
-position = Vector2(-25, 94)
-rotation = -1.5708
-scale = Vector2(0.530292, 0.383957)
-texture = ExtResource("1_rcnp2")
-region_enabled = true
-region_rect = Rect2(823.625, 374.75, 137.25, 405)
-
-[node name="Placas2" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao/layer/Placas"]
-position = Vector2(3.77151, 171.894)
-texture = ExtResource("1_rcnp2")
-flip_h = true
-flip_v = true
-region_enabled = true
-region_rect = Rect2(823.625, 374.75, 137.25, 308.25)
-
-[node name="Label" type="Label" parent="SeleçãoPersonagem/slots_selecao/layer"]
-modulate = Color(0.792157, 0.576471, 0.247059, 1)
-offset_left = -78.0
-offset_top = 90.0
-offset_right = 852.0
-offset_bottom = 120.0
-scale = Vector2(0.16, 0.16)
-theme_override_fonts/font = SubResource("FontVariation_ta8dn")
-theme_override_font_sizes/font_size = 30
-text = "1234567891011121314151617181920"
-
-[node name="Label2" type="Label" parent="SeleçãoPersonagem/slots_selecao/layer"]
-modulate = Color(0.792157, 0.576471, 0.247059, 1)
-offset_left = -19.0
-offset_top = -66.0
-offset_right = 71.0
-offset_bottom = -36.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = SubResource("FontVariation_ta8dn")
-theme_override_font_sizes/font_size = 30
-text = "999"
-
-[node name="slots_selecao2" type="Sprite2D" parent="SeleçãoPersonagem"]
-position = Vector2(66, 8)
-texture = ExtResource("8_27sag")
-region_enabled = true
-region_rect = Rect2(112.625, -8.25, 193.5, 213.75)
-
-[node name="layer" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao2"]
-
-[node name="SeleçãoPersonagem4" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao2/layer"]
-texture = ExtResource("8_27sag")
-region_enabled = true
-region_rect = Rect2(473.188, 6.104, 263.25, 189.646)
-
-[node name="Placas" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao2/layer"]
-position = Vector2(-25, 94)
-rotation = -1.5708
-scale = Vector2(0.530292, 0.383957)
-texture = ExtResource("1_rcnp2")
-region_enabled = true
-region_rect = Rect2(823.625, 374.75, 137.25, 405)
-
-[node name="Placas2" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao2/layer/Placas"]
-position = Vector2(3.77151, 171.894)
-texture = ExtResource("1_rcnp2")
-flip_h = true
-flip_v = true
-region_enabled = true
-region_rect = Rect2(823.625, 374.75, 137.25, 308.25)
-
-[node name="Label" type="Label" parent="SeleçãoPersonagem/slots_selecao2/layer"]
-modulate = Color(0.792157, 0.576471, 0.247059, 1)
-offset_left = -78.0
-offset_top = 90.0
-offset_right = 852.0
-offset_bottom = 120.0
-scale = Vector2(0.16, 0.16)
-theme_override_fonts/font = SubResource("FontVariation_ta8dn")
-theme_override_font_sizes/font_size = 30
-text = "1234567891011121314151617181920"
-
-[node name="Label2" type="Label" parent="SeleçãoPersonagem/slots_selecao2"]
-modulate = Color(0.792157, 0.576471, 0.247059, 1)
-offset_left = -19.0
-offset_top = -66.0
-offset_right = 71.0
-offset_bottom = -36.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = SubResource("FontVariation_ta8dn")
-theme_override_font_sizes/font_size = 30
-text = "999"
-
-[node name="slots_selecao3" type="Sprite2D" parent="SeleçãoPersonagem"]
-position = Vector2(288, 7)
-texture = ExtResource("8_27sag")
-region_enabled = true
-region_rect = Rect2(112.625, -8.25, 193.5, 213.75)
-
-[node name="layer" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao3"]
-
-[node name="SeleçãoPersonagem4" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao3/layer"]
-texture = ExtResource("8_27sag")
-region_enabled = true
-region_rect = Rect2(473.188, 6.104, 263.25, 189.646)
-
-[node name="Placas" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao3/layer"]
-position = Vector2(-25, 94)
-rotation = -1.5708
-scale = Vector2(0.530292, 0.383957)
-texture = ExtResource("1_rcnp2")
-region_enabled = true
-region_rect = Rect2(823.625, 374.75, 137.25, 405)
-
-[node name="Placas2" type="Sprite2D" parent="SeleçãoPersonagem/slots_selecao3/layer/Placas"]
-position = Vector2(3.77151, 171.894)
-texture = ExtResource("1_rcnp2")
-flip_h = true
-flip_v = true
-region_enabled = true
-region_rect = Rect2(823.625, 374.75, 137.25, 308.25)
-
-[node name="Label" type="Label" parent="SeleçãoPersonagem/slots_selecao3/layer"]
-modulate = Color(0.792157, 0.576471, 0.247059, 1)
-offset_left = -78.0
-offset_top = 90.0
-offset_right = 852.0
-offset_bottom = 120.0
-scale = Vector2(0.16, 0.16)
-theme_override_fonts/font = SubResource("FontVariation_ta8dn")
-theme_override_font_sizes/font_size = 30
-text = "1234567891011121314151617181920"
-
-[node name="Label2" type="Label" parent="SeleçãoPersonagem/slots_selecao3"]
-modulate = Color(0.792157, 0.576471, 0.247059, 1)
-offset_left = -19.0
-offset_top = -66.0
-offset_right = 71.0
-offset_bottom = -36.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = SubResource("FontVariation_ta8dn")
-theme_override_font_sizes/font_size = 30
-text = "999"
-
 [node name="SeleçãoPersonagem3" type="Sprite2D" parent="SeleçãoPersonagem"]
+visible = false
 position = Vector2(-47, 8)
-texture = SubResource("CompressedTexture2D_m3l8s")
+texture = ExtResource("8_27sag")
 region_enabled = true
 region_rect = Rect2(314.563, -10.5, 74.25, 226.125)
 
 [node name="SeleçãoPersonagem2" type="Sprite2D" parent="SeleçãoPersonagem"]
+visible = false
 position = Vector2(175, 7)
-texture = SubResource("CompressedTexture2D_m3l8s")
+texture = ExtResource("8_27sag")
 region_enabled = true
 region_rect = Rect2(314.563, -10.5, 74.25, 226.125)
 
+[node name="ScrollContainer" type="ScrollContainer" parent="SeleçãoPersonagem"]
+offset_left = -256.0
+offset_top = -88.0
+offset_right = 380.0
+offset_bottom = 127.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SeleçãoPersonagem/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 221
+script = ExtResource("7_rcnp2")
+
 [node name="Placas7" type="Sprite2D" parent="."]
-position = Vector2(130, -117)
+position = Vector2(228, -102.4)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_rcnp2")
 region_enabled = true
@@ -585,13 +259,13 @@ region_enabled = true
 region_rect = Rect2(65.375, 341, 315, 132.75)
 
 [node name="Placas6" type="Sprite2D" parent="Placas7"]
-position = Vector2(-500, 1.28746e-05)
+position = Vector2(-563.333, 1.58942e-07)
 texture = ExtResource("1_rcnp2")
 region_enabled = true
 region_rect = Rect2(65.375, 341, 315, 132.75)
 
 [node name="login" type="Sprite2D" parent="Placas7"]
-position = Vector2(-603.333, -1.66665)
+position = Vector2(-666.667, -1.66666)
 scale = Vector2(0.3, 0.4)
 texture = ExtResource("2_dbwua")
 region_enabled = true
@@ -700,8 +374,186 @@ texture = ExtResource("2_dbwua")
 region_enabled = true
 region_rect = Rect2(596.375, 462.5, 261, 166.5)
 
+[node name="numero_slots" type="Label" parent="Placas7"]
+modulate = Color(0.705882, 0.486275, 0.196078, 1)
+offset_left = 71.6666
+offset_top = -20.0
+offset_right = 151.667
+offset_bottom = 20.0
+theme_override_fonts/font = SubResource("FontVariation_rcnp2")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
 
+[node name="SlotSeerve" type="Sprite2D" parent="."]
+position = Vector2(-541, 0)
+scale = Vector2(0.631882, 1)
+texture = ExtResource("11_15l8f")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SlotSeerve"]
+offset_left = -214.0
+offset_top = -204.0
+offset_right = 193.0
+offset_bottom = 201.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SlotSeerve/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="show_erro" type="Node2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-10, -330)
+script = ExtResource("11_dmxof")
+
+[node name="show_erro" type="Sprite2D" parent="show_erro"]
+position = Vector2(-233, 34)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(395, 2.5)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(775, 2.5)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro7" type="Sprite2D" parent="show_erro/show_erro/Erro8"]
+position = Vector2(395, 2.5)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro8" type="Sprite2D" parent="show_erro/show_erro/Erro8"]
+position = Vector2(417.5, -1.19209e-06)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 187.609, 398.25, 28.936)
+
+[node name="Erro" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(-257.5, -48.0522)
+scale = Vector2(1, 1.0096)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/show_erro/Erro"]
+position = Vector2(0, 99.5957)
+texture = ExtResource("12_22ejx")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro"]
+position = Vector2(1702.5, 99.5958)
+texture = ExtResource("12_22ejx")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro"]
+position = Vector2(1702.5, 0.546997)
+texture = ExtResource("12_22ejx")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(49.625, 120.09, 132.75, 115.673)
+
+[node name="Erro2" type="Sprite2D" parent="show_erro/show_erro"]
+position = Vector2(2.50003, -50.0001)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
+position = Vector2(397.5, 0)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
+position = Vector2(792.5, 0)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro5" type="Sprite2D" parent="show_erro/show_erro/Erro2"]
+position = Vector2(1190, 105)
+rotation = -3.14159
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5"]
+position = Vector2(397.5, 0)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="Erro4" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5"]
+position = Vector2(792.5, 0)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(177.875, 135.545, 400.5, 81)
+
+[node name="Erro3" type="Sprite2D" parent="show_erro/show_erro/Erro2/Erro5/Erro4"]
+position = Vector2(397.5, 0)
+texture = ExtResource("12_22ejx")
+region_enabled = true
+region_rect = Rect2(180.125, 135.545, 398.25, 81)
+
+[node name="ColorRect" type="ColorRect" parent="show_erro"]
+modulate = Color(1, 1, 1, 0.333333)
+show_behind_parent = true
+offset_left = -362.0
+offset_top = -8.0
+offset_right = 365.0
+offset_bottom = 69.0
+color = Color(0.403087, 0, 0.11844, 1)
+
+[node name="label_mensagem" type="Label" parent="show_erro"]
+modulate = Color(0.999546, 0.982296, 0.966632, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(30, 30)
+offset_left = -357.0
+offset_top = -1.0
+offset_right = 362.0
+offset_bottom = 61.0
+pivot_offset = Vector2(95, 0)
+theme_override_fonts/font = SubResource("FontVariation_bh0q7")
+theme_override_font_sizes/font_size = 30
+text = "vazio"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="TimerErro" type="Timer" parent="show_erro"]
+wait_time = 1.9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="show_erro"]
+root_node = NodePath("../TimerErro")
+libraries = {
+&"": SubResource("AnimationLibrary_ta8dn")
+}
+speed_scale = 4.5
+
+[connection signal="mouse_entered" from="Placas6/login2" to="." method="_on_login_2_mouse_entered"]
+[connection signal="pressed" from="Placas6/login2" to="." method="_on_login_2_pressed"]
 [connection signal="timeout" from="show_erro/TimerErro" to="show_erro" method="_on_timer_erro_timeout"]
-[connection signal="animation_finished" from="show_erro/AnimationPlayer" to="show_erro" method="_on_animation_player_animation_finished"]

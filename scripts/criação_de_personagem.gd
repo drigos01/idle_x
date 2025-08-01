@@ -18,6 +18,10 @@ var aguardando_resposta := false
 var timer_timeout: Timer
 
 func _ready():
+	#
+	$layer/nick/preview_token/personagem.texture = null
+	$layer/nick/preview_token/personagem/token2.texture = null 
+	
 	Socket.connect("server_receive", _on_server_response)
 	timer_timeout = Timer.new()
 	timer_timeout.wait_time = 10.0
@@ -183,7 +187,9 @@ func _on_cadastra_pressed() -> void:
 			Global.personagens_criados.append(novo_personagem)
 
 		# Troca de cena mesmo no modo offline
+		print(Global.personagens_criados)
 		get_tree().change_scene_to_file("res://cenas/seleção_personagem.tscn")
+		
 		
 		# Aqui você pode simular o cadastro local
 func _on_server_response(flag, response):
@@ -216,6 +222,7 @@ func _on_server_response(flag, response):
 				Global.personagens_criados.append(novo_personagem)
 
 			get_tree().change_scene_to_file("res://cenas/seleção_personagem.tscn")
+
 
 func _on_timeout() -> void:
 	aguardando_resposta = false

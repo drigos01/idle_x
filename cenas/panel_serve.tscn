@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuhlwnequfiiv"]
+
+[ext_resource type="FontFile" uid="uid://m8ib5aucaayr" path="res://fontes/PressStart2P-Regular.ttf" id="1_s22e5"]
+
+[sub_resource type="FontVariation" id="FontVariation_v4eyi"]
+base_font = ExtResource("1_s22e5")
+
+[node name="Panel_serve" type="Panel"]
+offset_right = 418.0
+offset_bottom = 52.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 5.0
+offset_right = 457.0
+offset_bottom = 415.0
+rotation = 1.5708
+color = Color(0.0862745, 0, 0, 1)
+
+[node name="LabelNome" type="Label" parent="ColorRect2"]
+modulate = Color(0.792157, 0.576471, 0.247059, 1)
+offset_left = 16.0
+offset_top = 325.0
+offset_right = 256.0
+offset_bottom = 355.0
+rotation = -1.5708
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = SubResource("FontVariation_v4eyi")
+theme_override_font_sizes/font_size = 30
+text = "server 1"
+
+[node name="LabelIP" type="Label" parent="ColorRect2"]
+modulate = Color(0.792157, 0.576471, 0.247059, 1)
+offset_left = 16.0
+offset_top = 222.0
+offset_right = 411.0
+offset_bottom = 252.0
+rotation = -1.5708
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = SubResource("FontVariation_v4eyi")
+theme_override_font_sizes/font_size = 30
+text = "ip"
+
+[node name="BotaoConectar" type="Button" parent="ColorRect2"]
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 405.0

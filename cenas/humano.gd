@@ -68,9 +68,26 @@ extends PanelContainer
 
 
 func _on_mouse_entered() -> void:
-	Global.descricao_raca = $"../humano".name.capitalize()
-	$"../seleção_grande".visible = true
+	var no_selecao = get_node_or_null("../seleção_grande")
+	if no_selecao != null:
+		no_selecao.visible = true
+	else:
+		print("O nó '../seleção_grande' não foi encontrado.")
+
+	var humano_node = get_node_or_null("../../humano")  # substitua "MinhaCena" pelo nome da sua cena principal
+	if humano_node:
+		Global.descricao_raca = humano_node.name.capitalize()
+	else:
+		printerr("Nó 'humano' não encontrado no caminho absoluto")
+	
+	#get_node_or_null("../../seleção_grande").show()
 
 
+#
 func _on_mouse_exited() -> void:
-	$"../seleção_grande".visible = false
+	var no_selecao = get_node_or_null("../seleção_grande")
+	if no_selecao != null:
+		no_selecao.visible = false
+	else:
+		print("O nó '../seleção_grande' não foi encontrado.")
+	#$"../../seleção_grande".visible = false
