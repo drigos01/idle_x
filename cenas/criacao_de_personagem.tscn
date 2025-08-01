@@ -3189,9 +3189,9 @@ scale = Vector2(0.247803, 0.141602)
 [node name="ColorRect" type="ColorRect" parent="layer/token"]
 visible = false
 offset_left = -431.0
-offset_top = 95.0
+offset_top = 63.0
 offset_right = -258.0
-offset_bottom = 95.0
+offset_bottom = 185.0
 color = Color(0.752941, 0.494118, 0.196078, 1)
 
 [node name="Criacao7_investido" type="Sprite2D" parent="layer/token"]
@@ -3245,9 +3245,9 @@ region_rect = Rect2(708.75, 501.5, 186, 181.5)
 [node name="ScrollContainer_investido" type="ScrollContainer" parent="layer/token/fundo_slot_imagem_investido"]
 visible = false
 offset_left = -107.0
-offset_top = -30.0
+offset_top = -204.0
 offset_right = 120.0
-offset_bottom = -21.0
+offset_bottom = 275.0
 
 [node name="HBoxContainer_investido" type="HBoxContainer" parent="layer/token/fundo_slot_imagem_investido/ScrollContainer_investido"]
 layout_mode = 2
@@ -4062,8 +4062,9 @@ offset_right = 157.0
 offset_bottom = 61.0
 
 [node name="show_erro" type="Node2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-10, -330)
+position = Vector2(-10, -351)
 script = ExtResource("21_ph34t")
 
 [node name="show_erro" type="Sprite2D" parent="show_erro"]
