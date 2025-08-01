@@ -25,6 +25,11 @@ var mouse_pressionado := false
 var tempo_marcador := 0.0
 var inimigo_alvo: Node2D = null
 var marcador_atual: Sprite2D = null
+var mouse_esquerdo_pressionado := false
+
+# Controle para espaçar criação dos rastros
+var tempo_rastro := 0.0
+var intervalo_rastro := 0.05  # segundos entre cada sprite do rastro
 
 func _ready():
 	if level:
@@ -45,44 +50,76 @@ func _ready():
 	timer_ataque.timeout.connect(_atacar)
 
 func _input(event: InputEvent) -> void:
-	if not controle_manual:
-		return
-
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed and not Global.mouse_sobre_chat:
-			mouse_pressionado = true
-			destino_pendente = get_global_mouse_position()
-		elif not event.pressed and mouse_pressionado:
-			mouse_pressionado = false
-			destino = destino_pendente
-			mover = true
-			mostrar_indicador(destino)
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				mouse_esquerdo_pressionado = true
+			else:
+				mouse_esquerdo_pressionado = false
+				destino = get_global_mouse_position()
+				mover = true
+				mostrar_indicador(destino)
 
 func _process(delta: float) -> void:
-	if not controle_manual:
-		if mouse_pressionado:
+	if controle_manual:
+		if mouse_esquerdo_pressionado:
+			destino = get_global_mouse_position()
+			var direcao_mouse = destino - global_position
+			token_player.rotation = lerp_angle(token_player.rotation, direcao_mouse.angle(), delta * 10)
+
+			# Criação do rastro espaçada no tempo
+			tempo_rastro -= delta
+			if tempo_rastro <= 0:
+				criar_rastro(destino, Vector2(0.05, 0.05), 0.4)  # rastro menor, mais transparente
+				tempo_rastro = intervalo_rastro
+
+		elif mouse_pressionado:
 			destino_pendente = get_global_mouse_position()
 			var direcao_mouse = destino_pendente - global_position
 			token_player.rotation = lerp_angle(token_player.rotation, direcao_mouse.angle(), delta * 10)
-			tempo_marcador -= delta
-			if tempo_marcador <= 0:
-				mostrar_indicador(destino_pendente)
-				tempo_marcador = 0.02
-		else:
-			if inimigo_alvo == null or not is_instance_valid(inimigo_alvo):
-				procurar_inimigo()
-			else:
-				var dist = global_position.distance_to(inimigo_alvo.global_position)
-				if dist > alcance_ataque:
-					var dir = (inimigo_alvo.global_position - global_position).normalized()
-					if tipo_ataque == "distancia":
-						destino = inimigo_alvo.global_position - dir * distancia_parada
-					else:
-						destino = inimigo_alvo.global_position - dir * distancia_corpo
-					mover = true
-
 	else:
-		procurar_inimigo()
+		# modo automático
+		if inimigo_alvo == null or not is_instance_valid(inimigo_alvo):
+			procurar_inimigo()
+		else:
+			var dist = global_position.distance_to(inimigo_alvo.global_position)
+			if dist > alcance_ataque:
+				var dir = (inimigo_alvo.global_position - global_position).normalized()
+				if tipo_ataque == "distancia":
+					destino = inimigo_alvo.global_position - dir * distancia_parada
+				else:
+					destino = inimigo_alvo.global_position - dir * distancia_corpo
+				mover = true
+
+# Função genérica para criar rastro ou indicador
+func criar_rastro(posicao: Vector2, escala: Vector2, alpha: float = 0.4) -> Sprite2D:
+	var rastro = Sprite2D.new()
+	rastro.texture = preload("res://imagens/layer/token-border-collection-v0-8pv4nqo221ja1.png")
+	rastro.global_position = posicao
+	rastro.scale = escala
+	rastro.modulate = Color(1, 1, 1, alpha)
+	get_tree().current_scene.add_child(rastro)
+
+	var timer = get_tree().create_timer(0.3)
+	timer.timeout.connect(Callable(self, "_remover_rastro").bind(rastro))
+	return rastro
+
+func _remover_rastro(rastro: Sprite2D) -> void:
+	if rastro.is_inside_tree():
+		rastro.queue_free()
+
+func mostrar_indicador(posicao: Vector2) -> void:
+	if marcador_atual and marcador_atual.is_inside_tree():
+		marcador_atual.queue_free()
+
+	# Indicador maior e mais opaco para clique
+	marcador_atual = criar_rastro(posicao, Vector2(0.09, 0.09), 0.6)
+
+	await get_tree().create_timer(0.8).timeout
+
+	if marcador_atual and marcador_atual.is_inside_tree():
+		marcador_atual.queue_free()
+		marcador_atual = null
 
 func procurar_inimigo():
 	var inimigos = get_tree().get_nodes_in_group("inimigos")
@@ -108,42 +145,44 @@ func procurar_inimigo():
 			mostrar_indicador(inimigo_alvo.global_position)
 			inimigos_indicados[inimigo_alvo] = true
 
-	if inimigo_alvo and not timer_ataque.is_stopped():
+	if inimigo_alvo and timer_ataque.is_stopped():
 		timer_ataque.start()
 	elif inimigo_alvo == null:
 		timer_ataque.stop()
 
 func _physics_process(delta: float) -> void:
-	if mover:
-		var direcao = destino - global_position
-		var distancia = direcao.length()
-		if distancia > 5.0:
-			velocity = velocity.lerp(direcao.normalized() * velocidade_maxima, 0.1)
+	var direcao = destino - global_position
+	var distancia = direcao.length()
+
+	if controle_manual:
+		if mouse_esquerdo_pressionado:
+			var pos_mouse = get_global_mouse_position()
+			var direcao_continua = pos_mouse - global_position
+			velocity = direcao_continua.normalized() * velocidade_maxima
+
+		elif mover:
+			if distancia > 5.0:
+				velocity = velocity.lerp(direcao.normalized() * velocidade_maxima, 0.1)
+			else:
+				velocity = velocity.lerp(Vector2.ZERO, 0.2)
+				if velocity.length() < 5.0:
+					velocity = Vector2.ZERO
+					mover = false
 		else:
-			velocity = velocity.lerp(Vector2.ZERO, 0.1)
-			if velocity.length() < 5.0:
-				velocity = Vector2.ZERO
-				mover = false
+			velocity = velocity.lerp(Vector2.ZERO, 0.2)
 	else:
-		velocity = velocity.lerp(Vector2.ZERO, 0.2)
+		if mover:
+			if distancia > 5.0:
+				velocity = velocity.lerp(direcao.normalized() * velocidade_maxima, 0.1)
+			else:
+				velocity = velocity.lerp(Vector2.ZERO, 0.2)
+				if velocity.length() < 5.0:
+					velocity = Vector2.ZERO
+					mover = false
+		else:
+			velocity = velocity.lerp(Vector2.ZERO, 0.2)
 
 	move_and_slide()
-
-func mostrar_indicador(posicao: Vector2) -> void:
-	if marcador_atual and marcador_atual.is_inside_tree():
-		marcador_atual.queue_free()
-
-	marcador_atual = Sprite2D.new()
-	marcador_atual.texture = preload("res://imagens/layer/token-border-collection-v0-8pv4nqo221ja1.png")
-	marcador_atual.global_position = posicao
-	marcador_atual.scale = Vector2(0.09, 0.09)
-	get_tree().current_scene.add_child(marcador_atual)
-
-	await get_tree().create_timer(0.8).timeout
-
-	if marcador_atual and marcador_atual.is_inside_tree():
-		marcador_atual.queue_free()
-		marcador_atual = null
 
 func _atacar() -> void:
 	if inimigo_alvo and is_instance_valid(inimigo_alvo):
@@ -170,6 +209,6 @@ func atirar_projetil(destino: Vector2) -> void:
 
 func _exit_tree():
 	Global.jogador.erase(name)
-	
+
 func levar_dano(valor):
 	barra_vida.receber_dano(valor)

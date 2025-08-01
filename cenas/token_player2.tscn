@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bt8v8a3u7l40u"]
+[gd_scene load_steps=24 format=3 uid="uid://bt8v8a3u7l40u"]
 
 [ext_resource type="Script" uid="uid://jsje2m0asuew" path="res://cenas/token_player_2.gd" id="1_lt4tn"]
 [ext_resource type="Texture2D" uid="uid://c1dpify55utsm" path="res://imagens/erro.png" id="3_lt4tn"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://y2b0s1rfaa4b" path="res://cenas/chat_global.tscn" id="9_hs6yw"]
 [ext_resource type="Texture2D" uid="uid://cs0elkormjx15" path="res://imagens/personagens/images (1).jpg" id="10_3nnub"]
 [ext_resource type="Texture2D" uid="uid://jx40ndkub1uy" path="res://imagens/layer/token-border-collection-v0-61i9u2n221ja1.png" id="11_i3xu1"]
+[ext_resource type="Texture2D" uid="uid://cc7shmj4l10p2" path="res://imagens/efeitos/ciculo_clique.png" id="14_c2ffx"]
+[ext_resource type="Texture2D" uid="uid://cqy65cb5i3htq" path="res://imagens/efeitos/brilho_clique.png" id="15_1dex0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cgb5g"]
 radius = 54.7083
@@ -28,6 +30,91 @@ radius = 520.096
 
 [sub_resource type="FontVariation" id="FontVariation_hkn2p"]
 base_font = ExtResource("4_i2vfg")
+
+[sub_resource type="Animation" id="Animation_hs6yw"]
+resource_name = "brilho"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BrilhoClique:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(7, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jvjme"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BrilhoClique:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jt8pl"]
+_data = {
+&"RESET": SubResource("Animation_jvjme"),
+&"brilho": SubResource("Animation_hs6yw")
+}
 
 [node name="token_player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.04, 0.04)
@@ -590,3 +677,20 @@ collision_mask = 2
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_cgb5g")
+
+[node name="CiculoClique" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(50, 50)
+scale = Vector2(7, 7)
+texture = ExtResource("14_c2ffx")
+
+[node name="BrilhoClique" type="Sprite2D" parent="CiculoClique"]
+position = Vector2(-7.14286, 2.38419e-07)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_1dex0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CiculoClique")
+libraries = {
+&"": SubResource("AnimationLibrary_jt8pl")
+}
