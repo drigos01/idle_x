@@ -382,63 +382,58 @@ texture = ExtResource("3_xwq4y")
 region_enabled = true
 region_rect = Rect2(619.5, 599.013, 246, 65.9999)
 
-[node name="Placas4" type="Sprite2D" parent="."]
-position = Vector2(-100, 89)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_oi5x6")
-region_enabled = true
-region_rect = Rect2(447.875, 341, 353.25, 132.75)
-
-[node name="Placas5" type="Sprite2D" parent="Placas4"]
-position = Vector2(-195, 0)
-texture = ExtResource("5_oi5x6")
-region_enabled = true
-region_rect = Rect2(65.375, 341, 315, 132.75)
-
-[node name="registro" type="Sprite2D" parent="Placas4"]
-position = Vector2(-260, 2.5)
-scale = Vector2(0.425, 0.425)
+[node name="registro" type="Sprite2D" parent="."]
+modulate = Color(0.223767, 0.145413, 0, 1)
+position = Vector2(-204, 90)
+scale = Vector2(0.17, 0.17)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(600.875, 469.25, 144, 157.5)
 
-[node name="e" type="Sprite2D" parent="Placas4/registro"]
+[node name="e" type="Sprite2D" parent="registro"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(125, 5)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(618.875, 88.085, 144, 162)
 
-[node name="g" type="Sprite2D" parent="Placas4/registro"]
+[node name="g" type="Sprite2D" parent="registro"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(250, 5)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(78.875, 278, 132.75, 159.75)
 
-[node name="i" type="Sprite2D" parent="Placas4/registro"]
+[node name="i" type="Sprite2D" parent="registro"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(350, 0)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(373.625, 273.5, 74.25, 162)
 
-[node name="s" type="Sprite2D" parent="Placas4/registro"]
+[node name="s" type="Sprite2D" parent="registro"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(440, 0)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(747.125, 467, 112.5, 157.5)
 
-[node name="t" type="Sprite2D" parent="Placas4/registro"]
+[node name="t" type="Sprite2D" parent="registro"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(550, 0)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(855.125, 467, 123.75, 157.5)
 
-[node name="r" type="Sprite2D" parent="Placas4/registro"]
+[node name="r" type="Sprite2D" parent="registro"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(675, 5)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
 region_rect = Rect2(605.375, 471.5, 139.5, 162)
 
-[node name="r2" type="Sprite2D" parent="Placas4/registro"]
+[node name="o" type="Sprite2D" parent="registro"]
+modulate = Color(0.796078, 0.556863, 0, 1)
 position = Vector2(810, 5)
 texture = ExtResource("6_4fvy5")
 region_enabled = true
